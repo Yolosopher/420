@@ -1,0 +1,223 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  resize: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, input:before, input:after {
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul li {
+  list-style-position: inside;
+  list-style: none;
+}
+
+div.default-ul p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+div.default-ul ul li {
+  list-style: initial;
+  list-style-position: inside;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 1025px) {
+  html::-webkit-scrollbar {
+    width: 10px;
+    background-color: #fbfbfb;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  html::-webkit-scrollbar-thumb {
+    background-color: #EA433D;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  html::-webkit-scrollbar-track {
+    background-color: #fbfbfb;
+  }
+}
+
+body {
+  color: #171717;
+  background-color: #FBFBFF;
+}
+
+header, footer, .login-menu-slider {
+  padding: 0 10px !important;
+}
+
+@media screen and (min-width: 900px) {
+  header, footer, .login-menu-slider {
+    padding: 0 50px !important;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  header, footer, .login-menu-slider {
+    padding: 0 140px !important;
+  }
+}
+
+.login-menu-slider {
+  padding: 0 15px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .login-menu-slider {
+    padding: 0 50px !important;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .login-menu-slider {
+    padding: 0 140px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  footer::after {
+    margin: 0 50px !important;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  footer::after {
+    margin: 0 140px !important;
+  }
+}
+
+.success-error-message-outter, .productin-size-guide {
+  position: fixed;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(23, 23, 23, 0.5);
+  overflow: hidden;
+  z-index: -999;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+.success-error-message-outter.active, .productin-size-guide.active {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: 4;
+}
+
+.success-error-message, .productin-size-guide-image-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 536px;
+  height: 400px;
+  max-width: calc( 100% - 60px);
+  max-height: 70%;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: rmn;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.success-error-message-x-btn {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  cursor: pointer;
+}
+
+.success-error-message-x-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sign-svg-div {
+  margin-bottom: 72px;
+}
+
+.productin-size-guide img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.productin-size-guide-image-container {
+  width: 100%;
+  height: 100%;
+  max-width: 80%;
+}
+/*# sourceMappingURL=style.css.map */
