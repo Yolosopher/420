@@ -1,3 +1,301 @@
+@import fonts
 @import variables
 @import defaults
 
+body
+    min-height: 300vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+.testitem
+    // position: absolute
+    bottom: 10px
+    width: 100%
+    height: 100px
+    display: block
+    background-color: red
+    // z-index: -1
+
+// components
+@import header
+
+
+
+// main header
+.home-header
+    color: #fff
+    height: 100vh
+    width: 100%
+    display: grid
+    background-color: $blackdefault
+.mid
+    margin-left: -101px
+.home-header-realContent
+    margin: 0 auto
+    display: flex
+    
+    justify-content: center
+    align-items: center
+    position: relative
+    height: 100%
+    max-width: 101.5625em
+    min-width: calc( 100vw - 103px - (2 * 6.5625em))
+    @include plus1025()
+        font-size: 14px
+        padding: 0 6.5625rem
+        margin-top: -123px
+        padding-top: 35px
+
+    @include plus1441()
+        font-size: 16px
+        justify-content: space-between
+    h1
+        font-size: 4em
+        line-height: 1.1406em
+        margin-bottom: 0.6875em
+    .realContent-textdiv
+        font-size: 1em
+        line-height: 1.5em
+        font-family: rmn
+        margin-bottom: 5.625em
+    .realContent-see-more
+        @include upperCase(true)
+        font-size: 16px
+        line-height: 18px
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 229px
+        border-radius: 12px
+        background-color: $cyan
+        height: 56px
+        position: relative
+        overflow: hidden
+        transition: transform .3s ease out, background-color .3s ease-out
+        @include plus1025()
+            &:hover
+                transform: rotate(-5deg)
+                background-color: $orange
+
+        &::after
+            position: absolute
+            content: url(../images/canabis.svg)
+            right: -25.9px
+            top: 1.7px
+            transform: rotate(-15deg)
+
+.realContent-left
+    // display: flex
+    // flex-direction: column
+    max-width: 28.4375rem
+    margin-right: 20px
+.realContent-right
+    width: calc( 100vh - 16.5em )
+    font-size: 12px
+    max-width: calc( 100vh - 16.5em )
+    
+    border-radius: 50%
+
+    position: relative
+    background-color: $cyan
+
+    @include plus1025()
+        font-size: 13px
+    @include plus1441()
+        font-size: 16px
+        max-width: 67.9167em
+
+    &::before
+        position: absolute
+        right: 50%
+        bottom: 50%
+
+        content: ''
+        background-repeat: no-repeat
+        background-size: cover
+        background-image: url(../images/canabis.svg)
+        transform: rotate(120deg)
+        z-index: 2
+        display: block
+        height: 50%
+        width: 50%
+
+        
+    &::after
+        content: ''
+        display: block
+        border-radius: 50%
+        padding-bottom: 100%
+
+
+    .realContent-right-imageBox
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 3
+        top: 0
+        right: 0
+        display: flex
+        justify-content: center
+        align-items: center
+    img
+        height: calc(440 / 815 * 100%)
+        max-height: 440px
+        object-fit: contain
+.home-header
+    // position: relative
+    right: 0
+    top: 0
+    display: grid
+    grid-template-columns: repeat(3, auto)
+    width: 100%
+    height: 100vh
+    overflow: hidden
+
+.header-burgerMenu
+    position: relative
+    display: flex
+    align-items: center
+    height: 100%
+    width: 101px
+    z-index: 6
+    overflow: hidden
+    transition: width .8s ease-in-out
+
+.burger-icon-container
+    max-width: 102px
+    min-width: 101px
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    border-right: 1px solid #232323
+    // background-color: $blackdefault
+    position: relative
+    z-index: 1
+.burger-icon
+    width: 12px
+    height: 32px
+    position: relative
+    z-index: 3
+    margin: 0 auto
+    cursor: pointer
+    span
+        position: absolute
+        top: 0
+        z-index: 1
+        display: block
+        width: 2px
+        height: 32px
+        border-radius: 2px
+        background-color: #fff
+        transition: transform .3s ease-in-out, left .3s .3s
+        &:first-child
+            left: 0
+        &:last-child
+            left: calc( 100% - 2px )
+.header-burgerMenu
+    &.active
+        width: 624px
+        .burger-icon span
+            left: calc(50% - 1px) !important
+            transition: transform .3s ease-in-out
+            &:first-child
+                transform: rotate(-45deg)
+            &:last-child
+                transform: rotate(45deg)
+
+
+.burger-categories
+    flex: 1
+    height: 100%
+    margin-right: 157px
+.burger-cat-ul
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    padding-top: 97px
+    align-items: center
+    max-width: 180px
+    z-index: -1
+    position: relative
+    margin: 0 auto
+    li
+        display: inline-block
+        width: 100%
+        text-align: left
+        color: #909090
+        @include upperCase(true)
+        font-size: 22px
+        line-height: 25px
+        transition: transform .8s ease-out
+        transform: translateX(-200%)
+        &:not(:last-of-type)
+            margin-bottom: 26px
+        a
+            white-space: nowrap
+        &.active, &:active, &:hover
+            color: #fff
+        &:nth-of-type(2)
+            transition-delay: calc(.18s - .18s)
+        &:nth-of-type(3)
+            transition-delay: calc(.25s - .18s)
+        &:nth-of-type(4)
+            transition-delay: calc(.3s - .18s)
+        &:nth-of-type(5)
+            transition-delay: calc(.35s - .18s)
+        &:nth-of-type(6)
+            transition-delay: calc(.39s - .18s)
+        &:nth-of-type(7)
+            transition-delay: calc(.45s - .18s)
+        &:nth-of-type(8)
+            transition-delay: calc(.48s - .18s)
+        &:nth-of-type(9)
+            transition-delay: calc(.51s - .18s)
+        &:nth-of-type(10)
+            transition-delay: calc(.73s - .18s)
+        &:nth-of-type(11)
+            transition-delay: calc(.77s - .18s)
+        &:nth-of-type(12)
+            transition-delay: calc(.81s - .18s)
+        &:nth-of-type(13)
+            transition-delay: calc(.84s - .18s)
+        &:nth-of-type(14)
+            transition-delay: calc(.88s - .18s)
+        &:nth-of-type(15)
+            transition-delay: calc(.92s - .18s)
+.header-burgerMenu
+    &.active
+        .burger-categories
+            border-right: 1px solid black
+        .burger-cat-ul li
+            transform: translateX(0)
+        &:nth-of-type(15)
+            transition-delay: calc(.18s - .18s)
+        &:nth-of-type(14)
+            transition-delay: calc(.25s - .18s)
+        &:nth-of-type(13)
+            transition-delay: calc(.3s - .18s)
+        &:nth-of-type(12)
+            transition-delay: calc(.35s - .18s)
+        &:nth-of-type(11)
+            transition-delay: calc(.39s - .18s)
+        &:nth-of-type(10)
+            transition-delay: calc(.45s - .18s)
+        &:nth-of-type(9)
+            transition-delay: calc(.48s - .18s)
+        &:nth-of-type(8)
+            transition-delay: calc(.51s - .18s)
+        &:nth-of-type(7)
+            transition-delay: calc(.73s - .18s)
+        &:nth-of-type(6)
+            transition-delay: calc(.77s - .18s)
+        &:nth-of-type(5)
+            transition-delay: calc(.81s - .18s)
+        &:nth-of-type(4)
+            transition-delay: calc(.84s - .18s)
+        &:nth-of-type(3)
+            transition-delay: calc(.88s - .18s)
+        &:nth-of-type(2)
+            transition-delay: calc(.92s - .18s)

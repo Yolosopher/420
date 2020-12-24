@@ -1,0 +1,159 @@
+// header
+.lang-select
+    li
+        cursor: pointer
+        display: none
+        &.active
+            display: unset
+.searchbar-container
+    cursor: pointer
+    .searchbar-input-container
+        display: none
+    &.active
+        .searchbar-input-container
+            display: flex
+
+
+
+.header-container 
+    width: 100%
+    height: 123px
+    z-index: 5
+    background-color: $blackdefault
+
+.home-header
+    .header-container
+        position: sticky
+        top: 0
+        &.scrolled
+            padding: 0
+            height: 103px
+            position: fixed
+            
+header
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+    height: 100%
+    max-width: $max-width
+    margin: 0 auto
+    padding: 0 15px
+
+    @include upperCase(true)
+
+    @include plus1025()
+        font-size: 14px
+        padding: 0 6.5625em
+
+    @include plus1441()
+        font-size: 16px
+    li
+        &:active
+            color: $cyan
+        &:hover
+            @include plus1025()
+                color: $cyan
+
+svg
+    width: 1.5em
+    height: 1.5em
+*:not(.header-right-login) 
+    &:active
+        > .svg
+            path
+                stroke: $cyan
+    &:hover
+        > .svg
+            path
+                @include plus1025()
+                    stroke: $cyan
+.nav-ul-li-home
+    &:active
+        svg
+            path
+                fill: $cyan !important
+    &:hover
+        svg
+            path
+                @include plus1025()
+                    fill: $cyan !important
+
+.header-left, .header-right
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    
+.header-left
+    .header-logo
+        margin-right: 4.375em
+    ul
+        display: flex
+        align-items: center
+        li
+            &:not(:last-child)
+                margin-right: 3.25em
+            &.nav-ul-li-home
+                margin-right: 4.375em
+            &.active
+                position: relative
+                &::after
+                    content: ''
+                    display: block
+                    position: absolute
+                    z-index: 1
+                    bottom: -24px
+                    right: 50%
+                    transform: translateX(50%)
+                    
+                    width: 8px
+                    height: 8px
+                    border-radius: 50%
+                    background-color: #fff
+
+
+.header-right
+    @include plus1025()
+        display: grid
+        grid-template-columns: repeat(6, auto)
+        grid-column-gap: 2.5em
+.header-right-bag, .header-right-login
+    display: flex
+    align-items: center
+
+.header-right-login
+    transition-duration: .1s
+    path
+        transition-duration: .1s
+    &:active
+        color: $cyan
+        path
+            fill: $cyan !important
+    &:hover
+        color: $cyan
+        path
+            @include plus1025()
+                fill: $cyan !important
+.bag-svg, .profile-svg, .searchbar-svg
+    margin-right: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+
+.header-left
+    > *:not(.header-logo)
+        @media screen and ( max-width: 1024px )            
+            display: none
+.header-right
+    > *:not(.lang-select)
+        @media screen and ( max-width: 1024px )            
+            display: none
+
+.header-right-hr
+    height: 25px
+    width: 1px
+    opacity: .5
+    border-radius: 2px
+    background-color: #fff
