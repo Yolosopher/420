@@ -704,10 +704,10 @@ svg {
   font-weight: 600 !important;
   font-size: 22px;
   line-height: 25px;
-  -webkit-transition: -webkit-transform .8s ease-out;
-  transition: -webkit-transform .8s ease-out;
-  transition: transform .8s ease-out;
-  transition: transform .8s ease-out, -webkit-transform .8s ease-out;
+  -webkit-transition: -webkit-transform .4s ease-out;
+  transition: -webkit-transform .4s ease-out;
+  transition: transform .4s ease-out;
+  transition: transform .4s ease-out, -webkit-transform .4s ease-out;
   -webkit-transform: translateX(-200%);
           transform: translateX(-200%);
 }
