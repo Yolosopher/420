@@ -16,6 +16,7 @@ window.onscroll = () => {
 }
 burgerBtn.addEventListener('click', () => {
 	burgerWindow.classList.toggle('active');
+	document.querySelectorAll('.moveX').forEach(obj => obj.classList.toggle('left'))
 })
 
 

@@ -37,15 +37,13 @@ header
     align-items: center
     
     height: 100%
-    max-width: $max-width
     margin: 0 auto
     padding: 0 15px
 
     @include upperCase(true)
 
     @include plus1025()
-        font-size: 14px
-        padding: 0 6.5625em
+        font-size: 12px
 
     @include plus1441()
         font-size: 16px
@@ -57,8 +55,8 @@ header
                 color: $cyan
 
 svg
-    width: 1.5em
-    height: 1.5em
+    width: 1.5rem
+    height: 1.5rem
 *:not(.header-right-login) 
     &:active
         > .svg
@@ -88,15 +86,15 @@ svg
     
 .header-left
     .header-logo
-        margin-right: 4.375em
+        margin-right: 4.375rem
     ul
         display: flex
         align-items: center
         li
             &:not(:last-child)
-                margin-right: 3.25em
+                margin-right: 3.25rem
             &.nav-ul-li-home
-                margin-right: 4.375em
+                margin-right: 4.375rem
             &.active
                 position: relative
                 &::after
@@ -118,7 +116,7 @@ svg
     @include plus1025()
         display: grid
         grid-template-columns: repeat(6, auto)
-        grid-column-gap: 2.5em
+        grid-column-gap: 2.5rem
 .header-right-bag, .header-right-login
     display: flex
     align-items: center

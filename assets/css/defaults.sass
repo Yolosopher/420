@@ -67,12 +67,18 @@ html::-webkit-scrollbar-thumb
 html::-webkit-scrollbar-track 
     @include plus1025()
         background-color: #F2F2F2
-
+@import variables
 html
     font-family: rmn
     font-size: 16px
     line-height: 1.125rem
     scroll-behavior: smooth
+    @include plus1025()
+        font-size: 13px
+    @include plus1441()
+        font-size: 14px
+    @include sizePlus(1800px)    
+        font-size: 16px
 body
     // color: $blackFont
     background-color: $fawhite
