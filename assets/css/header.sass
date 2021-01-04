@@ -20,7 +20,12 @@
     height: 123px
     z-index: 5
     background-color: $blackdefault
-
+    &.scrolled-one
+        display: none
+        color: #fff
+        position: fixed
+        &.scrolled
+            display: flex
 .home-header
     .header-container
         position: sticky
@@ -122,6 +127,7 @@ svg
     align-items: center
 
 .header-right-login
+    cursor: pointer
     transition-duration: .1s
     path
         transition-duration: .1s

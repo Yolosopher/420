@@ -203,6 +203,18 @@ body {
   background-color: #111111;
 }
 
+.header-container.scrolled-one {
+  display: none;
+  color: #fff;
+  position: fixed;
+}
+
+.header-container.scrolled-one.scrolled {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .home-header .header-container {
   position: -webkit-sticky;
   position: sticky;
@@ -354,6 +366,7 @@ svg {
 }
 
 .header-right-login {
+  cursor: pointer;
   -webkit-transition-duration: .1s;
           transition-duration: .1s;
 }
@@ -415,17 +428,26 @@ svg {
 }
 
 .home-header {
-  color: #fff;
-  height: 100vh;
-  width: 100%;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 15.75rem 22.875rem minmax(calc(100vw - 16.75rem), calc(100vw - 16.75rem)) 36.75rem;
+      grid-template-columns: 15.75rem 22.875rem minmax(calc(100vw - 16.75rem), calc(100vw - 16.75rem)) 36.75rem;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
   background-color: #111111;
   overflow: hidden;
 }
 
 .mid {
   width: calc(100vw - 16.75rem);
+}
+
+.mid.scrolled {
+  -webkit-transition: 0s;
+  transition: 0s;
+  -webkit-transform: none;
+          transform: none;
 }
 
 .mid-container {
@@ -454,6 +476,11 @@ svg {
           transform: translateX(0);
 }
 
+.moveX.right {
+  -webkit-transform: translateX(-594px);
+          transform: translateX(-594px);
+}
+
 .home-header-realContent {
   margin: 0 auto;
   display: -ms-grid;
@@ -476,8 +503,8 @@ svg {
 
 @media screen and (min-width: 1441px) {
   .home-header-realContent {
-    -ms-grid-columns: auto 1fr;
-        grid-template-columns: auto 1fr;
+    -ms-grid-columns: minmax(auto, 40%) minmax(1fr, 60%);
+        grid-template-columns: minmax(auto, 40%) minmax(1fr, 60%);
   }
 }
 
@@ -569,6 +596,7 @@ svg {
 @media screen and (min-width: 1441px) {
   .realContent-right {
     font-size: 1rem;
+    width: 100%;
     max-height: 815px;
     max-width: 815px;
   }
@@ -702,18 +730,6 @@ svg {
   opacity: 1;
 }
 
-.home-header {
-  right: 0;
-  top: 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
-  width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-}
-
 .header-burgerMenu {
   position: relative;
   display: -webkit-box;
@@ -724,6 +740,7 @@ svg {
           align-items: center;
   height: 100%;
   width: 6.3125rem;
+  margin-right: 9.4375rem;
   z-index: 6;
   overflow: hidden;
   -webkit-transition: width .8s ease-in-out;
@@ -801,9 +818,7 @@ svg {
       -ms-flex: 1;
           flex: 1;
   height: 100%;
-  margin-right: 9.8125rem;
   z-index: 1;
-  padding-left: 9.4375rem;
   width: 22.875rem;
   -webkit-transition: left 1.2s ease-out;
   transition: left 1.2s ease-out;
@@ -1016,6 +1031,12 @@ svg {
   height: 400px;
 }
 
+@media screen and (min-width: 1441px) {
+  .realContent-left {
+    height: 418px;
+  }
+}
+
 .text-content {
   position: absolute;
   left: 0;
@@ -1064,5 +1085,58 @@ svg {
 
 .text-content.active a {
   opacity: 1;
+}
+
+.scroll-down-yeah {
+  position: absolute;
+  top: calc(100vh - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scroll-down-yeah p {
+  display: none;
+  font-family: mtavruli !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 1025px) {
+  .scroll-down-yeah p {
+    display: block;
+  }
+}
+
+.scroll-down-yeah p span {
+  color: #20CF8B;
+}
+
+.scroll-bot.svg {
+  width: 56px;
+  height: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background-color: rgba(32, 207, 139, 0.1);
+}
+
+@media screen and (min-width: 1025px) {
+  .scroll-bot.svg {
+    margin-right: 15px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
