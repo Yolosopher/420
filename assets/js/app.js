@@ -40,9 +40,8 @@ var scrollStop = function (callback) {
 	)
 }
 
-
 // event listeners
-if (!document.querySelector('.home-header')) {
+if (document.querySelector('.home-header')) {
 	window.addEventListener(
 		'scroll',
 		() => {
@@ -50,7 +49,6 @@ if (!document.querySelector('.home-header')) {
 		},
 		false
 	)
-
 }
 if (burgerBtn) {
 	burgerBtn.addEventListener('click', () => {
@@ -82,15 +80,14 @@ if (minimizeAuthBtn) {
 }
 // functions
 const headerBotFixer = () => {
-	if (homeHeader) {
-		if (window.innerWidth > 1024) {
-			if (window.pageYOffset > window.innerHeight - 123) {
-				headerContainer.classList.add('scrolled')
-			} else {
-				headerContainer.classList.remove('scrolled')
-			}
+	if (window.innerWidth > 1024) {
+		if (window.pageYOffset > window.innerHeight - 123) {
+			headerContainer.classList.add('scrolled')
+		} else {
+			headerContainer.classList.remove('scrolled')
 		}
 	}
+	
 }
 if (switchToRegisBtn) {
 	switchToRegisBtn.addEventListener('click', () => {
@@ -98,10 +95,49 @@ if (switchToRegisBtn) {
 	})
 }
 
+const checkPage = () => {
+	if (document.querySelector('.contact-main')) {
+		return 'contact'
+	} else if (document.querySelector('.real-aboutus')) {
+		return 'aboutus'
+	} else if (document.querySelector('.home-header')) {
+		return 'home'
+	} else {
+		return 0
+	}
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+	let pageName = checkPage()
+	const navUl = document.querySelectorAll('.nav-ul')
+
+	switch (pageName) {
+		case 'contact':
+			navUl.forEach(each => {
+				each.querySelector('li:nth-child(4)').classList.add('active')
+			})
+			break
+		case 'home':
+			navUl.forEach(each => {
+				each.querySelector('li:nth-child(1)').classList.add('active')
+			})
+			break
+		case 'aboutus':
+			navUl.forEach(each => {
+				each.querySelector('li:nth-child(2)').classList.add('active')
+			})
+			break
+		case 0:
+			console.log('something-went-wrong')
+			break
+		default:
+			console.log('something-went-wrong')
+			break
+	}
 	if (!homeHeader) {
 		document.querySelector('body').style.marginTop = '103px'
-	} else {
+
+	} else { 
 		scrollStop(() => {
 			if (window.innerWidth < 1025) {
 				if (window.pageYOffset === 0) {
@@ -117,14 +153,14 @@ window.addEventListener('DOMContentLoaded', () => {
 					})
 				} else if (window.pageYOffset < window.innerHeight / 4) {
 					console.log(`scrolled up`)
-			
+		
 					window.scroll({
 						top: 0, // could be negative value
 						left: 0,
 						behavior: 'smooth',
 					})
-				} 
+				}
 			}
 		})
 	}
-});
+})

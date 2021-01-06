@@ -452,6 +452,8 @@ svg {
 }
 
 .home-header {
+  position: relative;
+  z-index: 7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1504,7 +1506,7 @@ svg {
 
 .input-div .input-error-qstmark {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
   display: none;
   -webkit-box-pack: center;
@@ -2451,18 +2453,20 @@ footer > * {
   fill: #fff;
 }
 
-.home-main .mid .header-container {
+.home-main .mid .header-container-norm {
   position: relative;
 }
 
-body > .header-container {
+body > .header-container-norm {
   height: 103px;
+  width: 100%;
   color: #fff;
   position: fixed;
   top: 0;
+  background-color: #111111;
 }
 
-body > .header-container header {
+body > .header-container-norm header {
   max-width: 90.375rem;
   margin: 0 auto;
   padding: 0 15px;

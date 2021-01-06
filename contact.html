@@ -8,7 +8,7 @@
 			href="assets/images/logo.svg"
 			type="image/x-icon"
 		/>
-		<title>ჩვენ შესახებ</title>
+		<title>კონტაქტი</title>
 		<meta name="theme-color" content="#20CF8B" />
 		<meta property="og:title" content="420" />
 		<meta property="og:type" content="website" />
@@ -24,7 +24,7 @@
 	</head>
 	<body>
 		<!-- header -->
-        <div class="header-container">
+        <div class="header-container-norm">
             <header>
                 <div class="header-left">
                     <a href="index.html" class="header-logo">
@@ -35,7 +35,7 @@
                     </a>
                     <nav>
                         <ul class="nav-ul">
-                            <li class="nav-ul-li-home active">
+                            <li class="nav-ul-li-home">
                                 <a href="index.html">
                                     <svg
                                         id="Component_5_19"
@@ -62,7 +62,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="aboutus.html"
                                     >ჩვენ შესახებ</a
                                 >
@@ -497,8 +497,10 @@
 		<script src="assets/js/swiper-bundle.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script>
-			
+			const inputDivs = document.querySelectorAll('.input-div')
 
+			inputDivs.forEach(each => each.classList.add('invalid'));
 		</script>
+		<script src="assets/js/contact-validation.js"></script>
 	</body>
 </html>
