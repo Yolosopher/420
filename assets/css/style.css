@@ -2549,6 +2549,12 @@ body > .header-container header {
 
 @media screen and (min-width: 1025px) {
   .contact-content-container {
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .contact-content-container {
     margin-bottom: 110px;
   }
 }
