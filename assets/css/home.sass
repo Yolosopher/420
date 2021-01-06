@@ -243,10 +243,14 @@
     width: 100%
     height: 100%
     display: flex
+    .ptext
+        @include upperCase(true)
+        text-transform: uppercase !important
+        
     li
         border-radius: 12px
         background-color: #fff
-        flex-shrink: 1
+        flex-shrink: 0
         cursor: pointer
         width: 346px
         display: block
