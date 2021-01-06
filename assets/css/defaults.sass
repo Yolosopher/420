@@ -19,7 +19,7 @@ input, input:before, input:after
     -ms-user-select: initial
     user-select: initial
     
-input
+input, button, textarea
     background-color: transparent
     border: none
     outline: none
@@ -65,6 +65,18 @@ html::-webkit-scrollbar-thumb
         background-color: $cyan
 
 html::-webkit-scrollbar-track 
+    @include plus1025()
+        background-color: #F2F2F2
+*:not(html):not(body)::-webkit-scrollbar 
+    @include plus1025()
+        width: 3px
+        background-color: #F2F2F2
+
+*:not(html):not(body)::-webkit-scrollbar-thumb 
+    @include plus1025()
+        background-color: $cyan
+
+*:not(html):not(body)::-webkit-scrollbar-track 
     @include plus1025()
         background-color: #F2F2F2
 @import variables

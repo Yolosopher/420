@@ -14,22 +14,29 @@
             display: flex
 
 
-
+@import variables
 .header-container 
     width: 100%
-    height: 123px
+    height: 133px
     z-index: 5
     background-color: $blackdefault
+    @include plus1025()
+        height: 123px
+
     &.scrolled-one
         display: none
         color: #fff
         position: fixed
         &.scrolled
-            display: flex
+            @include plus1025()
+                display: flex
 .home-header
     .header-container
-        position: sticky
+        position: fixed
         top: 0
+        right: 0
+        @include plus1025()
+            position: sticky
         &.scrolled
             padding: 0
             height: 103px

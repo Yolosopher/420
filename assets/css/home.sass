@@ -1,0 +1,330 @@
+// home-main
+.home-main
+    max-width: 90.375rem
+    width: 100%
+    margin: 0 auto
+    padding: 0 15px
+
+.home-categories
+    width: 100%
+    height: 241px
+    overflow: hidden
+    margin-bottom: 38px
+    @include plus1025()
+        height: 19.3125rem
+        margin-bottom: 7.375rem
+.home-categories-ul, .home-topProducts-ul
+    display: flex
+    // justify-content: space-between
+    height: 100%
+    width: 100%
+
+    .discount-label
+        display: none
+        position: absolute
+        z-index: 1
+        top: 10px
+        left: 10px
+        margin: 0
+        padding: 4px 10px
+        background-color: #171717
+        @include upperCase(true)
+        color: #fff
+
+        border-radius: 4px
+        
+        font-size: 9px
+        line-height: 10px
+        @include plus1025()
+            font-size: 12px
+            line-height: 14px
+        
+    li
+        border-radius: 12px
+        background-color: #fff
+        cursor: pointer
+        text-align: center
+        flex-shrink: 0
+        display: flex
+        justify-content: center
+        flex-direction: column
+        position: relative
+        height: 100%
+        transition: box-shadow .2s ease-in
+
+        &.discounted
+            .discount-label
+                display: inline
+            .price
+                color: $orange
+                font-size: 16px
+                line-height: 18px
+                margin-right: 3px
+                @include plus1025()
+                    font-size: 22px
+                    line-height: 25px
+        .discounted-from
+            text-decoration: line-through
+
+            font-size: 16px
+            line-height: 18px
+        &:active
+            box-shadow: 0 0 30px rgba(98, 126, 163, .12)
+        &:hover
+            @include plus1025()
+                box-shadow: 0 0 30px rgba(98, 126, 163, .12)
+        a      
+            position: relative          
+            display: flex
+            width: 100%
+            height: 100%
+
+            flex-direction: column        
+            padding: 16px 16px 23px 16px
+
+            @include plus1025()
+                padding: 20px 20px 30px 20px
+        h4
+            @include upperCase(true)
+            font-size: 12px
+            line-height: 14px
+            width: 100%
+            text-align: center
+            @include plus1025()
+                font-size: 16px
+                line-height: 18px
+        .home-cat-li-imgbox
+            border-radius: 12px
+            overflow: hidden
+            margin-bottom: 22px            
+            width: 100%
+            height: 100%
+            max-width: 136px
+            max-height: 164px
+            @include plus1025()
+                max-width: 175px
+                max-height: 210px
+                margin-bottom: 30px
+                width: 100%
+        img
+            width: 100%
+            height: 100%
+            object-fit: scale-down
+
+.home-topProducts
+    overflow: hidden
+    margin-bottom: 40px
+    @include plus1025()
+        margin-bottom: 110px
+    h3
+        @include upperCase(true)
+        font-size: 18px
+        line-height: 21px
+        color: $blackdefault
+        span
+            margin-right: 12px
+        @include plus1025()
+            font-size: 28px
+            line-height: 33px
+.home-topProducts-ul
+    li
+        height: 377px
+        
+        @include plus1025()
+            width: 335px
+            height: 437px
+
+        a
+            padding: 20px
+            justify-content: flex-start
+            @include plus1025()
+                padding: 30px 10px
+            img
+                height: 180px
+                margin-bottom: 16px
+                @include plus1025()
+                    height: 235px
+            h4
+                font-family: rmn !important
+                text-transform: unset !important
+                font-size: 14px
+                line-height: 17px
+                font-weight: 500 !important
+                margin-bottom: 17px
+                @include plus1025()
+                    font-size: 16px
+                    line-height: 19px
+        .top-products-price
+            display: flex
+            justify-content: center
+            align-items: center
+            @include upperCase(true)
+            font-size: 16px
+            line-height: 18px
+            margin-bottom: 16px
+            @include plus1025()
+                font-size: 22px
+                line-height: 26px
+        .home-products-hr
+            height: 1px
+            border-radius: 2px
+            background-color: #F2F2F2
+            display: block
+            width: 76px
+            margin: 0 auto
+            margin-bottom: 16px
+            @include plus1025()
+                width: 100px
+                margin-bottom: 16px
+.top-produts-li-addbtn
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $cyan
+    border-radius: 50%
+    min-width: 56px
+    min-height: 56px
+    height: 56px
+    margin: 0 auto
+    cursor: pointer
+    @include upperCase(true)
+    font-size: 12px
+    line-height: 14px
+    
+    svg
+        width: 18px
+        height: 18px
+        path
+            fill: #fff
+    span
+        display: none
+
+    @include plus1025()
+        min-width: unset     
+        min-height: unset
+        border-radius: unset
+        width: unset
+        height: unset
+        background-color: transparent
+        span
+            display: inline
+        svg
+            width: unset
+            height: unset
+            margin-right: 10px
+            path
+                fill: #111
+.topProd-heading
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+    margin-bottom: 22px
+    @include plus1025()
+        margin-bottom: 50px
+            
+    .topProd-pagination 
+        display: flex
+        max-width: 104px
+        justify-content: flex-end
+        span
+            flex-shrink: 0
+            // flex-grow: 0
+// second categories
+.home-second-categories
+    overflow: hidden
+    width: 100%
+    height: 110px
+    margin-bottom: 20px
+    @include plus1025()
+        margin-bottom: 50px
+        height: 145px
+.home-second-categories-ul
+    width: 100%
+    height: 100%
+    display: flex
+    li
+        border-radius: 12px
+        background-color: #fff
+        flex-shrink: 1
+        cursor: pointer
+        width: 346px
+        display: block
+        height: 100%
+        padding: 20px
+        padding-bottom: 16px
+        color: $blackdefault
+        transition: all .2s ease-out
+        @include plus1025()
+            width: 168px
+        &.active, &:active
+            background-color: $cyan
+            color: #fff
+            svg path
+                fill: #fff
+                stroke: #fff
+        &:hover
+            @include plus1025()
+                background-color: $cyan
+                color: #fff
+                svg path
+                    fill: #fff
+                    stroke: #fff
+        .symbol
+            margin-bottom: 15px
+            @include plus1025()
+                margin-bottom: 34px
+
+.home-topProductsSecond
+    padding-bottom: 70px
+    margin-bottom: 0
+    ul
+        @include plus769()
+            grid-gap: 30px 25px
+    @include plus1025()
+        padding-bottom: 110px
+        width: 100%
+        ul
+            display: grid
+            width: 100%
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: 30px 25px
+            li
+                height: 377px
+                
+                @include plus1025()
+                    width: unset
+                    max-width: 335px
+                    height: 437px
+    .home-topProducts-ul
+        margin-bottom: 20px
+        @include plus1025()
+            margin-bottom: 70px
+
+.home-see-all-btn
+    @include upperCase(true)
+    font-size: 1rem
+    margin: 0 auto
+    line-height: 1.125rem
+    justify-content: center
+    align-items: center
+    width: 14.3125rem
+    border-radius: 0.75rem
+    background-color: $cyan
+    position: relative
+    height: 3.5rem
+    overflow: hidden
+    transition: transform .3s ease out, background-color .3s ease-out
+    color: #fff
+
+    display: flex
+    &:hover
+        transform: rotate(-5deg)
+        background-color: $orange
+
+    &::after
+        position: absolute
+        content: url(../images/canabis-white.svg)
+        right: -25.8992px
+        top: 0.1062rem
+        transform: rotate(-15deg)
