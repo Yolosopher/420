@@ -1,0 +1,203 @@
+// productin page
+.single-product-main
+    background-color: $cyan
+    width: 100%
+    height: 351px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: 0 15px
+    margin-bottom: 22px
+    @include plus1025()
+        margin-bottom: 42px
+        padding: 0
+        height: 269px
+        max-height: calc( 100vh - 103px )
+        &.active
+            height: 600px
+            .single-product-slider
+                overflow: hidden
+                border-radius: 12px
+                margin-bottom: 15px
+                @include plus1025()
+                    margin-bottom: 0
+                .swiper-wrapper
+                    display: flex
+                    height: 450px
+                    li
+                        width: unset
+                        @include plus1025()
+                            max-width: 695px
+
+
+    .swiper-wrapper
+        display: flex
+        li
+            display: flex
+            flex-shrink: 0
+            border-radius: 12px
+            overflow: hidden
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.single-product-slider
+    width: 100%
+    overflow: hidden
+    position: relative
+    border-radius: 12px
+    margin-bottom: 15px
+    @include plus1025()
+        margin-bottom: 0
+    .swiper-wrapper
+        height: 189px
+        li
+            display: flex
+            // max-width: 335px
+            flex-shrink: 0
+            height: 100%
+            position: relative
+            transform
+            background-color: #fff
+            @include plus1025()
+                padding: 15px 80px
+            &::after
+                position: absolute
+                content: ''
+                width: 100%
+                opacity: .9
+                height: 100%
+                right: 0
+                top: 0
+                background-color: $cyan
+                display: block
+                z-index: 99
+                transition: opacity .2s ease-out
+            &.swiper-slide-active
+                &::after
+                    opacity: 0
+
+.single-product-slider-thumbs
+    width: 100%
+    height: 56px    
+    @include plus1025()
+        display: none    
+    .swiper-wrapper
+        display: flex
+        height: 100%
+        li
+            height: 100%
+            display: flex
+
+.main-slider-prev, .main-slider-next
+    position: absolute
+    z-index: 1
+    top: 50%
+    cursor: pointer
+    display: none
+    right: calc(100% / 9 * 2)
+    @include plus1025()
+        display: block
+.main-slider-prev
+    right: unset
+    left: calc(100% / 9 * 2)
+
+
+
+// single-product-content
+.single-product-content
+    max-width: 90.375rem
+    width: 100%
+    margin: 0 auto
+    padding: 0 15px
+    
+    margin-bottom: 38px
+    @include plus1025()
+        margin-bottom: 108px
+
+.single-product-content
+    display: flex
+    h1
+        @include upperCase(true)
+        font-size: 16px
+        line-height: 18px
+        margin-bottom: 9px
+        @include plus1025()
+            font-size: 28px
+            line-height: 32px
+            margin-bottom: 17px
+    &__left
+        flex-grow: 1
+        &__price, &__price > *
+            @include upperCase(true)
+            margin-bottom: 30px
+            @include plus1025()
+                margin-bottom: 52px 
+        &__textcontent
+            font-family: rmn
+            font-size: 16px
+            line-height: 24px
+            p:not(:last-child)
+                margin-bottom: 1em
+                
+    &__right
+        margin-left: 9rem
+        flex-shrink: 0
+        display: none
+        @include plus1025()
+            display: block
+
+.form-quantity
+    flex-grow: 1
+    width: 21rem
+    &__manipulation
+        background-color: #f2f2f2
+        border-radius: 12px
+        width: 100%
+        margin-bottom: 20px
+        height: 56px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 30px
+        input
+            text-align: center
+            width: 3ch
+            pointer-events: none
+
+            @include upperCase(true)
+            font-size: 22px
+            line-height: 26px
+        &__hr
+            width: 1px
+            height: 26px
+            background-color: $blackdefault
+            opacity: .1
+            border-radius: 3px
+    .minus, .plus
+        cursor: pointer
+    button
+        height: 56px
+        width: 100%
+        max-width: 335px
+
+.single-product-similar-products
+    max-width: 90.375rem
+    width: 100%
+    margin: 0 auto
+    padding: 0 15px
+    margin-bottom: 0
+    h2
+        @include upperCase(true)
+        font-size: 18px
+        line-height: 21px
+        margin-bottom: 22px
+        @include plus1025()
+            font-size: 22px
+            line-height: 26px
+            margin-bottom: 52px
+        &::first-letter
+            font-size: 22px
+            line-height: 26px

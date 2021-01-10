@@ -5,6 +5,7 @@ const headerLoginBtnFirst = document.querySelector('.header-right-login')
 const headerLoginBtns = document.querySelectorAll('.header-right-login')
 const switchToRegisBtn = document.querySelector('.switch-to-register')
 const minimizeAuthBtn = document.querySelector('.minimize-svg')
+const respoMenuToggler = document.querySelector('.respo-menu-toggler')
 
 const burgerBtn = document.querySelector('.burger-icon')
 const burgerWindow = document.querySelector('.header-burgerMenu')
@@ -163,4 +164,8 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	}
+})
+
+respoMenuToggler.addEventListener('click', () => {
+	respoMenuToggler.classList.toggle('active')
 })

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <g id="Group_184" data-name="Group 184" transform="translate(-1469 -401)">
+    <rect id="Rectangle_243" data-name="Rectangle 243" width="44" height="44" transform="translate(1469 401)" fill="rgba(255,255,255,0)"/>
+    <path id="Arrow_-_Right_Circle" data-name="Arrow - Right Circle" d="M2,22A20,20,0,1,0,22,2,20,20,0,0,0,2,22Zm3,0A17,17,0,1,1,22,39,17,17,0,0,1,5,22Zm12.911,6.047a1.5,1.5,0,0,0,2.262,1.958l6.972-6.942.146-.168a1.5,1.5,0,0,0-.146-1.958L20.174,14l-.169-.145A1.5,1.5,0,0,0,18.052,14l-.145.169a1.5,1.5,0,0,0,.149,1.953L23.96,22l-5.9,5.877Z" transform="translate(1469 401)" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>

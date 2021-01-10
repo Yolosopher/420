@@ -214,6 +214,11 @@
             margin-right: 10px
             path
                 fill: #111
+    &.productin-addbtn
+        @include plus1025()
+            svg
+                path
+                    fill: #fff
 .topProd-heading
     display: flex
     align-items: center
@@ -252,15 +257,14 @@
         background-color: #fff
         flex-shrink: 0
         cursor: pointer
-        width: 346px
+        width: 168px
         display: block
         height: 100%
         padding: 20px
         padding-bottom: 16px
         color: $blackdefault
         transition: all .2s ease-out
-        @include plus1025()
-            width: 168px
+        // @include plus1025()
         &.active, &:active
             background-color: $cyan
             color: #fff
