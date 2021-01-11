@@ -486,9 +486,452 @@
 						</li>
 					</ul>
 				</div>
-				<div class="products-main__left__filter"></div>
+				<div class="products-main__left__filter">
+					
+					<form class="middle price-filter">
+						<div class="multi-range-slider">
+							<h2>ფასით ფილტრაცია</h2>
+							<!-- აქ ორივეგან უნდა ჩაიწეროს მინიმუმიც -->
+							<input
+								type="range"
+								id="input-left"
+								min="0"
+								max="1500"
+								value="25"
+							/>
+							<input
+								type="range"
+								id="input-right"
+								min="0"
+								max="1500"
+								value="75"
+							/>
+
+							<div class="slider">
+								<div class="track">
+									<span class="track-size-min">0 ₾</span>
+									<span class="track-size-max">1500 ₾</span>
+								</div>
+								<div class="range"></div>
+								<div class="thumb left">
+									<span class="thumb-content">5.00 ₾</span>
+								</div>
+								<div class="thumb right">
+									<span class="thumb-content">95.00 ₾</span>
+								</div>
+							</div>
+						</div>
+						<input
+							type="submit"
+							value="submit"
+							id="filter-submit-btn"
+							class="filter-submit-btn"
+						/>
+					</form>
+				</div>
 			</aside>
-			<div class="products-main__right"></div>
+			<div class="products-main__right-container">
+				<section
+					class="products-main__right home-topProducts home-topProductsSecond swiper-container"
+				>
+					<ul class="home-topProducts-ul swiper-wrapper">
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/1.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/2.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/3.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/4.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/1.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/2.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/3.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+						<li class="swiper-slide discounted">
+							<span class="discount-label">ფასდაკლება</span>
+							<a href="product.html">
+								<img
+									src="assets/images/products/4.jpg"
+									alt="top products image"
+								/>
+								<h4>Eyce Beaker Waterpipe Bong</h4>
+								<div class="top-products-price">
+									<span class="price">174.00 ₾</span>
+									<span class="discounted-from"
+										>215.80 ₾</span
+									>
+								</div>
+								<div class="home-products-hr"></div>
+								<button class="top-produts-li-addbtn">
+									<svg
+										id="Component_3_58"
+										data-name="Component 3 – 58"
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										<rect
+											id="Rectangle_12"
+											data-name="Rectangle 12"
+											width="24"
+											height="24"
+											fill="rgba(255,255,255,0)"
+										></rect>
+										<path
+											id="Bag"
+											d="M16.88,6.382a4.93,4.93,0,0,0-9.8,0h0c-1.781,0-3.278,1.3-3.7,3.56l-.761,5.87C1.972,20.111,3.993,22,7.949,22h8.1c3.658,0,5.845-2.13,5.4-5.952l-.785-6.067c-.5-2.287-1.962-3.6-3.7-3.6Zm-1.466,0a3.475,3.475,0,0,0-6.868,0ZM7.079,7.83h9.873c1.022,0,1.92.808,2.273,2.4L19.968,16c.442,3.068-1.031,4.555-3.922,4.555h-8.1c-3.131,0-4.395-1.181-3.889-4.54l.757-5.845C5.106,8.619,6.014,7.83,7.079,7.83Zm7.787,2.687a.724.724,0,0,1,.1,1.441l-.1.007h-.044a.724.724,0,0,1-.1-1.441l.1-.007Zm-4.928.724a.726.726,0,0,0-.727-.724H9.165l-.1.007a.724.724,0,0,0,.1,1.441H9.21l.1-.007A.725.725,0,0,0,9.937,11.24Z"
+											fill="#111"
+											fill-rule="evenodd"
+										></path>
+									</svg>
+									<span>კალათაში დამატება</span>
+								</button>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<div class="products-main__right__pagination">
+					<div class="products-main__right__pagination__left">
+						<svg
+							id="Group_203"
+							data-name="Group 203"
+							xmlns="http://www.w3.org/2000/svg"
+							width="18"
+							height="18"
+							viewBox="0 0 18 18"
+						>
+							<rect
+								id="Rectangle_256"
+								data-name="Rectangle 256"
+								width="18"
+								height="18"
+								fill="rgba(255,255,255,0)"
+							/>
+							<path
+								id="Arrow_-_Left_2"
+								data-name="Arrow - Left 2"
+								d="M7.781,13.789a.7.7,0,0,0,.072-.938l-.072-.081L1.8,7l5.98-5.771A.7.7,0,0,0,7.854.292L7.781.211A.767.767,0,0,0,6.81.141l-.084.07L.219,6.491a.7.7,0,0,0-.072.938l.072.081,6.507,6.28A.766.766,0,0,0,7.781,13.789Z"
+								transform="translate(5 2)"
+								fill="#111"
+							/>
+						</svg>
+					</div>
+					<ul class="products-main__right__pagination__ul">
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<div class="products-main__right__pagination__right">
+						<svg
+							id="Group_203"
+							data-name="Group 203"
+							xmlns="http://www.w3.org/2000/svg"
+							width="18"
+							height="18"
+							viewBox="0 0 18 18"
+						>
+							<rect
+								id="Rectangle_256"
+								data-name="Rectangle 256"
+								width="18"
+								height="18"
+								fill="rgba(255,255,255,0)"
+							/>
+							<path
+								id="Arrow_-_Left_2"
+								data-name="Arrow - Left 2"
+								d="M.219,13.789a.7.7,0,0,1-.072-.938l.072-.081L6.2,7,.219,1.229A.7.7,0,0,1,.146.292L.219.211A.767.767,0,0,1,1.19.141l.084.07,6.507,6.28a.7.7,0,0,1,.072.938l-.072.081-6.507,6.28A.766.766,0,0,1,.219,13.789Z"
+								transform="translate(5 2)"
+								fill="#111"
+							/>
+						</svg>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<!-- footer -->
@@ -772,6 +1215,120 @@
 					let nextUl = $(this).next()
 					nextUl.toggleClass('active')
 				}
+			})
+			let inputLeft = document.getElementById('input-left')
+			let inputRight = document.getElementById('input-right')
+
+			let thumbLeft = document.querySelector('.slider > .thumb.left')
+			let thumbRight = document.querySelector('.slider > .thumb.right')
+			let range = document.querySelector('.slider > .range')
+
+			let localMin, localMax
+
+			window.addEventListener('load', () => {
+				let hours = 24 * 14 // Reset when storage is more than 24hours
+				let now = new Date().getTime()
+				let setupTime = localStorage.getItem('setupTime')
+				if (setupTime == null) {
+					localStorage.setItem('setupTime', now)
+				} else {
+					if (now - setupTime > hours * 60 * 60 * 1000) {
+						localStorage.clear()
+						localStorage.setItem('setupTime', now)
+					}
+				}
+
+				if (localStorage.getItem('priceFilterMin')) {
+					inputLeft.value = +localStorage.getItem('priceFilterMin')
+					localMin = +localStorage.getItem('priceFilterMin')
+					setLeftValue()
+				} else {
+					localStorage.setItem('priceFilterMin', inputLeft.value)
+				}
+				if (localStorage.getItem('priceFilterMax')) {
+					inputRight.value = +localStorage.getItem('priceFilterMax')
+					localMax = +localStorage.getItem('priceFilterMin')
+					setRightValue()
+				} else {
+					localStorage.setItem('priceFilterMax', inputRight.value)
+				}
+			})
+
+			function setLeftValue() {
+				let _this = inputLeft,
+					min = parseInt(_this.min),
+					max = parseInt(_this.max)
+
+				_this.value = Math.min(
+					parseInt(_this.value),
+					parseInt(inputRight.value) - 1
+				)
+
+				let percent = ((_this.value - min) / (max - min)) * 100
+
+				thumbLeft.style.left = percent + '%'
+				range.style.left = percent + '%'
+				let spanInside = thumbLeft.querySelector('span')
+				spanInside.innerText = `${_this.value}.00 ₾`
+				if (percent < 5) {
+					spanInside.classList.add('empty')
+				} else {
+					spanInside.classList.remove('empty')
+				}
+				localStorage.setItem('priceFilterMin', _this.value)
+			}
+
+			function setRightValue() {
+				let _this = inputRight,
+					min = parseInt(_this.min),
+					max = parseInt(_this.max)
+
+				_this.value = Math.max(
+					parseInt(_this.value),
+					parseInt(inputLeft.value) + 1
+				)
+
+				let percent = ((_this.value - min) / (max - min)) * 100
+
+				thumbRight.style.right = 100 - percent + '%'
+				range.style.right = 100 - percent + '%'
+				let spanInside = thumbRight.querySelector('span')
+				spanInside.innerText = `${_this.value}.00 ₾`
+				if (percent > 95) {
+					spanInside.classList.add('full')
+				} else {
+					spanInside.classList.remove('full')
+				}
+				localStorage.setItem('priceFilterMax', _this.value)
+			}
+
+			inputLeft.addEventListener('input', setLeftValue)
+			inputRight.addEventListener('input', setRightValue)
+
+			inputLeft.addEventListener('mouseover', function () {
+				thumbLeft.classList.add('hover')
+			})
+			inputLeft.addEventListener('mouseout', function () {
+				thumbLeft.classList.remove('hover')
+			})
+			inputLeft.addEventListener('mousedown', function () {
+				thumbLeft.classList.add('active')
+			})
+			inputLeft.addEventListener('mouseup', function () {
+				thumbLeft.classList.remove('active')
+			})
+
+			inputRight.addEventListener('mouseover', function () {
+				thumbRight.classList.add('hover')
+			})
+			inputRight.addEventListener('mouseout', function () {
+				thumbRight.classList.remove('hover')
+			})
+			inputRight.addEventListener('mousedown', function () {
+				thumbRight.classList.add('active')
+			})
+			inputRight.addEventListener('mouseup', function () {
+				thumbRight.classList.remove('active')
 			});
 		</script>
 	</body>
