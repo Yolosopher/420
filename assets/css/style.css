@@ -168,6 +168,7 @@ html {
 
 body {
   background-color: #FAFAFA;
+  overflow-x: hidden;
 }
 
 .lang-select li {
@@ -457,8 +458,6 @@ svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-grid-columns: 15.75rem 22.875rem minmax(calc(100vw - 16.75rem), calc(100vw - 16.75rem)) 36.75rem;
-      grid-template-columns: 15.75rem 22.875rem minmax(calc(100vw - 16.75rem), calc(100vw - 16.75rem)) 36.75rem;
   width: 100%;
   height: 100vh;
   color: #fff;
@@ -469,9 +468,11 @@ svg {
 
 @media screen and (min-width: 1025px) {
   .home-header {
-    display: -ms-grid;
-    display: grid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin-bottom: 14.5rem;
+    padding-left: 15.75rem;
   }
 }
 
@@ -491,7 +492,10 @@ svg {
 
 @media screen and (min-width: 1025px) {
   .mid {
-    width: calc(100vw - 16.75rem);
+    height: 100%;
+    max-width: 90.375rem;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 }
 
@@ -521,22 +525,21 @@ svg {
   }
 }
 
+.moveX-content {
+  position: relative !important;
+}
+
 @media screen and (min-width: 1025px) {
-  .moveX {
-    -webkit-transform: translateX(-22.875rem);
-            transform: translateX(-22.875rem);
-    -webkit-transition: -webkit-transform .8s ease-out !important;
-    transition: -webkit-transform .8s ease-out !important;
-    transition: transform .8s ease-out !important;
-    transition: transform .8s ease-out, -webkit-transform .8s ease-out !important;
+  .moveX-content {
+    -webkit-transition: left .8s ease-out !important;
+    transition: left .8s ease-out !important;
+    left: 0;
   }
-  .moveX.left {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+  .moveX-content.left {
+    left: 29.1875rem;
   }
-  .moveX.right {
-    -webkit-transform: translateX(calc(-22.875rem - 37.125rem));
-            transform: translateX(calc(-22.875rem - 37.125rem));
+  .moveX-content.right {
+    left: -37.125rem;
   }
 }
 
@@ -889,14 +892,8 @@ svg {
   height: 100%;
   width: 6.3125rem;
   margin-right: 9.4375rem;
-  z-index: 6;
+  z-index: 21;
   overflow: hidden;
-  -webkit-transition: width .8s ease-in-out, -webkit-transform .78s ease-out !important;
-  transition: width .8s ease-in-out, -webkit-transform .78s ease-out !important;
-  transition: width .8s ease-in-out, transform .78s ease-out !important;
-  transition: width .8s ease-in-out, transform .78s ease-out, -webkit-transform .78s ease-out !important;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
 }
 
 @media screen and (min-width: 1025px) {
@@ -909,13 +906,8 @@ svg {
   }
 }
 
-.header-burgerMenu.right {
-  -webkit-transform: translateX(-37.125rem);
-          transform: translateX(-37.125rem);
-}
-
 .burger-icon-container {
-  max-width: 6.375rem;
+  max-width: 102px;
   min-width: 6.3125rem;
   width: 100%;
   height: 100%;
@@ -984,11 +976,14 @@ svg {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 100%;
-  z-index: 1;
+  position: relative;
+  -webkit-transform: none !important;
+          transform: none !important;
+  padding-left: 15.75rem;
   width: 22.875rem;
-  -webkit-transition: left 1.2s ease-out;
-  transition: left 1.2s ease-out;
+  height: 100vh;
+  -webkit-transition: right 1.2s ease-out;
+  transition: right 1.2s ease-out;
 }
 
 .burger-cat-ul {
@@ -1006,11 +1001,6 @@ svg {
       -ms-flex-align: center;
           align-items: center;
   max-width: 11.25rem;
-  z-index: -1;
-  position: relative;
-}
-
-.burger-categories {
   position: relative;
 }
 
@@ -1115,77 +1105,77 @@ svg {
           transition-delay: calc(.92s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories .burger-cat-ul li {
+.whole-nav-menu.left .burger-categories .burger-cat-ul li {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(15) {
+.whole-nav-menu.left .burger-categories:nth-of-type(15) {
   -webkit-transition-delay: calc(.18s - .18s);
           transition-delay: calc(.18s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(14) {
+.whole-nav-menu.left .burger-categories:nth-of-type(14) {
   -webkit-transition-delay: calc(.25s - .18s);
           transition-delay: calc(.25s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(13) {
+.whole-nav-menu.left .burger-categories:nth-of-type(13) {
   -webkit-transition-delay: calc(.3s - .18s);
           transition-delay: calc(.3s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(12) {
+.whole-nav-menu.left .burger-categories:nth-of-type(12) {
   -webkit-transition-delay: calc(.35s - .18s);
           transition-delay: calc(.35s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(11) {
+.whole-nav-menu.left .burger-categories:nth-of-type(11) {
   -webkit-transition-delay: calc(.39s - .18s);
           transition-delay: calc(.39s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(10) {
+.whole-nav-menu.left .burger-categories:nth-of-type(10) {
   -webkit-transition-delay: calc(.45s - .18s);
           transition-delay: calc(.45s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(9) {
+.whole-nav-menu.left .burger-categories:nth-of-type(9) {
   -webkit-transition-delay: calc(.48s - .18s);
           transition-delay: calc(.48s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(8) {
+.whole-nav-menu.left .burger-categories:nth-of-type(8) {
   -webkit-transition-delay: calc(.51s - .18s);
           transition-delay: calc(.51s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(7) {
+.whole-nav-menu.left .burger-categories:nth-of-type(7) {
   -webkit-transition-delay: calc(.73s - .18s);
           transition-delay: calc(.73s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(6) {
+.whole-nav-menu.left .burger-categories:nth-of-type(6) {
   -webkit-transition-delay: calc(.77s - .18s);
           transition-delay: calc(.77s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(5) {
+.whole-nav-menu.left .burger-categories:nth-of-type(5) {
   -webkit-transition-delay: calc(.81s - .18s);
           transition-delay: calc(.81s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(4) {
+.whole-nav-menu.left .burger-categories:nth-of-type(4) {
   -webkit-transition-delay: calc(.84s - .18s);
           transition-delay: calc(.84s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(3) {
+.whole-nav-menu.left .burger-categories:nth-of-type(3) {
   -webkit-transition-delay: calc(.88s - .18s);
           transition-delay: calc(.88s - .18s);
 }
 
-.header-burgerMenu.active + .burger-categories:nth-of-type(2) {
+.whole-nav-menu.left .burger-categories:nth-of-type(2) {
   -webkit-transition-delay: calc(.92s - .18s);
           transition-delay: calc(.92s - .18s);
 }
@@ -1336,6 +1326,8 @@ svg {
   padding-top: 62px;
   padding-left: 7.5rem;
   width: 37.125rem;
+  height: 100vh;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1343,6 +1335,17 @@ svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: fixed;
+  left: 100%;
+  top: 0;
+  background-color: #111111;
+  z-index: 20;
+  -webkit-transition: all .8s ease-out;
+  transition: all .8s ease-out;
+}
+
+.home-header-authorization.right {
+  left: calc( 100% - 37.125rem);
 }
 
 .minimize-svg {
@@ -5120,5 +5123,45 @@ aside.cart-menu.active {
   .history-orders-real {
     padding-bottom: 6.875rem;
   }
+}
+
+.whole-nav-menu {
+  position: fixed !important;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 100%;
+  top: 0;
+  background-color: #111;
+  color: #fff !important;
+  width: 29.1875rem;
+  height: 100vh;
+  -webkit-transition: right .8s ease-out;
+  transition: right .8s ease-out;
+}
+
+.whole-nav-menu.left {
+  right: calc( 100% - 29.1875rem);
+}
+
+.header-burgerMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 6.3125rem;
+  -webkit-transition: all .6s ease-out;
+  transition: all .6s ease-out;
+}
+
+.header-burgerMenu.scrolled {
+  position: fixed;
+  height: 123px;
+}
+
+.header-burgerMenu.left {
+  position: fixed;
+  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */

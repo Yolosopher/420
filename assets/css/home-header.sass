@@ -3,7 +3,7 @@
     position: relative
     z-index: 7
     display: flex
-    grid-template-columns: 15.75rem 22.875rem minmax(calc(100vw - 16.75rem), calc(100vw - 16.75rem)) 36.75rem
+    // grid-template-columns: 15.75rem 22.875rem minmax(calc(100vw - 16.75rem), calc(100vw - 16.75rem)) 36.75rem
     width: 100%
     height: 100vh
     color: #fff
@@ -11,8 +11,9 @@
     overflow: hidden
     margin-bottom: 40px
     @include plus1025()
-        display: grid
+        display: flex
         margin-bottom: 14.5rem
+        padding-left: 15.75rem
     > *
         max-height: 100vh
     > div:not(.mid):not(.header-burgerMenu)
@@ -23,7 +24,10 @@
 .mid
     width: 100%
     @include plus1025()
-        width: calc(100vw - 16.75rem)
+        height: 100%
+        max-width: 90.375rem
+        margin: 0 auto
+        padding: 0 15px
     &.scrolled
         transition: 0s
         transform: none
@@ -36,14 +40,15 @@
         margin-right: 12.5em
     @include sizePlus(1800px)
         margin-right: 18.75rem
-.moveX
+.moveX-content
+    position: relative !important
     @include plus1025()
-        transform: translateX(-22.875rem)
-        transition: transform .8s ease-out !important
+        transition: left .8s ease-out !important
+        left: 0
         &.left
-            transform: translateX(0)
+            left: 29.1875rem
         &.right
-            transform: translateX(calc(-22.875rem - 37.125rem))
+            left: -37.125rem
 .home-header-realContent
     margin: 0 auto
     grid-template-columns: auto 1fr
@@ -255,18 +260,18 @@
     height: 100%
     width: 6.3125rem
     margin-right: 9.4375rem
-    z-index: 6
+    z-index: 21
     overflow: hidden
-    transition: width .8s ease-in-out, transform .78s ease-out !important
-    transform: translateX(0)
+    // transition: width .8s ease-in-out, transform .78s ease-out !important
+    // transform: translateX(0)
     @include plus1025()
         display: flex
         position: relative
         top: unset
     &.right
-        transform: translateX(-37.125rem)
+        // transform: translateX(-37.125rem)
 .burger-icon-container
-    max-width: 6.375rem
+    max-width: 102px
     min-width: 6.3125rem
     width: 100%
     height: 100%
@@ -311,10 +316,15 @@
 
 .burger-categories
     flex: 1
-    height: 100%
-    z-index: 1  
+    position: relative
+    transform: none !important 
+    padding-left: 15.75rem
+
+
+
     width: 22.875rem
-    transition: left 1.2s ease-out
+    height: 100vh
+    transition: right 1.2s ease-out
 .burger-cat-ul
     width: 100%
     height: 100%
@@ -323,10 +333,9 @@
     padding-top: 6.0625rem
     align-items: center
     max-width: 11.25rem
-    z-index: -1
+    // z-index: -1
     position: relative
 .burger-categories
-    position: relative
     li
         display: inline-block
         width: 100%
@@ -371,9 +380,9 @@
             transition-delay: calc(.88s - .18s)
         &:nth-of-type(15)
             transition-delay: calc(.92s - .18s)
-.header-burgerMenu
-    &.active
-        + .burger-categories
+.whole-nav-menu
+    &.left
+        .burger-categories
             .burger-cat-ul li
                 transform: translateX(0)
             &:nth-of-type(15)
@@ -491,8 +500,18 @@
     padding-top: 62px
     padding-left: 7.5rem
     width: 37.125rem
+    height: 100vh
+    color: #fff
     display: flex
     flex-direction: column
+    position: fixed
+    left: 100%
+    top: 0
+    background-color: #111111
+    z-index: 20
+    transition: all .8s ease-out
+    &.right
+        left: calc( 100% - 37.125rem )
 .minimize-svg
     display: flex
     justify-content: center
@@ -506,9 +525,6 @@
     border: 1px solid #303030
 
     margin-bottom: 4.75rem
-.home-header-authorization
-    // overflow-y: auto !important
-    // overflow-x: hidden !important
 .switch-to-register
     display: block
     margin-top: 2.5rem

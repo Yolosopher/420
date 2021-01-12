@@ -7,7 +7,7 @@ const switchToRegisBtn = document.querySelector('.switch-to-register')
 const minimizeAuthBtn = document.querySelector('.minimize-svg')
 const respoMenuToggler = document.querySelector('.respo-menu-toggler')
 
-const burgerBtn = document.querySelector('.burger-icon')
+const burgerBtns = document.querySelectorAll('.burger-icon')
 const burgerWindow = document.querySelector('.header-burgerMenu')
 
 // Setup isScrolling variable
@@ -51,20 +51,27 @@ if (document.querySelector('.home-header')) {
 		false
 	)
 }
-if (burgerBtn) {
+burgerBtns.forEach(burgerBtn => {
 	burgerBtn.addEventListener('click', () => {
 		if (document.querySelector('.moveX.right')) {
 			headerLoginBtnFirst.click()
 		}
+		document.querySelector('.header-burgerMenu').classList.toggle('left')
+		document.querySelector('body').classList.toggle('noscroll')
 		burgerWindow.classList.toggle('active')
 		document
 			.querySelectorAll('.moveX')
 			.forEach((obj) => obj.classList.toggle('left'))
 	})
+})
+
+function egaa() {
+	burgerBtns[0].click()
 }
 
 headerLoginBtns.forEach((headerLoginBtn) => {
 	headerLoginBtn.addEventListener('click', () => {
+		document.querySelector('body').classList.add('noscroll')
 		document.querySelector('.header-burgerMenu').classList.add('right')
 		document
 			.querySelectorAll('.moveX')
@@ -74,6 +81,7 @@ headerLoginBtns.forEach((headerLoginBtn) => {
 if (minimizeAuthBtn) {
 	minimizeAuthBtn.addEventListener('click', () => {
 		document.querySelector('.header-burgerMenu').classList.remove('right')
+		document.querySelector('body').classList.remove('noscroll')
 		document
 			.querySelectorAll('.moveX')
 			.forEach((obj) => obj.classList.remove('right'))
@@ -84,8 +92,10 @@ const headerBotFixer = () => {
 	if (window.innerWidth > 1024) {
 		if (window.pageYOffset > window.innerHeight - 123) {
 			headerContainer.classList.add('scrolled')
+			burgerWindow.classList.add('scrolled')
 		} else {
 			headerContainer.classList.remove('scrolled')
+			burgerWindow.classList.remove('scrolled')
 		}
 	}
 	
