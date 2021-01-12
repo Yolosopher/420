@@ -1,0 +1,273 @@
+// products-page
+.products-main
+    display: flex
+    flex-direction: column
+    @include plus1025()
+        flex-direction: row
+    &__left
+        width: 100%
+        @include plus1025()
+            width: 335px
+            margin-right: 25px
+        &__categories
+            margin-bottom: 20px
+            width: 100%
+            padding: 40px
+            border-radius: 12px
+            background-color: #fff
+            @include plus1025()
+                margin-bottom: 40px
+            
+    &__right
+        flex-grow: 1
+        padding-bottom: 21px !important
+        @include plus1025()
+            padding-bottom: 70px !important
+        .home-topProducts-ul
+            margin-bottom: 0 !important
+            display: grid !important
+            grid-template-columns: repeat(2, 1fr)
+            @include plus769()        
+                grid-template-columns: repeat(3, 1fr)
+        &__pagination
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            @include plus769()
+                justify-content: unset
+                width: unset
+                margin: 0 auto
+            @include plus1025()
+                margin: unset
+            svg
+                width: unset
+                height: unset
+            &__ul
+                display: flex
+                align-items: center
+            div, li
+                margin-right: 5px
+                display: flex
+                justify-content: center
+                align-items: center
+                cursor: pointer
+                width: 36px
+                height: 36px
+                border-radius: 4px
+                background-color: #fff
+                color: $blackdefault
+                @include upperCase(true)
+                text-transform: none !important
+                font-size: 13px
+                line-height: 15px
+                transition: background-color .2s ease-out, color .2s ease-out
+                @include plus1025()
+                    font-size: 16px
+                    line-height: 18px
+                    width: 56px
+                    height: 56px
+                &.active, &:active
+                    color: #fff
+                    background-color: $cyan
+                &:hover
+                    @include plus1025()
+                        color: #fff
+                        background-color: $cyan
+            li
+                width: 47px
+                @include plus1025()
+                    width: 56px
+            div
+                &:last-child
+                    margin-right: 0
+.products-ul
+    width: 100%
+    display: block
+    &__li
+        max-height: 21px
+        overflow: hidden
+        white-space: nowrap
+        @include upperCase(true)
+        font-size: 16px
+        line-height: 18px
+        transition: max-height -200ms 300ms ease-out
+        &:not(:last-of-type)
+            margin-bottom: 28px
+        &.active
+            max-height: 9999px
+            transition: max-height 400ms ease-in
+            .products-a-outter
+                color: $cyan
+                &::after
+                    transform: rotate(-180deg)
+.products-a-outter
+    position: relative
+    margin-bottom: 19px
+    display: block
+    &::after
+        content: url(../images/products-cat-down.svg)
+        position: absolute
+        right: 0
+        transition: transform .2s ease-out
+
+.products-li-inside-ul
+    display: block
+    padding-left: 10px
+    li 
+        display: block
+        &:not(:last-of-type)
+            margin-bottom: 16px
+        a
+            font-family: rmn
+            font-size: 16px
+            line-height: 18px
+            display: block
+            text-transform: none !important
+
+            &.active, &:active
+                color: $cyan
+            &:hover
+                @include plus1025()
+                    color: $cyan
+
+// pricefilter
+    // range input slider
+.price-filter
+    width: 100%
+    padding: 40px
+    padding-bottom: 73px
+    // margin: 0 15px
+    display: flex
+    align-items: center
+    border-radius: 12px
+    background-color: #fff
+    margin-bottom: 50px
+    @include plus1025()
+        margin: 0 auto
+        margin-bottom: 46px
+    *
+        transition: none
+    h2
+        margin-bottom: 40px
+        margin-left: 15px
+        @include upperCase(true)
+        font-size: 14px
+        line-height: 16px
+        color: $blackdefault
+        @include plus1025()
+            margin-bottom: 50px
+
+    .multi-range-slider
+        position: relative
+        width: 100%
+        margin: 0 auto
+
+
+    .slider 
+        position: relative
+        z-index: 1
+        height: 4px
+        margin: 0 15px
+
+    .slider > .track 
+        position: absolute
+        height: 100%
+        z-index: 1
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        border-radius: 5px
+        background-color: #F8F8F8
+        span
+            position: absolute
+            top: calc(100% - 25px)
+            @include upperCase(true)
+            
+            font-size: 11px
+            line-height: 12px
+            text-transform: none !important
+            color: lightgrey
+            @include plus1025()
+                top: calc(100% - 25px)
+            &.track-size-min
+                left: 0
+            &.track-size-max
+                right: 0
+
+    .slider > .range 
+        position: absolute
+        z-index: 2
+        left: 25%
+        right: 25%
+        top: 0
+        bottom: 0
+        border-radius: 5px
+        background-color: $cyan
+    input[type="range" i]::-webkit-slider-runnable-track
+        height: 16px
+    .slider > .thumb 
+        position: absolute
+        z-index: 3
+        width: 16px
+        height: 16px
+        background-color: $cyan
+        border-radius: 50%
+        box-shadow: 0 0 0 0 rgba(98,0,238,.1)
+        transition: box-shadow .3s ease-in-out
+        cursor: pointer
+        .thumb-content            
+            @include upperCase(true)
+            font-weight: 600
+            font-size: 14px
+            line-height: 16px
+            color: $blackdefault
+            position: absolute
+            top: calc(100% + 4px)
+            right: 50%
+            transform: translateX(50%)
+            white-space: nowrap
+            @include plus1025()
+                top: calc(100% + 7px)
+            &.empty
+                right: -10%
+            &.full
+                right: 10%
+
+    .slider > .thumb.left 
+        left: 25%
+        transform: translate(-8px, calc(16px / -2.6))
+            // content: '5.00 ₾'
+    .slider > .thumb.right 
+        right: 25%
+        transform: translate(8px, calc(16px / -2.6))
+
+    .slider > .thumb.hover 
+        box-shadow: 0 0 0 10.6px rgba(98,0,238,.1)
+
+    .slider > .thumb.active 
+        box-shadow: 0 0 0 21.2px rgba(98,0,238,.2)
+
+
+    input[type=range] 
+        position: absolute
+        pointer-events: none
+        -webkit-appearance: none
+        z-index: 2
+        height: 4px
+        width: 100%
+        opacity: 0
+
+    input[type=range]::-webkit-slider-thumb 
+        pointer-events: all
+        width: 16px
+        height: 16px
+        border-radius: 0
+        border: 0 none
+        background-color: red
+        -webkit-appearance: none
+
+.filter-submit-btn
+    display: none
+
