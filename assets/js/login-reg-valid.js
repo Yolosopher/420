@@ -1,45 +1,45 @@
 // reg-log email
-const emailInputs = document.querySelectorAll('.input-email')
+document.querySelectorAll('.input-div').forEach(div => {
+	div.classList.add('invalid')
+})
+const emailInput = document.getElementById('login-email')
+const emailInputReg = document.getElementById('register-email')
 
-emailInputs.forEach((emailPut) => {
-	emailPut.addEventListener('change', () => {
-		checkEmailPut(emailPut)
-	})
+emailInput.addEventListener('change', () => {
+	checkEmailPut(emailInput)
+})
+emailInputReg.addEventListener('change', () => {
+	checkEmailPut(emailInputReg)
 })
 
 // reg-log password
-const passInputs = document.querySelectorAll('.input-password')
+const passInput = document.getElementById('login-password')
+const passInputReg = document.getElementById('register-password')
+const passInputRegRepeated = document.getElementById('register-repeated-password')
 
-passInputs.forEach((passPut) => {
-	passPut.addEventListener('change', () => {
-		checkPassPut(passPut)
-	})
+
+passInput.addEventListener('change', () => {
+	checkPassPut(passInput)
+})
+passInputReg.addEventListener('change', () => {
+	checkPassPut(passInputReg)
+})
+passInputRegRepeated.addEventListener('change', () => {
+	checkPassPut(passInputRegRepeated)
 })
 
 // reg-log text
-const textInputs = document.querySelectorAll('.input-text')
+const textInput = document.getElementById('register-fullname')
 
-textInputs.forEach((textPut) => {
-	textPut.addEventListener('change', () => {
-		let secondTextPut =
-			textPut.id === 'login-firstname-forReg'
-				? document.getElementById('login-lastname-forReg')
-				: document.getElementById('login-firstname-forReg')
-
-		checkTextPut(textPut)
-		if (!textPut.parentElement.classList.contains('invalid')) {
-			checkTextPut(secondTextPut)
-		}
-	})
+textInput.addEventListener('change', () => {
+	checkTextPut(textInput)
 })
 
 // reg-log tel
-const telInputs = document.querySelectorAll('.input-tel')
+const telInput = document.getElementById('register-phone')
 
-telInputs.forEach((telPut) => {
-	telPut.addEventListener('change', () => {
-		checkTelPut(telPut)
-	})
+telInput.addEventListener('change', () => {
+	checkTelPut(telInput)
 })
 
 // validation functions
@@ -77,9 +77,9 @@ const checkEmailPut = (emailPut) => {
 }
 const checkPassPut = (passPut) => {
 	let id = passPut.id
-	let isRepeated = id === 'login-passwordrepeat-forReg'
-	let isLoginPass = Boolean(passPut.closest('#login-form'))
-
+	let isRepeated = id === 'register-repeated-password'
+	let isLoginPass = Boolean(passPut.closest('.home-header-login'))
+	console.log(isLoginPass);
 	passPut.value = String(passPut.value)
 	let value = passPut.value
 	let parent = passPut.parentElement
@@ -94,7 +94,7 @@ const checkPassPut = (passPut) => {
 		parent.classList.add('invalid')
 		parent.classList.remove('invalid-shown')
 	} else if (isRepeated) {
-		let notRepeated = document.getElementById('login-password-forReg')
+		let notRepeated = document.getElementById('register-password')
 		if (notRepeated.value !== passPut.value) {
 			parent.classList.add('invalid')
 			parent.classList.add('invalid-shown')
@@ -116,7 +116,7 @@ const checkTextPut = (textPut) => {
 	if (value === '') {
 		parent.classList.add('invalid')
 		parent.classList.remove('invalid-shown')
-	} else if (value.length > 1) {
+	} else if (value.length > 4) {
 		parent.classList.remove('invalid')
 		parent.classList.remove('invalid-shown')
 	} else {
@@ -127,6 +127,7 @@ const checkTextPut = (textPut) => {
 
 // submit validation
 const forms = document.querySelectorAll('.hard-form')
+
 
 forms.forEach((form) => {
 	form.addEventListener('submit', (e) => {

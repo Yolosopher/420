@@ -1476,6 +1476,11 @@ input[type=number] {
   }
 }
 
+.hard-form .input-error-qstmark {
+  top: unset !important;
+  bottom: 10px !important;
+}
+
 .home-header-forms-combiner {
   width: 100%;
   height: 100% !important;
