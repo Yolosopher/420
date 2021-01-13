@@ -76,15 +76,19 @@ headerLoginBtns.forEach((headerLoginBtn) => {
 			.forEach((obj) => obj.classList.add('right'))
 	})
 })
-if (minimizeAuthBtn) {
-	minimizeAuthBtn.addEventListener('click', () => {
+
+minimizeAuthBtn.addEventListener('click', () => {
+	if(document.querySelector('.home-header-forms-combiner').classList.contains('register')){
+		document.querySelector('.home-header-forms-combiner').classList.remove('register')
+	} else {
 		document.querySelector('.header-burgerMenu').classList.remove('right')
 		document.querySelector('body').classList.remove('noscroll')
 		document
 			.querySelectorAll('.moveX')
 			.forEach((obj) => obj.classList.remove('right'))
-	})
-}
+	}
+})
+
 // functions
 const headerBotFixer = () => {
 	if (window.innerWidth > 1024) {
@@ -117,6 +121,7 @@ const checkPage = () => {
 
 window.addEventListener('DOMContentLoaded', () => {
 	let pageName = checkPage()
+	document.querySelector('body').classList.add(`${pageName}-page`)
 	const navUl = document.querySelectorAll('.nav-ul')
 
 	switch (pageName) {
@@ -174,5 +179,17 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 respoMenuToggler.addEventListener('click', () => {
+	document.querySelector('body').classList.toggle('noscroll')
 	respoMenuToggler.classList.toggle('active')
+})
+
+const respoLoginBtnA = document.querySelector('.respo-profile-li:last-child a')
+
+respoLoginBtnA.href = "javascript:void(0)"
+
+const RespLoginCaller = () => {
+	headerLoginBtnFirst.click()
+}	
+respoLoginBtnA.addEventListener('click', (e) => {
+	RespLoginCaller()
 })

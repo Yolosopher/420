@@ -3,19 +3,23 @@
     position: relative
 body
 
-    > .header-container-norm
+    .header-container-norm
         height: 103px
         width: 100%
         color: #fff
         position: fixed
         top: 0      
-        z-index: 2
+        z-index: 21
         background-color: $blackdefault
+        @include plus1025()            
+            display: grid
+            grid-template-columns: 6.3125rem 1fr 6.3125rem
         header  
             max-width: 90.375rem
             margin: 0 auto
             padding: 0 15px
             width: 100%
+            grid-column: 2
 .body-child-container
     max-width: 90.375rem
     margin: 0 auto
@@ -27,7 +31,7 @@ body
     color: $blackdefault
     min-height: calc( 100vh - 591px )    
     @include plus1025()
-        padding: 67px 0
+        padding: 67px 15px
         min-height: calc( 100vh - 342px )
     h1
         @include upperCase(true)

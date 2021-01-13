@@ -1,4 +1,7 @@
 // main header
+@import variables
+
+
 .home-header
     position: relative
     z-index: 7
@@ -496,35 +499,71 @@
 
 
 // authorization
+.home-page
+    .home-header-authorization
+        height: calc(100vh - 243px)
+        top: 133px
+        @include plus1025()
+            height: 100vh
+            top: 0
+
 .home-header-authorization
-    padding-top: 62px
-    padding-left: 7.5rem
-    width: 37.125rem
-    height: 100vh
-    color: #fff
+    overflow-y: auto
+    height: calc(100vh - 213px)
+    padding: 37px 15px 39px 15px
+    width: 100vw
+    color: #111111
+    background-color: #FAFAFA
     display: flex
     flex-direction: column
     position: fixed
     left: 100%
-    top: 0
-    background-color: #111111
+    top: 103px
     z-index: 20
     transition: all .8s ease-out
+    @include plus1025()
+        background-color: #111111
+        padding-top: 62px
+        padding-left: 7.5rem
+        color: #fff
+        top: 0
+        width: 37.125rem
+        height: 100vh
+
     &.right
-        left: calc( 100% - 37.125rem )
+        left: 0
+        @include plus1025()
+            left: calc( 100% - 37.125rem )
 .minimize-svg
     display: flex
     justify-content: center
     align-items: center 
     align-self: flex-start
-
     cursor: pointer
-    width: 56px
-    height: 56px
+    width: 36px
+    height: 36px
     border-radius: 8px
     border: 1px solid #303030
-
-    margin-bottom: 4.75rem
+    position: absolute
+    right: 15px
+    @include plus1025()
+        position: static
+        width: 56px
+        height: 56px
+        transform: none
+        margin-bottom: 4.75rem
+    svg
+        width: 1rem
+        height: 1rem
+        transform: rotate(-180deg)
+        @include plus1025()
+            transform: none
+            width: 1.5rem
+            height: 1.5rem
+        path
+            fill: #111
+            @include plus1025()
+                fill: #fff
 .switch-to-register
     display: block
     margin-top: 2.5rem
@@ -535,23 +574,29 @@
     cursor: pointer
 .hard-form
     height: 100% !important
-    overflow: auto !important
-    padding-bottom: 30px
-    padding-right: 20px
+    @include plus1025()
+        padding-bottom: 30px
+        padding-right: 20px
+
 .home-header-forms-combiner
     width: 100%
     height: 100% !important
-    max-width: 22.25rem
-    overflow: auto
+    @include plus1025()
+        overflow: auto
+        max-width: 22.25rem
     form
         width: 100%
         display: flex
         flex-direction: column
         @include upperCase(true)
     h2
-        font-size: 1.75rem
-        line-height: 2rem
-        margin-bottom: 1.75rem
+        font-size: 22px
+        line-height: 26px
+        margin-bottom: 38px
+        @include plus1025()
+            font-size: 1.75rem
+            line-height: 2rem
+            margin-bottom: 1.75rem
     button
         position: relative
         font-size: 16px
