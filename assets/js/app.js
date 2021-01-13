@@ -65,14 +65,12 @@ burgerBtns.forEach(burgerBtn => {
 	})
 })
 
-function egaa() {
-	burgerBtns[0].click()
-}
 
 headerLoginBtns.forEach((headerLoginBtn) => {
 	headerLoginBtn.addEventListener('click', () => {
 		document.querySelector('body').classList.add('noscroll')
 		document.querySelector('.header-burgerMenu').classList.add('right')
+		
 		document
 			.querySelectorAll('.moveX')
 			.forEach((obj) => obj.classList.add('right'))
@@ -98,7 +96,6 @@ const headerBotFixer = () => {
 			burgerWindow.classList.remove('scrolled')
 		}
 	}
-	
 }
 if (switchToRegisBtn) {
 	switchToRegisBtn.addEventListener('click', () => {
