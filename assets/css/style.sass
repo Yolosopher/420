@@ -107,11 +107,24 @@
     background: unset !important
     padding: unset !important
 
-
+.personal-info 
+    @media screen and ( max-width: 768px )
+        padding: 0 !important
+        background: unset !important
 .basicinfoform
-    display: flex
-    flex-direction: column
+    margin-bottom: 30px
+    @include plus1025()
+        margin-bottom: 57px
+.personal-info form
+    display: flex !important
+    flex-direction: column !important
+    background-color: #fff !important
+    border-radius: 12px !important
+    padding: 20px !important
+    @include plus1025()
+        padding: 0 !important
     label
+        cursor: pointer
         display: block
         @include upperCase(true)
         font-size: 16px
@@ -121,6 +134,7 @@
             font-size: 1rem
             line-height: 1.125rem
     .home-see-all-btn
+        cursor: pointer !important
         order: 1
         background-color: transparent
         border: 1px solid $cyan
@@ -171,3 +185,8 @@
         color: #aaaaaa
         font-size: 0.75rem
         line-height: 0.875rem
+.dropzone .dz-message
+    margin: 0 !important
+    margin-bottom: 20px !important
+    @include plus1025()
+        margin-bottom: 30px !important

@@ -5379,17 +5379,44 @@ aside.cart-menu.active {
   padding: unset !important;
 }
 
-.basicinfoform {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+@media screen and (max-width: 768px) {
+  .personal-info {
+    padding: 0 !important;
+    background: unset !important;
+  }
 }
 
-.basicinfoform label {
+.basicinfoform {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1025px) {
+  .basicinfoform {
+    margin-bottom: 57px;
+  }
+}
+
+.personal-info form {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  background-color: #fff !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+}
+
+@media screen and (min-width: 1025px) {
+  .personal-info form {
+    padding: 0 !important;
+  }
+}
+
+.personal-info form label {
+  cursor: pointer;
   display: block;
   font-family: mtavruli !important;
   text-transform: uppercase !important;
@@ -5401,13 +5428,14 @@ aside.cart-menu.active {
 }
 
 @media screen and (min-width: 1025px) {
-  .basicinfoform label {
+  .personal-info form label {
     font-size: 1rem;
     line-height: 1.125rem;
   }
 }
 
-.basicinfoform .home-see-all-btn {
+.personal-info form .home-see-all-btn {
+  cursor: pointer !important;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -5421,12 +5449,12 @@ aside.cart-menu.active {
 }
 
 @media screen and (min-width: 769px) {
-  .basicinfoform .home-see-all-btn {
+  .personal-info form .home-see-all-btn {
     width: 14.3125rem;
   }
 }
 
-.basicinfoform .home-see-all-btn::after {
+.personal-info form .home-see-all-btn::after {
   content: url(../images/cyan-border-canabis.svg);
   right: -32.8992px;
   top: -0.4rem;
@@ -5513,5 +5541,16 @@ aside.cart-menu.active {
   color: #aaaaaa;
   font-size: 0.75rem;
   line-height: 0.875rem;
+}
+
+.dropzone .dz-message {
+  margin: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+@media screen and (min-width: 1025px) {
+  .dropzone .dz-message {
+    margin-bottom: 30px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

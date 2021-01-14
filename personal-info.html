@@ -270,6 +270,35 @@
 						</div>
 						<button type="submit" class="home-see-all-btn">შენახვა</button>
 					</form>
+					<form class="passform form">
+						<div class="personal-info__three-together">
+							<div class="personal-info__three-together__each">
+								<label for="personal-info-currentpass">მიმდინარე პაროლი</label>
+								<div class="input-div personal-input invalid">
+									<input type="password" name="personal-info-currentpass" id="personal-info-currentpass"
+									placeholder="********">
+									<div class="input-error-qstmark">?</div>
+								</div>
+							</div>
+							<div class="personal-info__three-together__each">
+								<label for="personal-info-newpass">ახალი პაროლი</label>
+								<div class="input-div personal-input invalid">
+									<input type="password" name="personal-info-newpass" id="personal-info-newpass"
+									placeholder="********">
+									<div class="input-error-qstmark">?</div>
+								</div>
+							</div>
+							<div class="personal-info__three-together__each">
+								<label for="personal-info-newpass-repeated">დაადასტურე ახალი პაროლი</label>
+								<div class="input-div personal-input invalid">
+									<input type="password" name="personal-info-newpass-repeated" id="personal-info-newpass-repeated"
+									placeholder="********">
+									<div class="input-error-qstmark">?</div>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="home-see-all-btn">შენახვა</button>
+					</form>
 				</div>
 			</main>
 
@@ -684,7 +713,7 @@
 		<script src="assets/js/swiper-bundle.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/jquery-3.2.1.min.js"></script>
-		<script src="assets/js/login-reg-valid.js"></script>
+		<script src="assets/js/personal-info-validation.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
 		<script>
 			const productsMain = document.querySelector('.cart-menu')
@@ -701,10 +730,9 @@
 		</script>
 		<!-- dropzone -->
 		<script>
-			var myDropZone = new Dropzone(".dropzone", {
+			var dropZ = new Dropzone(".dropzone", {
 				url: 'upload/image',
 				dictDefaultMessage: '<img src="assets/images/dropdownmenu.svg"><span class="deskt">ჩააგდე ან ატვირთე პროფილის სურათი</span><span class="mob">პროფილის სურათი</span><p class="warning">PNG, JPGE (მაქსიმალური ზომა 2MB)</p>',
-
 			});
 		</script>
 	</body>
