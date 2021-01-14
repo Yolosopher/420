@@ -21,6 +21,7 @@
 
 		<!-- style -->
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 	</head>
 	<body>
 		<div class="moveX-content moveX">
@@ -196,9 +197,9 @@
 				</header>
 			</div>
 			<!-- products main content -->
-			<h1 class="cart-h1 body-child-container">შეკვეთების ისტორია</h1>
+			<h1 class="cart-h1 body-child-container">კალათა</h1>
 			<main
-				class="cart-main-main history-orders-real products-main body-child-container"
+				class="cart-main-main real-cart products-main body-child-container"
 			>
 				<aside class="cart-menu products-main__left">
 					<div class="cart-menu__img">
@@ -217,10 +218,10 @@
 						<li class="cart-menu__ul__info">
 							<a href="personal-info.html">პირადი ინფორმაცია</a>
 						</li>
-						<li class="cart-menu__ul__orders active">
+						<li class="cart-menu__ul__orders">
 							<a href="history-orders.html">შეკვეთების ისტორია</a>
 						</li>
-						<li class="cart-menu__ul__basket real">
+						<li class="cart-menu__ul__basket real active">
 							<span class="cart-menu__ul__basket__text"
 								><a href="cart.html">კალათა</a></span
 							>
@@ -235,393 +236,40 @@
 						>
 					</ul>
 				</aside>
-				<div class="basket form products-main__right-container">
-					<ul class="orders-ul">
-						<li class="order-ul__li">
-							<div class="order-ul__li__header">
-								<div class="order-ul__li__header__number">
-									1<span>.</span>
-								</div>
-								<div class="order-ul__li__header__ID">
-									<span>#32534631</span>
-								</div>
-								<div class="order-ul__li__header__hr"></div>
-								<div class="order-ul__li__header__date">
-									19.12.2020
+				<div class="personal-info form products-main__right-container">
+					<form class="basicinfoform form dropzone" enctype="multipart/form-data">
+						<div class="personal-info__three-together">
+							<div class="personal-info__three-together__each">
+								<label for="personal-info-name">სახელი გვარი</label>
+								<div class="input-div personal-input invalid">
+									<input type="text" name="personal-info-name" id="personal-info-name"
+									placeholder="სახელი გვარი">
+									<div class="input-error-qstmark">?</div>
 								</div>
 							</div>
-							<ul class="orders-ul__li__itemsUL">
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="order-ul__li">
-							<div class="order-ul__li__header">
-								<div class="order-ul__li__header__number">
-									1<span>.</span>
-								</div>
-								<div class="order-ul__li__header__ID">
-									<span>#32534631</span>
-								</div>
-								<div class="order-ul__li__header__hr"></div>
-								<div class="order-ul__li__header__date">
-									19.12.2020
+							<div class="personal-info__three-together__each">
+								<label for="personal-info-email">ელ.ფოსტა</label>
+								<div class="input-div personal-input invalid">
+									<input type="email" name="personal-info-email" id="personal-info-email"
+									placeholder="example@gmail.com">
+									<div class="input-error-qstmark">?</div>
 								</div>
 							</div>
-							<ul class="orders-ul__li__itemsUL">
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="order-ul__li">
-							<div class="order-ul__li__header">
-								<div class="order-ul__li__header__number">
-									1<span>.</span>
-								</div>
-								<div class="order-ul__li__header__ID">
-									<span>#32534631</span>
-								</div>
-								<div class="order-ul__li__header__hr"></div>
-								<div class="order-ul__li__header__date">
-									19.12.2020
+							<div class="personal-info__three-together__each">
+								<label for="personal-info-tel">ტელეფონი</label>
+								<div class="input-div personal-input invalid">
+									<input type="number" name="personal-info-tel" id="personal-info-tel"
+									placeholder="5********">
+									<div class="input-error-qstmark">?</div>
 								</div>
 							</div>
-							<ul class="orders-ul__li__itemsUL">
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="order-ul__li">
-							<div class="order-ul__li__header">
-								<div class="order-ul__li__header__number">
-									1<span>.</span>
-								</div>
-								<div class="order-ul__li__header__ID">
-									<span>#32534631</span>
-								</div>
-								<div class="order-ul__li__header__hr"></div>
-								<div class="order-ul__li__header__date">
-									19.12.2020
-								</div>
-							</div>
-							<ul class="orders-ul__li__itemsUL">
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-								<li class="orders-ul__li__itemsUL__li">
-									<div
-										class="orders-ul__li__itemsUL__li__left"
-									>
-										<img
-											src="assets/images/cart-images/1.jpg"
-											alt="image"
-										/>
-										<div class="h2andPrice">
-											<h2>
-												<a href="product.html"
-													>Eyce Beaker Waterpipe
-													Bong</a
-												>
-											</h2>
-											<p class="h2andPrice__price">
-												<span
-													class="h2andPrice__price__number"
-													>174.00</span
-												>
-												₾
-											</p>
-										</div>
-									</div>
-									<div
-										class="orders-ul__li__itemsUL__li__right"
-									>
-										<p
-											class="orders-ul__li__itemsUL__li__right__amount"
-										>
-											რაოდენობა: <span>6</span>
-										</p>
-										<p
-											class="orders-ul__li__itemsUL__li__right__total"
-										>
-											ჯამში:
-											<span>1,040.00<span> ₾</span></span>
-										</p>
-									</div>
-								</li>
-							</ul>
-						</li>
-					</ul>
+						</div>
+						<div class="personal-info__one-alone">
+							<label>პროფილის სურათი</label>
+							
+						</div>
+						<button type="submit" class="home-see-all-btn">შენახვა</button>
+					</form>
 				</div>
 			</main>
 
@@ -1037,8 +685,7 @@
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/jquery-3.2.1.min.js"></script>
 		<script src="assets/js/login-reg-valid.js"></script>
-		<script src="assets/js/nicuSelect.js"></script>
-		<script src="assets/js/cart-validation.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
 		<script>
 			const productsMain = document.querySelector('.cart-menu')
 
@@ -1052,15 +699,12 @@
 				}
 			});
 		</script>
+		<!-- dropzone -->
 		<script>
-			let orderUlLiHeaders = document.querySelectorAll(
-				'.order-ul__li__header'
-			)
+			var myDropZone = new Dropzone(".dropzone", {
+				url: 'upload/image',
+				dictDefaultMessage: '<img src="assets/images/dropdownmenu.svg"><span class="deskt">ჩააგდე ან ატვირთე პროფილის სურათი</span><span class="mob">პროფილის სურათი</span><p class="warning">PNG, JPGE (მაქსიმალური ზომა 2MB)</p>',
 
-			orderUlLiHeaders.forEach((header) => {
-				header.addEventListener('click', () => {
-					header.classList.toggle('active')
-				})
 			});
 		</script>
 	</body>

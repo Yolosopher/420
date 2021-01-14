@@ -80,3 +80,94 @@
         position: fixed
     100%
         position: fixed
+
+
+// personal-info
+.personal-info
+    &__three-together
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 20px
+        grid-auto-rows: auto
+        @include plus1025()
+            grid-gap: 1.5625rem
+            grid-template-columns: repeat(3, 1fr)
+
+
+.personal-input
+    border: 1px solid #E5E5E5
+    border-radius: 12px
+
+.dropzone.dz-clickable
+    cursor: initial !important
+
+.dropzone 
+    min-height: unset !important
+    border: unset !important
+    background: unset !important
+    padding: unset !important
+
+
+.basicinfoform
+    display: flex
+    flex-direction: column
+    label
+        display: block
+        @include upperCase(true)
+        font-size: 16px
+        margin-bottom: 15px !important
+        line-height: 18px
+        @include plus1025()
+            font-size: 1rem
+            line-height: 1.125rem
+    .home-see-all-btn
+        order: 1
+        background-color: transparent
+        border: 1px solid $cyan
+        color: $cyan
+        margin: unset
+        width: 100%
+        align-self: flex-end
+        @include plus769()
+            width: 14.3125rem
+        &::after
+            content: url(../images/cyan-border-canabis.svg)
+            right: -32.8992px
+            top: -0.4rem
+            transform: rotate(11deg)
+.dz-default
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 181px
+    border-radius: 12px
+    border: 1px dashed #e5e5e5
+    @include plus1025()  
+        height: 220px
+.dz-button
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    @include upperCase(true)
+    img
+        margin-bottom: 19px
+    span
+        font-size: 14px
+        line-height: 16px
+        color: #AAAAAA 
+        margin-bottom: 13px 
+        @include plus1025()
+            font-size: 1rem
+            line-height: 1.125rem
+    .deskt
+        display: none
+        @include plus1025()
+            display: unset
+    .mob
+        @include plus1025()
+            display: none
+    .warning
+        color: #aaaaaa
+        font-size: 0.75rem
+        line-height: 0.875rem
