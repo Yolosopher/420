@@ -14,179 +14,71 @@
 @import products
 @import cart
 @import history-orders
+@import sidebars
+@import profile
+@import recovery
+// @import rules
+
 
 
 // min-height: calc( 100vh - 591px )    
 // @include plus1025()
 //     padding: 67px 0
 //     min-height: calc( 100vh - 342px )
-.whole-nav-menu
-    position: fixed !important
-    z-index: 20
-    display: flex
 
-    right: 100%
-    top: 0    
-    background-color: #111
-    color: #fff !important 
-    width: 29.1875rem
-    height: 100vh
-    transition: right .8s ease-out
-    &.left
-        right: calc( 100% - 29.1875rem )
-.header-burgerMenu
-    position: absolute
-    top: 0
-    left: 0
-    height: 100vh
-    width: 6.3125rem
-    transition: all .6s ease-out
-    &.scrolled
-        position: fixed
-        height: 123px
-    &.left
-        position: fixed
-        height: 100vh
-    &.right
-        left: -37.125rem
-        transition: left .8 ease-out
-.header-container-norm
-    .header-burgerMenu
-        position: relative
-        top: 0
-        left: 0
-        height: 103px
-        width: 6.3125rem
-        min-width: unset
-        max-width: unset
-        transition: all .6s ease-out
-        animation: relativeLater .6s
-        &.scrolled
-            position: fixed
-            height: 123px
-            animation: none
-        &.left
-            position: fixed
-            height: 100vh
-            animation: none
-
-.minimeze-svg-container
-    position: relative
-    @include plus1025()
-        position: static
-
-@keyframes relativeLater
-    0%
-        position: fixed
-    100%
-        position: fixed
-
-
-// personal-info
-.personal-info
-    &__three-together
-        display: grid
-        grid-template-columns: 1fr
-        grid-gap: 20px
-        grid-auto-rows: auto
+// rules.html
+.real-rules
+    h1
+        margin-bottom: 49px !important
         @include plus1025()
-            grid-gap: 1.5625rem
-            grid-template-columns: repeat(3, 1fr)
-
-
-.personal-input
-    border: 1px solid #E5E5E5
-    border-radius: 12px
-
-.dropzone.dz-clickable
-    cursor: initial !important
-
-.dropzone 
-    min-height: unset !important
-    border: unset !important
-    background: unset !important
-    padding: unset !important
-
-.personal-info 
-    @media screen and ( max-width: 768px )
-        padding: 0 !important
-        background: unset !important
-.basicinfoform
-    margin-bottom: 30px
-    @include plus1025()
-        margin-bottom: 57px
-.personal-info form
-    display: flex !important
-    flex-direction: column !important
-    background-color: #fff !important
-    border-radius: 12px !important
-    padding: 20px !important
-    @include plus1025()
-        padding: 0 !important
-    label
-        cursor: pointer
-        display: block
-        @include upperCase(true)
-        font-size: 16px
-        margin-bottom: 15px !important
-        line-height: 18px
-        @include plus1025()
-            font-size: 1rem
-            line-height: 1.125rem
-    .home-see-all-btn
-        cursor: pointer !important
-        order: 1
-        background-color: transparent
-        border: 1px solid $cyan
-        color: $cyan
-        margin: unset
-        width: 100%
-        align-self: flex-end
-        @include plus769()
-            width: 14.3125rem
-        &::after
-            content: url(../images/cyan-border-canabis.svg)
-            right: -32.8992px
-            top: -0.4rem
-            transform: rotate(11deg)
-.dz-default
-    display: flex
-    justify-content: center
-    align-items: center
-    height: 181px
-    border-radius: 12px
-    border: 1px dashed #e5e5e5
-    @include plus1025()  
-        height: 220px
-.dz-button
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    @include upperCase(true)
-    img
-        margin-bottom: 19px
-    span
+            margin-bottom: 109px !important
+    h3
+        font-family: rmn
         font-size: 14px
-        line-height: 16px
-        color: #AAAAAA 
-        margin-bottom: 13px 
+        line-height: 17px
+        margin-bottom: 50px
+        text-align: center
         @include plus1025()
-            font-size: 1rem
-            line-height: 1.125rem
-    .deskt
-        display: none
+            font-size: 1.375rem
+            line-height: 1.625rem
+            margin-bottom: 110px
+.rules-content
+    &__three-together
+        display: flex
+        align-items: center
+        flex-direction: column
         @include plus1025()
-            display: unset
-    .mob
-        @include plus1025()
-            display: none
-    .warning
-        color: #aaaaaa
-        font-size: 0.75rem
-        line-height: 0.875rem
-.dropzone .dz-message
-    margin: 0 !important
-    margin-bottom: 20px !important
-    @include plus1025()
-        margin-bottom: 30px !important
+            align-items: unset
+            flex-direction: row
+            justify-content: space-between
+        &__each
+            max-width: 335px
+            display: flex
+            flex-direction: column
+            align-items: center
+            &:not(:last-of-type)
+                margin-bottom: 40px
+                @include plus1025()
+                    margin-bottom: 0
+            &__box
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: $cyan
+                width: 120px
+                height: 120px
+                border-radius: 50%
+                margin-bottom: 20px
+                @include plus1025()
+                    width: 160px
+                    height: 160px
+                    margin-bottom: 40px
+            &__text
+                font-family: rmn
+                font-size: 14px
+                line-height: 22.4px
+                text-align: center
+                span
+                    display: block
+                    color: $orange
+                

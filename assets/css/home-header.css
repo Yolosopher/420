@@ -143,6 +143,10 @@ input[type=number] {
 }
 
 .home-header-realContent h1 {
+  font-family: mtavruli !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  font-weight: 600 !important;
   font-size: 32px;
   line-height: 37px;
   margin-bottom: 11px;

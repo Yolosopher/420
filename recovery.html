@@ -8,7 +8,7 @@
 			href="assets/images/logo.svg"
 			type="image/x-icon"
 		/>
-		<title>კონტაქტი</title>
+		<title>პაროლის აღდგენა</title>
 		<meta name="theme-color" content="#20CF8B" />
 		<meta property="og:title" content="420" />
 		<meta property="og:type" content="website" />
@@ -38,10 +38,7 @@
 				<header>
 					<div class="header-left">
 						<a href="index.html" class="header-logo">
-							<img
-								src="assets/images/logo.svg"
-								alt="420 logo"
-							/>
+							<img src="assets/images/logo.svg" alt="420 logo" />
 						</a>
 						<nav>
 							<ul class="nav-ul">
@@ -73,9 +70,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="aboutus.html"
-										>ჩვენ შესახებ</a
-									>
+									<a href="aboutus.html">ჩვენ შესახებ</a>
 								</li>
 								<li>
 									<a href="blog.html">ბლოგი</a>
@@ -200,72 +195,67 @@
 					</div>
 				</header>
 			</div>
-			<!-- contact main map-inside -->
-			<main class="contact-main">
-				<div class="contact-map" id="contact-map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.5583868947147!2d44.824665015075006!3d41.6868799853385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440c513e6b35b3%3A0x1378e41f51cbabc9!2s8%20Bochorma%20St%2C%20T&#39;bilisi!5e0!3m2!1sen!2sge!4v1609924144831!5m2!1sen!2sge"  frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+			<!-- homepage main content -->
+			<main class="aboutus-main real-recovery body-child-container">
+				<h1>პაროლის აღდგენა</h1>
+				<form class="recovery-form">
+					<div class="input-div invalid">
+						<label for="recovery-newpass">ახალი პაროლი</label>
+						<input
+							type="password"
+							name="recovery-newpass"
+							placeholder="********"
+							id="recovery-newpass"
+						/>
+						<div class="input-error-qstmark">?</div>
+					</div>
+					<div class="input-div invalid">
+						<label for="recovery-newpass-repeated"
+							>გაიმეორე ახალი პაროლი</label
+						>
+						<input
+							type="password"
+							name="recovery-newpass-repeated"
+							placeholder="********"
+							id="recovery-newpass-repeated"
+						/>
+						<div class="input-error-qstmark">?</div>
+					</div>
+					<button
+						class="home-see-all-btn recovery-submit-btn"
+						type="submit"
+					>
+						ახალი პაროლის დაყენება
+					</button>
+				</form>
+				<div class="recover-successfully-completed">
+					<div class="checkmark-buble">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="32"
+							height="32"
+							viewBox="0 0 32 32"
+						>
+							<g transform="translate(-1489 -347)">
+								<rect
+									width="32"
+									height="32"
+									transform="translate(1489 347)"
+									fill="rgba(17,17,17,0)"
+								/>
+								<path
+									d="M14.632,2.142,5.253,5.318A2.532,2.532,0,0,0,3.5,7.7v9.293a11.468,11.468,0,0,0,2.978,7.681,11.985,11.985,0,0,0,3.445,2.562L15,29.877a1.1,1.1,0,0,0,1.015,0l5.07-2.639a12,12,0,0,0,3.441-2.563A11.465,11.465,0,0,0,27.5,17V7.7a2.532,2.532,0,0,0-1.754-2.383L16.369,2.143A2.716,2.716,0,0,0,14.632,2.142ZM15.66,4.085l9.379,3.176a.467.467,0,0,1,.324.44V17a9.45,9.45,0,0,1-2.45,6.327l-.28.294a10.416,10.416,0,0,1-2.563,1.806L15.507,27.8l-4.569-2.375a9.92,9.92,0,0,1-2.846-2.1,9.452,9.452,0,0,1-2.455-6.331V7.7a.466.466,0,0,1,.323-.44L15.34,4.085A.5.5,0,0,1,15.66,4.085ZM20.8,12.136a1.1,1.1,0,0,0-1.511,0l-4.8,4.623-1.939-1.87-.12-.1a1.1,1.1,0,0,0-1.391.1,1,1,0,0,0,0,1.456l2.7,2.6.12.1a1.1,1.1,0,0,0,1.392-.1L20.8,13.592l.1-.115A1,1,0,0,0,20.8,12.136Z"
+									transform="translate(1489.5 347)"
+									fill="#fff"
+									fill-rule="evenodd"
+								/>
+							</g>
+						</svg>
+                    </div>
+                    <p class="p-message">ახალი პაროლი წარმატებით დაყენდა</p>
 				</div>
 			</main>
-			<!-- contact content -->  
-			<div class="contact-content-container">
-				
-				<div class="contact-content body-child-containerrr">  
-					<form class="form contact-form" id="contact-form">
-						<div class="contactForm-gridbox">
-							<label for="contact-name">სახელი</label>
-							<div class="input-div contact-input-div">
-								<input type="text" name="contact-name" id="contact-name">
-								<div class="input-error-qstmark">?</div>
-							</div>
-						</div>
-						
-						<div class="contactForm-gridbox">
-							<label for="contact-tel">ტელეფონი</label>
-							<div class="input-div contact-input-div">
-								<input type="tel" placeholder="5********" name="contact-tel" id="contact-tel">
-								<div class="input-error-qstmark">?</div>
-							</div>
-						</div>
-						<div class="contactForm-gridbox">
-							<label for="contact-email">ელ.ფოსტა</label>
-							<div class="input-div contact-input-div">
-								<input type="email" name="contact-email" id="contact-email" placeholder="example@gmail.com">
-								<div class="input-error-qstmark">?</div>
-							</div>
-						</div>
-						<div class="contactForm-gridbox">
-							<label for="contact-subject">თემა</label>
-							<div class="input-div contact-input-div">
-								<input type="text" placeholder="სატივას თესლები" name="contact-subject" id="contact-subject" placeholder="example@gmail.com">
-								<div class="input-error-qstmark">?</div>
-							</div>
-						</div>
-						<div class="input-div contact-input-div contact-input-div-textarea">
-							<textarea name="contact-textarea" id="contact-textarea" placeholder="შეტყობინება"></textarea>
-							<div class="input-error-qstmark">?</div>
-						</div>
-						<button type="submit">გაგზავნა</button>
-					</form>
-					<div class="contact-info">
-						<h2>საკონტაქტო ინფორმაცია</h2>
-						<ul class="contact-info-ul">
-							<li>
-								<h3>ტელეფონი</h3>
-								<span><a href="tel:+995558420420">558 420 420</a></span>
-							</li>
-							<li>
-								<h3>ელ.ფოსტა</h3>
-								<span><a href="mailto:info@420.ge">info@420.ge</a></span>
-							</li>
-							<li>
-								<h3>მისამართი</h3>
-								<span>თბილისი, ბოჭორმის ქ.8</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-				
-			</div>
+
 			<!-- footer -->
 			<div class="footer-container">
 				<footer>
@@ -347,8 +337,6 @@
 				</footer>
 			</div>
 		</div>
-
-
 		<!-- in layout -->
 		<div class="whole-nav-menu moveX">
 			<div class="burger-categories">
@@ -492,7 +480,6 @@
 			</div>
 		</div>
 
-
 		<!-- respo-menu -->
 		<div class="respo-menu-container">
 			<div class="respo-menu">
@@ -593,7 +580,9 @@
 									<a href="products.html">აქსესუარები</a>
 								</li>
 								<li>
-									<a href="products.html">შესახვევი ქაღალდი</a>
+									<a href="products.html"
+										>შესახვევი ქაღალდი</a
+									>
 								</li>
 								<li>
 									<a href="products.html">საფხვნელი</a>
@@ -678,11 +667,5 @@
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/jquery-3.2.1.min.js"></script>
 		<script src="assets/js/login-reg-valid.js"></script>
-		<script>
-			const inputDivs = document.querySelectorAll('.input-div')
-
-			inputDivs.forEach(each => each.classList.add('invalid'));
-		</script>
-		<script src="assets/js/contact-validation.js"></script>
 	</body>
 </html>
