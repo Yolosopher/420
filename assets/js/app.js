@@ -51,7 +51,7 @@ if (document.querySelector('.home-header')) {
 		false
 	)
 }
-burgerBtns.forEach(burgerBtn => {
+burgerBtns.forEach((burgerBtn) => {
 	burgerBtn.addEventListener('click', () => {
 		if (document.querySelector('.moveX.right')) {
 			headerLoginBtnFirst.click()
@@ -65,12 +65,11 @@ burgerBtns.forEach(burgerBtn => {
 	})
 })
 
-
 headerLoginBtns.forEach((headerLoginBtn) => {
 	headerLoginBtn.addEventListener('click', () => {
 		document.querySelector('body').classList.add('noscroll')
 		document.querySelector('.header-burgerMenu').classList.add('right')
-		
+
 		document
 			.querySelectorAll('.moveX')
 			.forEach((obj) => obj.classList.add('right'))
@@ -78,8 +77,14 @@ headerLoginBtns.forEach((headerLoginBtn) => {
 })
 
 minimizeAuthBtn.addEventListener('click', () => {
-	if(document.querySelector('.home-header-forms-combiner').classList.contains('register')){
-		document.querySelector('.home-header-forms-combiner').classList.remove('register')
+	if (
+		document
+			.querySelector('.home-header-forms-combiner')
+			.classList.contains('register')
+	) {
+		document
+			.querySelector('.home-header-forms-combiner')
+			.classList.remove('register')
 	} else {
 		document.querySelector('.header-burgerMenu').classList.remove('right')
 		document.querySelector('body').classList.remove('noscroll')
@@ -126,17 +131,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	switch (pageName) {
 		case 'contact':
-			navUl.forEach(each => {
+			navUl.forEach((each) => {
 				each.querySelector('li:nth-child(4)').classList.add('active')
 			})
 			break
 		case 'home':
-			navUl.forEach(each => {
+			navUl.forEach((each) => {
 				each.querySelector('li:nth-child(1)').classList.add('active')
 			})
 			break
 		case 'aboutus':
-			navUl.forEach(each => {
+			navUl.forEach((each) => {
 				each.querySelector('li:nth-child(2)').classList.add('active')
 			})
 			break
@@ -149,8 +154,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 	if (!homeHeader) {
 		document.querySelector('body').style.marginTop = '103px'
-
-	} else { 
+	} else {
 		scrollStop(() => {
 			if (window.innerWidth < 1025) {
 				if (window.pageYOffset === 0) {
@@ -166,7 +170,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					})
 				} else if (window.pageYOffset < window.innerHeight / 4) {
 					console.log(`scrolled up`)
-		
+
 					window.scroll({
 						top: 0, // could be negative value
 						left: 0,
@@ -185,11 +189,40 @@ respoMenuToggler.addEventListener('click', () => {
 
 const respoLoginBtnA = document.querySelector('.respo-profile-li:last-child a')
 
-respoLoginBtnA.href = "javascript:void(0)"
+respoLoginBtnA.href = 'javascript:void(0)'
 
 const RespLoginCaller = () => {
 	headerLoginBtnFirst.click()
-}	
+}
 respoLoginBtnA.addEventListener('click', (e) => {
 	RespLoginCaller()
+})
+
+// srchbar dekstop
+
+$('.searchbar-container').each(function () {
+	$(this).on('click', () => {
+		$('.header-left').addClass('srch-on')
+		$('.header-right').addClass('srch-on')
+		$('.searchbar-shown').addClass('srch-on')
+		$(this)
+			.closest('header')
+			.find('.searchbar-input-container input')
+			.focus()
+	})
+})
+$('.searchbar-svg__X').on('click', () => {
+	$('.header-left').removeClass('srch-on')
+	$('.header-right').removeClass('srch-on')
+	$('.searchbar-shown').removeClass('srch-on')
+})
+
+// srchbar mobile
+$('.respo-search-li a').on('click', () => {
+	$('.respo-menu-ul li:not(.respo-search-li)').addClass('vanished')
+	$('.respo-search-li').addClass('respo-srch-on')
+})
+$('.respo-search-li__searchform__X').on('click', () => {
+	$('.respo-menu-ul li:not(.respo-search-li)').removeClass('vanished')
+	$('.respo-search-li').removeClass('respo-srch-on')
 })

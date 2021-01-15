@@ -107,7 +107,7 @@
         background-color: $cyan
         height: 3.5rem
         overflow: hidden
-        transition: transform .3s ease out, background-color .3s ease-out
+        transition: transform .3s ease-in, background-color .3s ease-in
         @include plus1025()
             display: flex
             &:hover
@@ -422,7 +422,7 @@
 .realContent-left      
     height: 202px !important
     @include plus1025()
-        height: 400px !important
+        height: 380px !important
     @include plus1441()
         height: 418px !important
 .text-content
@@ -435,8 +435,9 @@
     @include plus1025()
         position: absolute
         left: 0
+        top: 3.5rem
+    @include plus1441()
         top: 4.5rem
-
     a
         position: absolute
         left: 0

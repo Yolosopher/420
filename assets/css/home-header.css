@@ -194,10 +194,10 @@ input[type=number] {
   background-color: #20CF8B;
   height: 3.5rem;
   overflow: hidden;
-  -webkit-transition: background-color .3s ease-out, -webkit-transform .3s ease out;
-  transition: background-color .3s ease-out, -webkit-transform .3s ease out;
-  transition: transform .3s ease out, background-color .3s ease-out;
-  transition: transform .3s ease out, background-color .3s ease-out, -webkit-transform .3s ease out;
+  -webkit-transition: background-color .3s ease-in, -webkit-transform .3s ease-in;
+  transition: background-color .3s ease-in, -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in, background-color .3s ease-in;
+  transition: transform .3s ease-in, background-color .3s ease-in, -webkit-transform .3s ease-in;
 }
 
 @media screen and (min-width: 1025px) {
@@ -748,7 +748,7 @@ input[type=number] {
 
 @media screen and (min-width: 1025px) {
   .realContent-left {
-    height: 400px !important;
+    height: 380px !important;
   }
 }
 
@@ -771,6 +771,12 @@ input[type=number] {
   .text-content {
     position: absolute;
     left: 0;
+    top: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .text-content {
     top: 4.5rem;
   }
 }

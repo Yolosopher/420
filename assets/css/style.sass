@@ -25,38 +25,103 @@
 // @include plus1025()
 //     padding: 67px 0
 //     min-height: calc( 100vh - 342px )
-
-// recovery
-.recovery-form
-    width: 100%
-    margin: 0 auto
-
-    max-width: 455px
-.recovery-submit-btn
-    width: 100%
-    cursor: pointer
-.real-recovery.active
-    .recover-successfully-completed
-        display: flex
-    .recovery-form
-        display: none
-.recover-successfully-completed
-    display: none
-    flex-direction: column
-    align-items: center
-.checkmark-buble
-    width: 130px
-    height: 130px
-
+header 
+    position: relative
+.searchbar-shown
+    position: absolute
     display: flex
-    justify-content: center
-    align-items: center
-    margin-bottom: 39px
+    right: 0
+    top: 70%
+    z-index: 1
+    opacity: 0
 
-    border-radius: 50%
-    background-color: $cyan
-.p-message
-    @include upperCase(true)
-    font-size: 1rem
-    line-height: 1.6rem
+    padding-left: calc( 105px + 4.375rem )
+    padding-right: 10px
+
+    width: 100%
+    height: 100%
+
+    transition: top .4s ease-in, opacity .2s ease-in
+
+    &.srch-on
+        opacity: 1
+        top: 0
+
+    &__inside
+        height: 100%
+        width: 100%
+
+        display: flex
+        align-items: center
+        justify-content: space-between
+.header-right
+    position: relative
+    z-index: 1
+
+.header-right > *:not(.searchbar-container), .header-left > *:not(.header-logo)
+    bottom: 0
+    position: relative
+    opacity: 1
+    transition: bottom .5s ease-in, left .2s ease-in, opacity .6s ease-in
+.header-right.srch-on > *:not(.searchbar-container), .header-left.srch-on > *:not(.header-logo)
+    bottom: 100%
+    position: relative
+    opacity: 0
+    transition: bottom .4s ease-in, left .2s ease-in, opacity .2s ease-in
+.header-right
+    .searchbar-container
+        position: relative
+        left: 0
+        transition: left .2s ease-in
+        
+.header-right.srch-on
+    .searchbar-container
+        left: 178px
+        z-index: 10
+        position: relative
+
+.searchbar-svg
+    &__X
+        cursor: pointer
+        display: flex
+        align-items: center
+        padding: 10px
+.searchbar-input-container
+    width: 50%
+    input
+        width: 100%
+        @include upperCase(true)
+        color: #fff
+        font-size: 16px
+        line-height: 18px
+        
+.respo-menu-ul li:not(.respo-search-li)
+    &.vanished
+        display: none !important
+// respo search
+.respo-search-li
+    display: flex
+    align-items: center
+    justify-content: space-between
     
+    &__searchform
+        flex-grow: 1
+        display: none
+        justify-content: space-between
+        align-items: center
+        input
+            flex-grow: 1
+            margin-left: 20px
+            margin-right: 15px
+            font-size: 12px
+            line-height: 14px
+            @include upperCase(true)
+            
+    &.respo-srch-on
+        width: 100%
+        a
+            display: none
+        .respo-search-li__searchform
+            display: flex 
+.respo-search-li__searchform__X
+    cursor: pointer
