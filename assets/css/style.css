@@ -5558,64 +5558,6 @@ aside.cart-menu.active {
   }
 }
 
-.recovery-form {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 455px;
-}
-
-.recovery-submit-btn {
-  width: 100%;
-  cursor: pointer;
-}
-
-.real-recovery.active .recover-successfully-completed {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.real-recovery.active .recovery-form {
-  display: none;
-}
-
-.recover-successfully-completed {
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.checkmark-buble {
-  width: 130px;
-  height: 130px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 39px;
-  border-radius: 50%;
-  background-color: #20CF8B;
-}
-
-.p-message {
-  font-family: mtavruli !important;
-  text-transform: uppercase !important;
-  font-weight: 500 !important;
-  font-weight: 600 !important;
-  font-size: 1rem;
-  line-height: 1.6rem;
-}
-
 .real-rules h1 {
   margin-bottom: 49px !important;
 }
@@ -5729,5 +5671,63 @@ aside.cart-menu.active {
 .rules-content__three-together__each__text span {
   display: block;
   color: #F2A928;
+}
+
+.recovery-form {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 455px;
+}
+
+.recovery-submit-btn {
+  width: 100%;
+  cursor: pointer;
+}
+
+.real-recovery.active .recover-successfully-completed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.real-recovery.active .recovery-form {
+  display: none;
+}
+
+.recover-successfully-completed {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkmark-buble {
+  width: 130px;
+  height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 39px;
+  border-radius: 50%;
+  background-color: #20CF8B;
+}
+
+.p-message {
+  font-family: mtavruli !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  font-weight: 600 !important;
+  font-size: 1rem;
+  line-height: 1.6rem;
 }
 /*# sourceMappingURL=style.css.map */

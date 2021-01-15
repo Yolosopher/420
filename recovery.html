@@ -251,8 +251,8 @@
 								/>
 							</g>
 						</svg>
-                    </div>
-                    <p class="p-message">ახალი პაროლი წარმატებით დაყენდა</p>
+					</div>
+					<p class="p-message">ახალი პაროლი წარმატებით დაყენდა</p>
 				</div>
 			</main>
 
@@ -667,5 +667,60 @@
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/jquery-3.2.1.min.js"></script>
 		<script src="assets/js/login-reg-valid.js"></script>
+		<script>
+			const recoveryForm = document.querySelector('.recovery-form')
+			const recoveryNewPass = document.getElementById('recovery-newpass')
+			const recoveryNewPassRepeated = document.getElementById(
+				'recovery-newpass-repeated'
+			)
+
+			recoveryNewPass.addEventListener('change', () => {
+				checkPassPutInRecovery(recoveryNewPass)
+			})
+			recoveryNewPassRepeated.addEventListener('change', () => {
+				checkPassPutInRecovery(recoveryNewPassRepeated)
+			})
+
+			const checkPassPutInRecovery = (passPut) => {
+				let id = passPut.id
+				let isRepeated = id === 'recovery-newpass-repeated'
+				passPut.value = String(passPut.value)
+				let value = passPut.value
+				let parent = passPut.parentElement
+
+				if (value === '') {
+					parent.classList.add('invalid')
+					parent.classList.remove('invalid-shown')
+				} else if (isRepeated) {
+					let notRepeated = document.getElementById(
+						'recovery-newpass'
+					)
+					if (notRepeated.value !== passPut.value) {
+						parent.classList.add('invalid')
+						parent.classList.add('invalid-shown')
+					} else {
+						parent.classList.remove('invalid')
+						parent.classList.remove('invalid-shown')
+					}
+				} else if (value.length > 5 && value.length < 51) {
+					parent.classList.remove('invalid')
+					parent.classList.remove('invalid-shown')
+				} else {
+					parent.classList.add('invalid')
+					parent.classList.add('invalid-shown')
+				}
+			}
+
+			recoveryForm.addEventListener('submit', (e) => {
+				let inputDivs = recoveryForm.querySelectorAll('.input-div.invalid')
+				if (inputDivs[0]) {
+					inputDivs.forEach((each) => {
+						each.classList.add('invalid-shown')
+					})
+					e.preventDefault()
+					return false
+				}
+			});
+		</script>
 	</body>
 </html>
