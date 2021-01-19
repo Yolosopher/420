@@ -62,21 +62,19 @@ input[type=number] {
 
 .home-header .header-container {
   position: fixed;
-  top: 0;
   right: 0;
+  top: 0;
 }
 
 @media screen and (min-width: 1025px) {
   .home-header .header-container {
-    position: -webkit-sticky;
-    position: sticky;
+    position: absolute;
   }
 }
 
 .home-header .header-container.scrolled {
   padding: 0;
   height: 103px;
-  position: fixed;
 }
 
 header {

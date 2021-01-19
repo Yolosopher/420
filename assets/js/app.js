@@ -11,6 +11,10 @@ const burgerBtns = document.querySelectorAll('.burger-icon')
 const burgerWindow = document.querySelector('.header-burgerMenu')
 
 // Setup isScrolling variable
+
+let workWith = document.querySelector('.home-header.work-with')
+
+
 let isScrolling
 /*!
  * Run a callback function after scrolling has stopped
@@ -94,15 +98,38 @@ minimizeAuthBtn.addEventListener('click', () => {
 	}
 })
 
+let middd = document.querySelector('.home-header-realContent')
+let homeHeaderBurg = document.querySelector('.header-burgerMenu')
+let homeMain = document.querySelector('.home-main')
+
 // functions
 const headerBotFixer = () => {
 	if (window.innerWidth > 1024) {
-		if (window.pageYOffset > window.innerHeight - 123) {
-			headerContainer.classList.add('scrolled')
-			burgerWindow.classList.add('scrolled')
+		let vhMinusHeader = window.innerHeight - 123
+
+		let height = window.pageYOffset >= vhMinusHeader ? 123 : window.innerHeight - window.pageYOffset
+
+		let transformTop = window.innerHeight - height
+
+		let max = window.pageYOffset >= vhMinusHeader ? 0 : (window.pageYOffset / (window.innerHeight - 246) * 100)
+		
+		let offsett = window.pageYOffset >= window.pageYOffset ? window.innerHeight : window.pageYOffset 
+
+
+		max = max.toFixed(1)
+		max = 100 - max
+		middd.style.opacity = `${max}%`
+		scrollDownYeah.style.opacity = `${max}%`
+		middd.style.transform = `translateY(-${transformTop}px)`
+		scrollDownYeah.style.transform = `translateY(-${transformTop}px)`
+		workWith.style.height = `${height}px`
+		burgerWindow.style.height = `${height}px`
+		homeMain.style.marginTop = `${offsett + 230}px`
+
+		if (window.pageYOffset > vhMinusHeader) {
+			workWith.classList.add('scrolled')
 		} else {
-			headerContainer.classList.remove('scrolled')
-			burgerWindow.classList.remove('scrolled')
+			workWith.classList.remove('scrolled')
 		}
 	}
 }
@@ -157,18 +184,19 @@ window.addEventListener('DOMContentLoaded', () => {
 	} else {
 		scrollStop(() => {
 			if (window.innerWidth < 1025) {
+				let innHeight = window.innerHeight - 244
 				if (window.pageYOffset === 0) {
-					console.log("it's zero")
-				} else if (window.pageYOffset > window.innerHeight) {
-					console.log(`scrolled down too far`)
-				} else if (window.pageYOffset > window.innerHeight / 4) {
-					console.log(`scrolled down`)
+					// console.log("it's zero")
+				} else if (window.pageYOffset > innHeight) {
+					// console.log(`scrolled down too far`)
+				} else if (window.pageYOffset > innHeight / 4) {
+					// console.log(`scrolled down`)
 					window.scroll({
-						top: window.innerHeight - 133, // could be negative value
+						top: innHeight, // could be negative value
 						left: 0,
 						behavior: 'smooth',
 					})
-				} else if (window.pageYOffset < window.innerHeight / 4) {
+				} else if (window.pageYOffset < innHeight / 4) {
 					console.log(`scrolled up`)
 
 					window.scroll({

@@ -239,21 +239,19 @@ input[type=number] {
 
 .home-header .header-container {
   position: fixed;
-  top: 0;
   right: 0;
+  top: 0;
 }
 
 @media screen and (min-width: 1025px) {
   .home-header .header-container {
-    position: -webkit-sticky;
-    position: sticky;
+    position: absolute;
   }
 }
 
 .home-header .header-container.scrolled {
   padding: 0;
   height: 103px;
-  position: fixed;
 }
 
 header {
@@ -475,7 +473,7 @@ input[type=number] {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 111px);
   color: #fff;
   background-color: #111111;
   overflow: hidden;
@@ -487,7 +485,6 @@ input[type=number] {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 14.5rem;
     padding-left: 15.75rem;
   }
 }
@@ -588,8 +585,8 @@ input[type=number] {
     display: -ms-grid;
     display: grid;
     font-size: 0.8125rem;
-    margin-top: -7.6875rem;
-    padding-top: 7.7875rem;
+    margin-top: 0;
+    padding-top: 123px;
   }
 }
 
@@ -680,10 +677,13 @@ input[type=number] {
           transform: rotate(-15deg);
 }
 
+.realContent-left, .realContent-right {
+  height: calc( (100vh - 320px) / 2);
+}
+
 .realContent-left {
   position: relative;
   width: 100%;
-  height: 202px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -706,7 +706,7 @@ input[type=number] {
 .realContent-right {
   justify-self: flex-start;
   border-radius: 50%;
-  height: 200px;
+  max-height: 200px;
   width: 100%;
   position: relative;
 }
@@ -803,7 +803,7 @@ input[type=number] {
 }
 
 .realContent-right .realContent-right-imageBox img {
-  height: 200px;
+  height: 100%;
   max-height: 27.5rem;
   -o-object-fit: contain;
      object-fit: contain;
@@ -940,6 +940,8 @@ input[type=number] {
   border-right: 0.0625rem solid #232323;
   position: relative;
   z-index: 1;
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 .burger-icon {
@@ -972,6 +974,10 @@ input[type=number] {
 
 .burger-icon span:last-child {
   left: calc( 100% - 0.0625rem);
+}
+
+.header-burgerMenu.active {
+  height: 100% !important;
 }
 
 .header-burgerMenu.active .burger-icon span {
@@ -1282,7 +1288,7 @@ input[type=number] {
 
 .scroll-down-yeah {
   position: absolute;
-  top: calc(100vh - 66px);
+  top: calc(100% - 66px);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1658,6 +1664,12 @@ input[type=number] {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+@media screen and (min-width: 1025px) {
+  .home-main {
+    margin-top: 353px;
+  }
 }
 
 .home-categories {
@@ -2102,6 +2114,21 @@ input[type=number] {
   padding: 20px;
   padding-bottom: 16px;
   color: #111111;
+  -webkit-transition: color .1s ease-out, all .2s ease-out;
+  transition: color .1s ease-out, all .2s ease-out;
+  background-color: transparent;
+  color: #111;
+}
+
+.home-second-categories-ul li .ptext {
+  color: inherit;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+}
+
+.home-second-categories-ul li svg path {
+  fill: #111;
+  stroke: #111;
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
 }
@@ -2163,6 +2190,9 @@ input[type=number] {
   }
   .home-topProductsSecond ul li {
     height: 377px;
+    display: none;
+    position: relative;
+    overflow: hidden;
   }
 }
 
@@ -2174,6 +2204,34 @@ input[type=number] {
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .home-topProductsSecond ul li::after {
+    position: absolute;
+    content: attr(data-category);
+    width: 100%;
+    height: 100%;
+    background: black;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 50px;
+    display: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home-topProductsSecond ul li.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-animation: showProduct .9s;
+            animation: showProduct .9s;
+  }
+}
+
 .home-topProductsSecond .home-topProducts-ul {
   margin-bottom: 20px;
 }
@@ -2181,6 +2239,24 @@ input[type=number] {
 @media screen and (min-width: 1025px) {
   .home-topProductsSecond .home-topProducts-ul {
     margin-bottom: 70px;
+  }
+}
+
+@-webkit-keyframes showProduct {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showProduct {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -5838,5 +5914,29 @@ header {
 
 .respo-search-li__searchform__X {
   cursor: pointer;
+}
+
+@media screen and (min-width: 1025px) {
+  .home-header.work-with {
+    -webkit-transition: height .1s ease-out;
+    transition: height .1s ease-out;
+    position: fixed;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .mid-container {
+    position: relative !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .header-burgerMenu {
+    top: 0;
+    position: fixed !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

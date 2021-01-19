@@ -125,3 +125,23 @@ header
             display: flex 
 .respo-search-li__searchform__X
     cursor: pointer
+
+
+
+// fix home-header animtion
+.home-header.work-with
+    @include plus1025()
+        transition: height .1s ease-out
+        position: fixed
+        top: 0
+        &.scrolled
+
+.mid-container
+    @include plus1025()
+        position: relative !important
+
+.header-burgerMenu
+    @include plus1025()        
+        top: 0
+        position: fixed !important
+        transition: none !important
