@@ -486,6 +486,7 @@ input[type=number] {
     display: -ms-flexbox;
     display: flex;
     padding-left: 15.75rem;
+    height: 100vh;
   }
 }
 
