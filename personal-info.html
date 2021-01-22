@@ -864,5 +864,18 @@
 				dictDefaultMessage: '<img src="assets/images/dropdownmenu.svg"><span class="deskt">ჩააგდე ან ატვირთე პროფილის სურათი</span><span class="mob">პროფილის სურათი</span><p class="warning">PNG, JPGE (მაქსიმალური ზომა 2MB)</p>',
 			});
 		</script>
+		<!-- passreset -->
+		<script>
+			// isPassResetSent = false //ეს ხაზი ან თუ გაიგზავნა მეილზე წარმატებით, გამოაჩინე, თუ არადა ან არ გამოაჩინო
+
+			let combiner = document.querySelector('.home-header-forms-combiner')
+			isPassResetSent = isPassResetSent && function () {
+				headerLoginBtns[0].click()
+				switchToResetBtn.click()
+				combiner.classList.add('reseted')
+			}
+
+			if (isPassResetSent) isPassResetSent()
+		</script>
 	</body>
 </html>

@@ -767,5 +767,18 @@
 		<script src="assets/js/jquery-3.2.1.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/login-reg-valid.js"></script>
+		<!-- passreset -->
+		<script>
+			// isPassResetSent = false //ეს ხაზი ან თუ გაიგზავნა მეილზე წარმატებით, გამოაჩინე, თუ არადა ან არ გამოაჩინო
+
+			let combiner = document.querySelector('.home-header-forms-combiner')
+			isPassResetSent = isPassResetSent && function () {
+				headerLoginBtns[0].click()
+				switchToResetBtn.click()
+				combiner.classList.add('reseted')
+			}
+
+			if (isPassResetSent) isPassResetSent()
+		</script>
 	</body>
 </html>
