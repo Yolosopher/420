@@ -1,59 +1,12 @@
-<!-- category filter home -->
 <script>
-	let seeAllBtn = document.querySelector('.home-see-all-btn')
+	isPassResetSent = true //ეს ხაზი ან თუ გაიგზავნა მეილზე წარმატებით, გამოაჩინე, თუ არადა ან არ გამოაჩინო
 
-	let products = document.querySelectorAll('.home-topProductsSecond li')
-
-	// let catCounter = 1
-
-	const changeCatHandler = (cat) => {
-		let filtered = document.querySelectorAll(
-			`.home-topProductsSecond [data-category="${cat}"]`
-		)
-
-		document
-			.querySelectorAll('.home-topProductsSecond li.active')
-			.forEach((each) => each.classList.remove('active'))
-
-		filtered.forEach((each) => each.classList.add('active'))
+	let combiner = document.querySelector('.home-header-forms-combiner')
+	isPassResetSent = isPassResetSent && function () {
+		headerLoginBtns[0].click()
+		switchToResetBtn.click()
+		combiner.classList.add('reseted')
 	}
 
-	// for (let i = 0; i < products.length; i++) {
-	// 	if (i > 8 * catCounter - 1) {
-	// 		++catCounter
-	// 	}
-	// 	products[i].setAttribute('data-category', `${catCounter}`)
-	// }
-	const cats = document.querySelectorAll('.home-second-categories li')
-	// for (let i = 0; i < cats.length; i++) {
-	// 	let a = cats[i].querySelector('a')
-	// 	let href = a.href
-	// 	a.href = href.concat('/', i)
-	// 	console.log(a.href)
-	// }
-	cats.forEach((each) => {
-		let href = each.querySelector('a').getAttribute('href')
-
-		each.querySelector('a').removeAttribute('href')
-
-		each.setAttribute('data-href', href)
-	})
-
-	cats.forEach((each) => {
-		each.addEventListener('click', () => {
-			document
-				.querySelectorAll('.home-second-categories li.active')
-				.forEach((cat) => cat.classList.remove('active'))
-
-			each.classList.add('active')
-
-			let cat = each.dataset.category
-
-			changeCatHandler(cat)
-
-			seeAllBtn.href = each.dataset.href
-		})
-	})
-
-	cats[0].click();
+	if (isPassResetSent) isPassResetSent()
 </script>

@@ -4,6 +4,7 @@ const headerContainer = document.querySelector('.header-container.scrolled-one')
 const headerLoginBtnFirst = document.querySelector('.header-right-login')
 const headerLoginBtns = document.querySelectorAll('.header-right-login')
 const switchToRegisBtn = document.querySelector('.switch-to-register')
+const switchToResetBtn = document.querySelector('.input-error-qstmark-real')
 const minimizeAuthBtn = document.querySelector('.minimize-svg')
 const respoMenuToggler = document.querySelector('.respo-menu-toggler')
 
@@ -14,6 +15,7 @@ const burgerWindow = document.querySelector('.header-burgerMenu')
 
 let workWith = document.querySelector('.home-header.work-with')
 
+let isPassResetSent
 
 let isScrolling
 /*!
@@ -43,6 +45,7 @@ var scrollStop = function (callback) {
 		},
 		false
 	)
+
 }
 
 // event listeners
@@ -84,11 +87,19 @@ minimizeAuthBtn.addEventListener('click', () => {
 	if (
 		document
 			.querySelector('.home-header-forms-combiner')
-			.classList.contains('register')
+			.classList.contains('register') || document
+			.querySelector('.home-header-forms-combiner')
+			.classList.contains('reset')
 	) {
 		document
 			.querySelector('.home-header-forms-combiner')
 			.classList.remove('register')
+		document
+			.querySelector('.home-header-forms-combiner')
+			.classList.remove('reset')
+		document
+			.querySelector('.home-header-forms-combiner')
+			.classList.remove('reseted')
 	} else {
 		document.querySelector('.header-burgerMenu').classList.remove('right')
 		document.querySelector('body').classList.remove('noscroll')
@@ -138,6 +149,12 @@ if (switchToRegisBtn) {
 		switchToRegisBtn.closest('form').parentElement.classList.add('register')
 	})
 }
+if (switchToResetBtn) {
+	switchToResetBtn.addEventListener('click', () => {
+		switchToResetBtn.closest('form').parentElement.classList.add('reset')
+	})
+}
+
 
 const checkPage = () => {
 	if (document.querySelector('.contact-main')) {

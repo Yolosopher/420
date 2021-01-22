@@ -654,7 +654,7 @@
     
 
         
-    .home-header-register
+    .home-header-register, .home-header-reset
         display: none  
     
     &.register 
@@ -662,6 +662,15 @@
             display: none
         .home-header-register
             display: flex
+    &.reset
+        .home-header-login
+            display: none
+        .home-header-reset
+            display: flex
+        &.reseted
+            .home-header-reset
+                > *:not(.reset-successful)
+                    display: none
 
 .input-div:not(.radio-input)
     position: relative
@@ -684,7 +693,7 @@
         background-color: #fff
     .input-error-qstmark
         position: absolute
-        top: 0
+        bottom: calc(56px + 1rem)
         right: 0
 
         display: none
@@ -716,3 +725,30 @@
     &.invalid.invalid-shown
         .input-error-qstmark
             display: flex
+@import variables
+
+
+
+.reset-successful
+    display: none
+    flex-direction: column
+    align-items: center
+    &__imgbox 
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 8.125rem
+        height: 8.125rem
+        background-color: $cyan
+        margin-bottom: 2.5rem
+    &__text
+        @include upperCase(true)
+        font-size: 16px
+        line-height: 25.6px
+        text-align: center
+        span
+            color: #F22828 
+.reseted
+    .reset-successful
+        display: flex !important

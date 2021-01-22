@@ -292,7 +292,11 @@
             margin-bottom: 15px
             @include plus1025()
                 margin-bottom: 34px
-
+.home-page
+    .home-topProductsSecond
+        @include plus1025()
+            ul li
+                display: none
 .home-topProductsSecond
     padding-bottom: 70px
     margin-bottom: 0
@@ -309,7 +313,7 @@
             grid-gap: 30px 25px
             li
                 height: 377px
-                display: none
+                display: flex
                 position: relative
                 overflow: hidden
                 @include plus1025()

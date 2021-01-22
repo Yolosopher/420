@@ -4,12 +4,16 @@ document.querySelectorAll('.input-div:not(.reg-select-div)').forEach(div => {
 })
 const emailInput = document.getElementById('login-email')
 const emailInputReg = document.getElementById('register-email')
+const emailInputReset = document.getElementById('reset-email')
 
 emailInput.addEventListener('change', () => {
 	checkEmailPut(emailInput)
 })
 emailInputReg.addEventListener('change', () => {
 	checkEmailPut(emailInputReg)
+})
+emailInputReset.addEventListener('change', () => {
+	checkEmailPut(emailInputReset)
 })
 
 // reg-log password
