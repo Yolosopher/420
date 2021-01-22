@@ -314,7 +314,7 @@
 											>
 												<span
 													class="basket-ul__li__right__price__amount"
-													>174.00</span
+													>21.00</span
 												>
 												₾
 											</p>
@@ -434,7 +434,7 @@
 										>
 										<span
 											class="basket-ul__li__totalAmount__num"
-											>1,040.00<span> ₾</span></span
+											><span>1,040.00</span> ₾</span
 										>
 									</div>
 								</div>
@@ -605,7 +605,7 @@
 										>
 										<span
 											class="basket-ul__li__totalAmount__num"
-											>1,040.00<span> ₾</span></span
+											><span>1,040.00</span> ₾</span
 										>
 									</div>
 								</div>
@@ -619,7 +619,7 @@
 									>ჯამში:</span
 								>
 								<span class="basket-ul__li__totalAmount__num"
-									>1,040.00<span> ₾</span></span
+									><span>1,040.00</span> ₾</span
 								>
 							</div>
 							<div class="cart-basket-info-and-nav__right">
@@ -643,17 +643,17 @@
 									>ჯამში:</span
 								>
 								<span class="basket-ul__li__totalAmount__num"
-									>1,040.00<span> ₾</span></span
+									><span>1,040.00</span> ₾</span
 								>
 								<span class="delivery-price">
 									+ მიტანის ღირებულება
 									<span class="delivery-price__amount"
-										>6<span> ₾</span></span
+										><span>6</span> ₾</span
 									>
 								</span>
 							</div>
 							<div class="totalPlusDelivery">
-								1455,80<span> ₾</span>
+								<span>1455,80</span> ₾
 							</div>
 						</div>
 						<div class="whereToTake">
@@ -665,51 +665,35 @@
 											value="გლდანი"
 											selected
 											data-delivery-price="3"
-										>
-											გლდანი
-										</option>
+										>გლდანი</option>
 										<option
 											value="ნაძალადევი"
 											data-delivery-price="4"
-										>
-											ნაძალადევი
-										</option>
+										>ნაძალადევი</option>
 										<option
 											value="მთაწმინდა"
 											data-delivery-price="2"
-										>
-											მთაწმინდა
-										</option>
+										>მთაწმინდა</option>
 										<option
 											value="თემქა"
 											data-delivery-price="5"
-										>
-											თემქა
-										</option>
+										>თემქა</option>
 										<option
 											value="ვაკე"
 											data-delivery-price="1"
-										>
-											ვაკე
-										</option>
+										>ვაკე</option>
 										<option
 											value="საბურთალო"
 											data-delivery-price="5"
-										>
-											საბურთალო
-										</option>
+										>საბურთალო</option>
 										<option
 											value="ვარკეთილი"
 											data-delivery-price="7"
-										>
-											ვარკეთილი
-										</option>
+										>ვარკეთილი</option>
 										<option
 											value="ბიბუბე"
 											data-delivery-price="9"
-										>
-											ბიბუბე
-										</option>
+										>ბიბუბე</option>
 									</select>
 									<div class="nicuSelect-container">
 										<p class="active-p"></p>
@@ -1277,32 +1261,103 @@
 			});
 		</script>
 		<script>
+			let totalPrice = document.querySelector(
+				'.cart-basket-info-and-nav .basket-ul__li__totalAmount__num span'
+			)
+			let totalPriceSecond = document.querySelector(
+				'.basket__orderMenu .basket-ul__li__totalAmount__num span'
+			)
+			let totalPriceRed = document.querySelector(
+				'.totalPlusDelivery span'
+			)
+			let deliveryPrice = document.querySelector(
+				'.delivery-price__amount span'
+			)
+
+
+
 			const minuses = document.querySelectorAll('.minus')
 			const pluses = document.querySelectorAll('.plus')
 
-			minuses.forEach((minus) => {
-				minus.addEventListener('click', () => {
-					let quantityInput = minus.parentElement.querySelector(
-						'.quantityID'
-					)
+			const setInputWidthByChars = (el) => {
+				el.style.width = `${
+					el.value.length > 2 ? el.value.length : 3
+				}ch`
+			}
 
-					let val = +quantityInput.value
-					if (val > 1) quantityInput.value = val - 1
-					setInputWidthByChars(quantityInput)
+			const getTotalPrice = () => {
+				let total = 0
+				document
+					.querySelectorAll(
+						'.basket-ul__li .basket-ul__li__totalAmount__num span'
+					)
+					.forEach((liTotal) => {
+						let toAddValue = +liTotal.innerText.replace(',', '')
+
+						total += toAddValue
+					})
+				totalPrice.innerText = total
+				totalPriceSecond.innerText = total
+
+				totalPriceRed.innerText = total + +deliveryPrice.innerText
+				return total
+			}
+
+			minuses.forEach((minus) => {
+				let quantityInputOutter = minus.parentElement.querySelector(
+					'.quantityID'
+				)
+				
+				setInputWidthByChars(quantityInputOutter)
+
+				minus.addEventListener('click', () => {
+					updateVal(minus, false)
+
+					getTotalPrice()
 				})
 			})
+
+			const updateVal = (plusEl, plus=false) => {
+				let quantityInput = plusEl.parentElement.querySelector(
+						'.quantityID'
+					)
+					
+				let price = plusEl.closest('.basket-ul__li').querySelector('.basket-ul__li__right__price__amount').innerText.replace(',', '')
+				
+				let thisTotal = plusEl.closest('.basket-ul__li').querySelector('.basket-ul__li__totalAmount__num span')
+
+
+				let val = +quantityInput.value
+
+				switch (plus) {
+					case true:
+						quantityInput.value = val + 1
+						break;
+					case false:
+						if (val > 1) quantityInput.value = val - 1
+					case "update":
+						break;
+					default:	
+						if (val > 1) quantityInput.value = val - 1
+						break;
+				}
+
+				setInputWidthByChars(quantityInput)
+
+				thisTotal.innerText = +price * +quantityInput.value
+			}
 
 			pluses.forEach((plus) => {
-				plus.addEventListener('click', () => {
-					let quantityInput = plus.parentElement.querySelector(
-						'.quantityID'
-					)
+				updateVal(plus, 'update')
 
-					let val = +quantityInput.value
-					quantityInput.value = val + 1
-					setInputWidthByChars(quantityInput)
+				plus.addEventListener('click', () => {
+					updateVal(plus, true)
+					getTotalPrice()
 				})
 			})
+
+			getTotalPrice()
+
 			const regRealSelect = document.getElementById('reg-select')
 			const regNiceSelect = document.getElementById('nicuSelect')
 
@@ -1332,7 +1387,7 @@
 
 			continueOrderBtn.addEventListener('click', (e) => {
 				if (basketForm.classList.contains('ordering')) {
-					let inputDivs = document.querySelectorAll(
+					let inputDivs = document.querySelector('.basket.form').querySelectorAll(
 						'.input-div.invalid'
 					)
 					if (
@@ -1357,6 +1412,9 @@
 					e.preventDefault()
 				}
 			});
+		</script>
+		<script>
+
 		</script>
 	</body>
 </html>

@@ -1470,7 +1470,11 @@
 			let thumbRight = document.querySelector('.slider > .thumb.right')
 			let range = document.querySelector('.slider > .range')
 
+			const priceFilter = document.querySelector('.price-filter')
+
 			let localMin, localMax
+
+
 
 			window.addEventListener('load', () => {
 				let hours = 24 * 14 // Reset when storage is more than 24hours
@@ -1485,20 +1489,23 @@
 					}
 				}
 
-				if (localStorage.getItem('priceFilterMin')) {
-					inputLeft.value = +localStorage.getItem('priceFilterMin')
-					localMin = +localStorage.getItem('priceFilterMin')
-					setLeftValue()
-				} else {
-					localStorage.setItem('priceFilterMin', inputLeft.value)
-				}
-				if (localStorage.getItem('priceFilterMax')) {
-					inputRight.value = +localStorage.getItem('priceFilterMax')
-					localMax = +localStorage.getItem('priceFilterMin')
-					setRightValue()
-				} else {
-					localStorage.setItem('priceFilterMax', inputRight.value)
-				}
+				// if (localStorage.getItem('priceFilterMin')) {
+				// 	inputLeft.value = +localStorage.getItem('priceFilterMin')
+				// 	localMin = +localStorage.getItem('priceFilterMin')
+				// } else {
+				// 	localStorage.setItem('priceFilterMin', inputLeft.value)
+				// }
+				// if (localStorage.getItem('priceFilterMax')) {
+				// 	inputRight.value = +localStorage.getItem('priceFilterMax')
+				// 	localMax = +localStorage.getItem('priceFilterMax')
+					
+				// } else {
+				// 	localStorage.setItem('priceFilterMax', inputRight.value)
+				// }
+
+				setLeftValue()
+				setRightValue()
+				// priceFilter.submit()
 			})
 
 			function setLeftValue() {
@@ -1522,7 +1529,8 @@
 				} else {
 					spanInside.classList.remove('empty')
 				}
-				localStorage.setItem('priceFilterMin', _this.value)
+				// localStorage.setItem('priceFilterMin', _this.value)
+				
 			}
 
 			function setRightValue() {
@@ -1546,11 +1554,21 @@
 				} else {
 					spanInside.classList.remove('full')
 				}
-				localStorage.setItem('priceFilterMax', _this.value)
+				// localStorage.setItem('priceFilterMax', _this.value)
 			}
 
 			inputLeft.addEventListener('input', setLeftValue)
 			inputRight.addEventListener('input', setRightValue)
+
+
+			inputLeft.addEventListener('change', () => {
+				setLeftValue()
+				priceFilter.submit()
+			})
+			inputRight.addEventListener('change', () => {
+				setRightValue()
+				priceFilter.submit()
+			})
 
 			inputLeft.addEventListener('mouseover', function () {
 				thumbLeft.classList.add('hover')

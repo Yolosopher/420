@@ -29,23 +29,25 @@ header
     position: relative
 .searchbar-shown
     position: absolute
-    display: flex
     right: 0
+    display: flex
     top: 70%
-    z-index: 1
+    z-index: -1
     opacity: 0
 
     padding-left: calc( 105px + 4.375rem )
     padding-right: 10px
 
     width: 100%
-    height: 100%
+    height: 0
 
     transition: top .4s ease-in, opacity .2s ease-in
 
     &.srch-on
+        height: 100%
         opacity: 1
         top: 0
+        z-index: 1
 
     &__inside
         height: 100%
@@ -131,7 +133,7 @@ header
 // fix home-header animtion
 .home-header.work-with
     @include plus1025()
-        transition: height .1s ease-out
+        transition: height 0s
         position: fixed
         top: 0
         &.scrolled

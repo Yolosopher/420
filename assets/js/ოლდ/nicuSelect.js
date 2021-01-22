@@ -59,7 +59,7 @@ const nicuSelecto = (niceSelect, realSelect) => {
 
             $(realSelect).parent().removeClass('err');
             $(realSelect).parent().find('.input-error-message').removeClass('active');
-            // deliveryPriceUpdater();
+            deliveryPriceUpdater();
         })
     });
 };

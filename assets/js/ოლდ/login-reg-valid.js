@@ -1,5 +1,5 @@
 // reg-log email
-document.querySelectorAll('.input-div:not(.reg-select-div)').forEach(div => {
+document.querySelectorAll('.input-div').forEach(div => {
 	div.classList.add('invalid')
 })
 const emailInput = document.getElementById('login-email')
@@ -79,6 +79,7 @@ const checkPassPut = (passPut) => {
 	let id = passPut.id
 	let isRepeated = id === 'register-repeated-password'
 	let isLoginPass = Boolean(passPut.closest('.home-header-login'))
+	console.log(isLoginPass);
 	passPut.value = String(passPut.value)
 	let value = passPut.value
 	let parent = passPut.parentElement

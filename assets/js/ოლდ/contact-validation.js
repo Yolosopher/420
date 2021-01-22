@@ -2,26 +2,26 @@ const nameInput = document.getElementById('contact-name')
 const subjectInput = document.getElementById('contact-subject')
 const mailInput = document.getElementById('contact-email')
 const textArea = document.getElementById('contact-textarea')
-const telContactInput = document.getElementById('contact-tel')
+const telInput = document.getElementById('contact-tel')
 
 nameInput.addEventListener('change', () => {
 	checkTextPut(nameInput)
 })
 subjectInput.addEventListener('change', () => {
-	checkTextContactPut(subjectInput)
+	checkTextPut(subjectInput)
 })
 mailInput.addEventListener('change', () => {
-	checkEmailContactPut(mailInput)
+	checkEmailPut(mailInput)
 })
 textArea.addEventListener('change', () => {
 	checkTextArea(textArea)
 })
-telContactInput.addEventListener('change', () => {
-    checkTelContactPut(telContactInput)
+telInput.addEventListener('change', () => {
+    checkTelPut(telInput)
 })
 
 // validation functions
-const checkTextContactPut = (textPut) => {
+const checkTextPut = (textPut) => {
 	textPut.value = String(textPut.value)
 	let value = textPut.value
 	let parent = textPut.parentElement
@@ -36,7 +36,7 @@ const checkTextContactPut = (textPut) => {
 		parent.classList.add('invalid-shown')
 	}
 }
-const checkEmailContactPut = (emailPut) => {
+const checkEmailPut = (emailPut) => {
 	emailPut.value = String(emailPut.value)
 	let value = emailPut.value
 	let parent = emailPut.parentElement
@@ -68,7 +68,7 @@ const checkTextArea = (area) => {
 		parent.classList.add('invalid-shown')
 	}
 }
-const checkTelContactPut = (telPut) => {
+const checkTelPut = (telPut) => {
 	let value = telPut.value
 	let parent = telPut.parentElement
 	let ifTel = /^(5)\d{8}$/.test(value)
@@ -94,9 +94,9 @@ allTogether.forEach((each) => {
 })
 
 // submit validation
-const formsContact = document.querySelectorAll('form')
+const forms = document.querySelectorAll('form')
 
-formsContact.forEach((form) => {
+forms.forEach((form) => {
 	form.addEventListener('submit', (e) => {
 		let inputDivs = form.querySelectorAll('.invalid')
 		if (inputDivs[0]) {
