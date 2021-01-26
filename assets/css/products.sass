@@ -4,6 +4,8 @@
     flex-direction: column
     @include plus1025()
         flex-direction: row
+    &__right-container
+        flex-grow: 1
     &__left
         width: 100%
         @include plus1025()
@@ -259,6 +261,7 @@
         height: 4px
         width: 100%
         opacity: 0
+        cursor: pointer
 
     input[type=range]::-webkit-slider-thumb 
         pointer-events: all

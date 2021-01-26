@@ -102,6 +102,12 @@ header {
   }
 }
 
+@media screen and (min-width: 1055px) {
+  header {
+    padding: 0;
+  }
+}
+
 @media screen and (min-width: 1441px) {
   header {
     font-size: 16px;
@@ -186,7 +192,7 @@ svg {
   display: block;
   position: absolute;
   z-index: 1;
-  bottom: -24px;
+  bottom: -14px;
   right: 50%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);

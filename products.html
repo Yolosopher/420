@@ -529,7 +529,6 @@
 						</ul>
 					</div>
 					<div class="products-main__left__filter">
-						
 						<form class="middle price-filter">
 							<div class="multi-range-slider">
 								<h2>ფასით ფილტრაცია</h2>
@@ -552,14 +551,20 @@
 								<div class="slider">
 									<div class="track">
 										<span class="track-size-min">0 ₾</span>
-										<span class="track-size-max">1500 ₾</span>
+										<span class="track-size-max"
+											>1500 ₾</span
+										>
 									</div>
 									<div class="range"></div>
 									<div class="thumb left">
-										<span class="thumb-content">5.00 ₾</span>
+										<span class="thumb-content"
+											>5.00 ₾</span
+										>
 									</div>
 									<div class="thumb right">
-										<span class="thumb-content">95.00 ₾</span>
+										<span class="thumb-content"
+											>95.00 ₾</span
+										>
 									</div>
 								</div>
 							</div>
@@ -976,7 +981,7 @@
 				</div>
 			</main>
 
-			<!-- footer --> 	
+			<!-- footer -->
 			<div class="footer-container">
 				<footer>
 					<div class="footer-top">
@@ -1057,7 +1062,6 @@
 				</footer>
 			</div>
 		</div>
-
 
 		<!-- in layout -->
 		<div class="whole-nav-menu moveX">
@@ -1237,13 +1241,13 @@
 							</svg>
 						</div>
 						<div class="reset-successful__text">
-							პაროლის აღსადგენი ლინკი გაგზავნილია თქვენს მიერ მითითებულ<span> ელ.ფოსტაზე</span>
+							პაროლის აღსადგენი ლინკი გაგზავნილია თქვენს მიერ
+							მითითებულ<span> ელ.ფოსტაზე</span>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
-
 
 		<!-- respo-menu  layout -->
 		<div class="respo-menu-container">
@@ -1516,8 +1520,6 @@
 
 			let localMin, localMax
 
-
-
 			window.addEventListener('load', () => {
 				let hours = 24 * 14 // Reset when storage is more than 24hours
 				let now = new Date().getTime()
@@ -1540,7 +1542,7 @@
 				// if (localStorage.getItem('priceFilterMax')) {
 				// 	inputRight.value = +localStorage.getItem('priceFilterMax')
 				// 	localMax = +localStorage.getItem('priceFilterMax')
-					
+
 				// } else {
 				// 	localStorage.setItem('priceFilterMax', inputRight.value)
 				// }
@@ -1572,7 +1574,6 @@
 					spanInside.classList.remove('empty')
 				}
 				// localStorage.setItem('priceFilterMin', _this.value)
-				
 			}
 
 			function setRightValue() {
@@ -1601,7 +1602,6 @@
 
 			inputLeft.addEventListener('input', setLeftValue)
 			inputRight.addEventListener('input', setRightValue)
-
 
 			inputLeft.addEventListener('change', () => {
 				setLeftValue()
@@ -1643,13 +1643,16 @@
 			// isPassResetSent = false //ეს ხაზი ან თუ გაიგზავნა მეილზე წარმატებით, გამოაჩინე, თუ არადა ან არ გამოაჩინო
 
 			let combiner = document.querySelector('.home-header-forms-combiner')
-			isPassResetSent = isPassResetSent && function () {
-				headerLoginBtns[0].click()
-				switchToResetBtn.click()
-				combiner.classList.add('reseted')
-			}
+			isPassResetSent =
+				isPassResetSent &&
+				function () {
+					headerLoginBtns[0].click()
+					switchToResetBtn.click()
+					combiner.classList.add('reseted')
+				}
 
-			if (isPassResetSent) isPassResetSent()
+			if (isPassResetSent) isPassResetSent();
 		</script>
+
 	</body>
 </html>

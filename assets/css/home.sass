@@ -266,7 +266,6 @@
         color: $blackdefault
         transition: color .1s ease-out, all .2s ease-out
         // @include plus1025()
-        background-color: transparent
         color: #111
         .ptext
             color: inherit
@@ -363,10 +362,9 @@
     color: #fff
 
     display: flex
-    &:hover
+    &:hover, &.added.active-animation
         transform: rotate(-5deg)
         background-color: $orange
-
     &::after
         position: absolute
         content: url(../images/canabis-white.svg)

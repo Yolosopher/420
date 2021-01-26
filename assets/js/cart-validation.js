@@ -1,9 +1,10 @@
 // address input
 const addressInput = document.getElementById('exact-address');
-
-addressInput.addEventListener('change', () => {
-    checkAddressPut(addressInput);
-})
+if (addressInput) {
+	addressInput.addEventListener('change', () => {
+		checkAddressPut(addressInput);
+	})
+}
 
 
 

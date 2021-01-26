@@ -665,35 +665,51 @@
 											value="გლდანი"
 											selected
 											data-delivery-price="3"
-										>გლდანი</option>
+										>
+											გლდანი
+										</option>
 										<option
 											value="ნაძალადევი"
 											data-delivery-price="4"
-										>ნაძალადევი</option>
+										>
+											ნაძალადევი
+										</option>
 										<option
 											value="მთაწმინდა"
 											data-delivery-price="2"
-										>მთაწმინდა</option>
+										>
+											მთაწმინდა
+										</option>
 										<option
 											value="თემქა"
 											data-delivery-price="5"
-										>თემქა</option>
+										>
+											თემქა
+										</option>
 										<option
 											value="ვაკე"
 											data-delivery-price="1"
-										>ვაკე</option>
+										>
+											ვაკე
+										</option>
 										<option
 											value="საბურთალო"
 											data-delivery-price="5"
-										>საბურთალო</option>
+										>
+											საბურთალო
+										</option>
 										<option
 											value="ვარკეთილი"
 											data-delivery-price="7"
-										>ვარკეთილი</option>
+										>
+											ვარკეთილი
+										</option>
 										<option
 											value="ბიბუბე"
 											data-delivery-price="9"
-										>ბიბუბე</option>
+										>
+											ბიბუბე
+										</option>
 									</select>
 									<div class="nicuSelect-container">
 										<p class="active-p"></p>
@@ -1036,7 +1052,8 @@
 							</svg>
 						</div>
 						<div class="reset-successful__text">
-							პაროლის აღსადგენი ლინკი გაგზავნილია თქვენს მიერ მითითებულ<span> ელ.ფოსტაზე</span>
+							პაროლის აღსადგენი ლინკი გაგზავნილია თქვენს მიერ
+							მითითებულ<span> ელ.ფოსტაზე</span>
 						</div>
 					</div>
 				</form>
@@ -1316,8 +1333,6 @@
 				'.delivery-price__amount span'
 			)
 
-
-
 			const minuses = document.querySelectorAll('.minus')
 			const pluses = document.querySelectorAll('.plus')
 
@@ -1349,7 +1364,7 @@
 				let quantityInputOutter = minus.parentElement.querySelector(
 					'.quantityID'
 				)
-				
+
 				setInputWidthByChars(quantityInputOutter)
 
 				minus.addEventListener('click', () => {
@@ -1359,29 +1374,33 @@
 				})
 			})
 
-			const updateVal = (plusEl, plus=false) => {
+			const updateVal = (plusEl, plus = false) => {
 				let quantityInput = plusEl.parentElement.querySelector(
-						'.quantityID'
-					)
-					
-				let price = plusEl.closest('.basket-ul__li').querySelector('.basket-ul__li__right__price__amount').innerText.replace(',', '')
-				
-				let thisTotal = plusEl.closest('.basket-ul__li').querySelector('.basket-ul__li__totalAmount__num span')
+					'.quantityID'
+				)
 
+				let price = plusEl
+					.closest('.basket-ul__li')
+					.querySelector('.basket-ul__li__right__price__amount')
+					.innerText.replace(',', '')
+
+				let thisTotal = plusEl
+					.closest('.basket-ul__li')
+					.querySelector('.basket-ul__li__totalAmount__num span')
 
 				let val = +quantityInput.value
 
 				switch (plus) {
 					case true:
 						quantityInput.value = val + 1
-						break;
+						break
 					case false:
 						if (val > 1) quantityInput.value = val - 1
-					case "update":
-						break;
-					default:	
+					case 'update':
+						break
+					default:
 						if (val > 1) quantityInput.value = val - 1
-						break;
+						break
 				}
 
 				setInputWidthByChars(quantityInput)
@@ -1393,6 +1412,7 @@
 				updateVal(plus, 'update')
 
 				plus.addEventListener('click', () => {
+
 					updateVal(plus, true)
 					getTotalPrice()
 				})
@@ -1429,9 +1449,9 @@
 
 			continueOrderBtn.addEventListener('click', (e) => {
 				if (basketForm.classList.contains('ordering')) {
-					let inputDivs = document.querySelector('.basket.form').querySelectorAll(
-						'.input-div.invalid'
-					)
+					let inputDivs = document
+						.querySelector('.basket.form')
+						.querySelectorAll('.input-div.invalid')
 					if (
 						inputDivs[0] ||
 						!agreeTerms.checked ||
@@ -1460,13 +1480,82 @@
 			// isPassResetSent = false //ეს ხაზი ან თუ გაიგზავნა მეილზე წარმატებით, გამოაჩინე, თუ არადა ან არ გამოაჩინო
 
 			let combiner = document.querySelector('.home-header-forms-combiner')
-			isPassResetSent = isPassResetSent && function () {
-				headerLoginBtns[0].click()
-				switchToResetBtn.click()
-				combiner.classList.add('reseted')
-			}
+			isPassResetSent =
+				isPassResetSent &&
+				function () {
+					headerLoginBtns[0].click()
+					switchToResetBtn.click()
+					combiner.classList.add('reseted')
+				}
 
-			if (isPassResetSent) isPassResetSent()
+			if (isPassResetSent) isPassResetSent();
+		</script>
+		<script>
+			let quantity = document.getElementById('quantity')
+			const removeBtns = document.querySelectorAll('.basket-ul__li__removebtn')
+
+			removeBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					removeFromCart(btn)
+				})
+			})
+			const removeFromCart = (elem) => {
+				let id = parseFloat($(elem).parent().data('bind'))
+				console.log(id);
+				$.ajax({
+					url: 'http://420.loremipsum.ge/add_to_cart',
+					method: 'get',
+					data: { id: id },
+					success: function (data) {
+						if (data.status) {
+							let cartItemsCount = data.cart_items_count
+							elem.closest('.basket-ul__li').remove()
+							$('.inbag-number').text(cartItemsCount)
+						}
+					},
+					error: function (err) {
+						console.log(err);
+					},
+				}).then()
+				return false
+			}
+			const addToCartCart = (elem) => {
+				let quantity = elem.parentElement.querySelector(
+					'.quantityID'
+				)
+				let qty = quantity ? quantity.value : 1
+				qty = +qty
+				let id = parseFloat($(elem).parent().data('id'))
+				$.ajax({
+					url: 'http://420.loremipsum.ge/add_to_cart',
+					method: 'get',
+					data: { id: id, qty: qty },
+					success: function (data) {
+						if (data.status) {
+							let cartItemsCount = data.cart_items_count
+							$(
+								'.inbag-number'
+							).text(cartItemsCount)
+
+							// elem.classList.toggle('added')
+							// elem.classList.toggle('active-animation')
+
+							// setTimeout(function () {
+							// 	$(elem).removeClass('active-animation')
+							// }, 500)
+						}
+					},
+					error: function () {
+						// elem.classList.toggle('added')
+						// elem.classList.toggle('active-animation')
+
+						// setTimeout(function () {
+						// 	$(elem).removeClass('active-animation')
+						// }, 1000)
+					},
+				}).then()
+				return false
+			}
 		</script>
 	</body>
 </html>
