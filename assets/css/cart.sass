@@ -209,7 +209,8 @@ aside.cart-menu
         width: 90px
         margin-right: 20px
         @include plus1025()    
-            height: 215px
+            width: 13.4375rem
+            height: 13.4375rem
             padding: 25px 0
             margin-right: 2.5rem
         img
@@ -341,7 +342,10 @@ aside.cart-menu
         cursor: pointer
         @include plus1025()
             transform: none
-            position: static
+            position: relative
+            right: 0
+            top: 0
+
 
 
 
@@ -415,6 +419,8 @@ aside.cart-menu
             color: #1111111c
             &.active-p
                 color: #111
+                br
+                    display: none
             &::after
                 content: url(../images/reg-sel-arrow.svg)
                 transform: rotate(0deg)
@@ -472,7 +478,11 @@ aside.cart-menu
 
 .text-input
     width: 100%
-
+h3 +
+    .two-together
+        @include plus1025()
+            margin-bottom: 69px
+            max-width: 695px
 .two-together
     display: grid
     grid-template-columns: 1fr
