@@ -91,6 +91,12 @@ div.default-ul ul li {
   list-style-position: inside;
 }
 
+html {
+  overflow-x: auto;
+  scrollbar-color: #20CF8B #F2F2F2;
+  scrollbar-width: 10px;
+}
+
 @media screen and (min-width: 1025px) {
   html::-webkit-scrollbar {
     width: 10px;
@@ -470,7 +476,7 @@ svg {
   height: calc(100vh - 111px);
   color: #fff;
   background-color: #111111;
-  overflow-x: hidden;
+  overflow: hidden;
   margin-bottom: 40px;
 }
 
@@ -4143,6 +4149,7 @@ input[type=number] {
 
 .price-filter input[type=range] {
   position: absolute;
+  pointer-events: none;
   -webkit-appearance: none;
   z-index: 2;
   height: 4px;

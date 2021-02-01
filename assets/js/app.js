@@ -8,6 +8,9 @@ const switchToResetBtn = document.querySelector('.input-error-qstmark-real')
 const minimizeAuthBtn = document.querySelector('.minimize-svg')
 const respoMenuToggler = document.querySelector('.respo-menu-toggler')
 
+const searchInputs = document.querySelectorAll('input[name=search]')
+const searchInputRespo = document.getElementById('respo-search')
+
 const burgerBtns = document.querySelectorAll('.burger-icon')
 const burgerWindow = document.querySelector('.header-burgerMenu')
 
@@ -173,29 +176,29 @@ window.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('body').classList.add(`${pageName}-page`)
 	const navUl = document.querySelectorAll('.nav-ul')
 
-	switch (pageName) {
-		case 'contact':
-			navUl.forEach((each) => {
-				each.querySelector('li:nth-child(4)').classList.add('active')
-			})
-			break
-		case 'home':
-			navUl.forEach((each) => {
-				each.querySelector('li:nth-child(1)').classList.add('active')
-			})
-			break
-		case 'aboutus':
-			navUl.forEach((each) => {
-				each.querySelector('li:nth-child(2)').classList.add('active')
-			})
-			break
-		case 0:
-			console.log('something-went-wrong')
-			break
-		default:
-			console.log('something-went-wrong')
-			break
-	}
+	// switch (pageName) {
+	// 	case 'contact':
+	// 		navUl.forEach((each) => {
+	// 			each.querySelector('li:nth-child(4)').classList.add('active')
+	// 		})
+	// 		break
+	// 	case 'home':
+	// 		navUl.forEach((each) => {
+	// 			each.querySelector('li:nth-child(1)').classList.add('active')
+	// 		})
+	// 		break
+	// 	case 'aboutus':
+	// 		navUl.forEach((each) => {
+	// 			each.querySelector('li:nth-child(2)').classList.add('active')
+	// 		})
+	// 		break
+	// 	case 0:
+	// 		console.log('something-went-wrong')
+	// 		break
+	// 	default:
+	// 		console.log('something-went-wrong')
+	// 		break
+	// }
 	if (!homeHeader) {
 		document.querySelector('body').style.marginTop = '103px'
 	} else {
@@ -271,4 +274,13 @@ $('.respo-search-li__searchform__X').on('click', () => {
 	$('.respo-menu-ul li:not(.respo-search-li)').removeClass('vanished')
 	$('.respo-search-li').removeClass('respo-srch-on')
 })
-$('.realContent-see-more, .home-header-forms-combiner button, .home-see-all-btn:not(.personal-info form .home-see-all-btn)').addClass('cannabis-btn-rotate')
+$('.realContent-see-more, .home-header-forms-combiner button, .home-see-all-btn:not(.personal-info form .home-see-all-btn)').addClass('cannabis-btn-rotate');
+
+[...searchInputs, searchInputRespo].forEach(each => {
+    const parentForm = each.closest('form')
+    parentForm.addEventListener('submit', e => {
+        if (each.value.length < 3) {
+            e.preventDefault()
+        }
+    })
+})
