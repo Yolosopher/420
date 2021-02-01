@@ -3820,6 +3820,7 @@ input[type=number] {
   margin-bottom: 27px;
   font-size: 16px;
   line-height: 18px;
+  display: none;
   font-family: mtavruli !important;
   text-transform: uppercase !important;
   font-weight: 500 !important;
@@ -3836,7 +3837,16 @@ input[type=number] {
   color: #F22828;
 }
 
+.products-main__right__searchresult.active {
+  display: block;
+}
+
+.products-main__right__searchresult.active.notfound + .products-main__right__searchform {
+  display: block;
+}
+
 .products-main__right__searchform {
+  display: none;
   padding: 0 20px;
   height: 56px;
   width: 100%;

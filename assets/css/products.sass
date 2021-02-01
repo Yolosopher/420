@@ -88,12 +88,18 @@
             margin-bottom: 27px
             font-size: 16px
             line-height: 18px
+            display: none
             @include upperCase(true)
             @include plus1025()
                 margin-bottom: 50px
             &__name
                 color: #F22828
+            &.active
+                display: block
+                &.notfound + .products-main__right__searchform
+                    display: block
         &__searchform
+            display: none
             padding: 0 20px
             height: 56px
             width: 100%
