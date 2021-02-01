@@ -1,10 +1,30 @@
+.lang-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lang-select:hover li {
+  max-width: 26px;
+}
+
 .lang-select li {
+  display: inline-block;
   cursor: pointer;
-  display: none;
+  overflow: hidden;
+  max-width: 0;
 }
 
 .lang-select li.active {
+  max-width: 26px;
   display: unset;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.lang-select li:not(.last-child) {
+  margin-right: 20px;
 }
 
 .searchbar-container {
