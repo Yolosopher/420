@@ -91,6 +91,11 @@
         font-size: 32px
         line-height: 37px
         margin-bottom: 11px
+        
+        @media screen and ( max-height: 750px )
+            font-size: 22px
+            line-height: 28px
+
         @include plus1025()
         
             font-size: 4rem
@@ -102,6 +107,9 @@
         line-height: 18px
         font-family: rmn
 
+        @media screen and ( max-height: 750px )
+            font-size: 11px
+            line-height: 14px
         @include plus1025()
             font-size: 1rem
             line-height: 1.5rem
@@ -118,12 +126,8 @@
         background-color: $cyan
         height: 3.5rem
         overflow: hidden
-        transition: transform .3s ease-in, background-color .3s ease-in
         @include plus1025()
             display: flex
-            &:hover
-                transform: rotate(-5deg)
-                background-color: $orange
 
         &::after
             position: absolute
@@ -131,6 +135,13 @@
             right: -25.8992px
             top: 0.1062rem
             transform: rotate(-15deg)
+
+.cannabis-btn-rotate
+    transition: transform .3s ease-in, background-color .3s ease-in !important
+    @include plus1025()
+        &:hover
+            transform: rotate(-5deg) !important
+            background-color: $orange !important
 
 
 .realContent-left, .realContent-right
@@ -444,6 +455,8 @@
 
 .realContent-left      
     height: 202px !important
+    @media screen and ( max-height: 750px )
+        height: 120px !important
     @include plus1025()
         height: 380px !important
     @include plus1441()
@@ -696,7 +709,7 @@
         position: absolute
         bottom: calc(56px + 1rem)
         right: 0
-
+        height: auto !important
         display: none
 
         color: #F41E10
@@ -726,7 +739,6 @@
     &.invalid.invalid-shown
         .input-error-qstmark
             display: flex
-@import variables
 
 
 

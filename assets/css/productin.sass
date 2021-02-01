@@ -8,6 +8,7 @@
     justify-content: center
     flex-direction: column
     padding: 0 15px
+    overflow-x: hidden
     margin-bottom: 22px
     @include plus1025()
         margin-bottom: 42px
@@ -82,6 +83,7 @@
                     opacity: 0
 
 .single-product-slider-thumbs
+    overflow-x: hidden
     width: 100%
     height: 56px    
     @include plus1025()
@@ -118,9 +120,12 @@
     margin-bottom: 38px
     @include plus1025()
         margin-bottom: 108px
-
+@import variables
 .single-product-content
     display: flex
+    flex-direction: column
+    @include plus769()
+        flex-direction: row
     h1
         @include upperCase(true)
         font-size: 16px
@@ -145,11 +150,41 @@
                 margin-bottom: 1em
                 
     &__right
-        margin-left: 9rem
-        flex-shrink: 0
-        display: none
-        @include plus1025()
+        @media screen and ( max-width: 768px )
+            margin: 0
+            position: fixed
+            width: 100%
+            padding: 0 15px
+            padding-top: 10px
+            right: 0
+            bottom: 110px
+            background-color: #fafafa
+            z-index: 999
+            height: 66px
+
+        @include plus769()
+            margin: unset
+            flex-shrink: 0
+            margin-left: 9rem
             display: block
+        @media screen and ( max-width: 768px )
+            align-self: center
+        .form-quantity
+            @media screen and ( max-width: 768px )
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                margin: 0 auto
+                &__manipulation 
+                    background-color: #fff
+                .home-see-all-btn
+                    margin-left: 10px
+                    border-radius: 12px
+                    min-width: 56px
+                    max-width: 56px
+                    &::after
+                        display: none
+
 
 .form-quantity
     flex-grow: 1

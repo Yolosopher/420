@@ -84,6 +84,31 @@
             div
                 &:last-child
                     margin-right: 0
+        &__searchresult
+            margin-bottom: 27px
+            font-size: 16px
+            line-height: 18px
+            @include upperCase(true)
+            @include plus1025()
+                margin-bottom: 50px
+            &__name
+                color: #F22828
+        &__searchform
+            padding: 0 20px
+            height: 56px
+            width: 100%
+            background-color: #fff
+            border-radius: 12px
+            margin-bottom: 40px
+            @include plus769()
+                max-width: 335px
+        .searchput
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+
 .products-ul
     width: 100%
     display: block
@@ -219,7 +244,7 @@
         border-radius: 50%
         box-shadow: 0 0 0 0 rgba(98,0,238,.1)
         transition: box-shadow .3s ease-in-out
-        cursor: pointer
+        // cursor: grab
         .thumb-content            
             @include upperCase(true)
             font-weight: 600
@@ -250,19 +275,21 @@
         box-shadow: 0 0 0 10.6px rgba(98,0,238,.1)
 
     .slider > .thumb.active 
+        cursor: pointer
         box-shadow: 0 0 0 21.2px rgba(98,0,238,.2)
 
 
     input[type=range] 
         position: absolute
-        pointer-events: none
+        // pointer-events: none
         -webkit-appearance: none
         z-index: 2
         height: 4px
         width: 100%
         opacity: 0
-        cursor: pointer
-
+        cursor: grab
+        &:active
+            cursor: grabbing
     input[type=range]::-webkit-slider-thumb 
         pointer-events: all
         width: 16px

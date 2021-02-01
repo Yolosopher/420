@@ -4,7 +4,6 @@ const headerContainer = document.querySelector('.header-container.scrolled-one')
 const headerLoginBtnFirst = document.querySelector('.header-right-login')
 const headerLoginBtns = document.querySelectorAll('.header-right-login')
 const switchToRegisBtn = document.querySelector('.switch-to-register')
-const switchToResetBtn = document.querySelector('.input-error-qstmark-real')
 const minimizeAuthBtn = document.querySelector('.minimize-svg')
 const respoMenuToggler = document.querySelector('.respo-menu-toggler')
 
@@ -12,11 +11,6 @@ const burgerBtns = document.querySelectorAll('.burger-icon')
 const burgerWindow = document.querySelector('.header-burgerMenu')
 
 // Setup isScrolling variable
-
-let workWith = document.querySelector('.home-header.work-with')
-
-let isPassResetSent
-
 let isScrolling
 /*!
  * Run a callback function after scrolling has stopped
@@ -45,7 +39,6 @@ var scrollStop = function (callback) {
 		},
 		false
 	)
-
 }
 
 // event listeners
@@ -87,19 +80,11 @@ minimizeAuthBtn.addEventListener('click', () => {
 	if (
 		document
 			.querySelector('.home-header-forms-combiner')
-			.classList.contains('register') || document
-			.querySelector('.home-header-forms-combiner')
-			.classList.contains('reset')
+			.classList.contains('register')
 	) {
 		document
 			.querySelector('.home-header-forms-combiner')
 			.classList.remove('register')
-		document
-			.querySelector('.home-header-forms-combiner')
-			.classList.remove('reset')
-		document
-			.querySelector('.home-header-forms-combiner')
-			.classList.remove('reseted')
 	} else {
 		document.querySelector('.header-burgerMenu').classList.remove('right')
 		document.querySelector('body').classList.remove('noscroll')
@@ -109,38 +94,15 @@ minimizeAuthBtn.addEventListener('click', () => {
 	}
 })
 
-let middd = document.querySelector('.home-header-realContent')
-let homeHeaderBurg = document.querySelector('.header-burgerMenu')
-let homeMain = document.querySelector('.home-main')
-
 // functions
 const headerBotFixer = () => {
 	if (window.innerWidth > 1024) {
-		let vhMinusHeader = window.innerHeight - 123
-
-		let height = window.pageYOffset >= vhMinusHeader ? 123 : window.innerHeight - window.pageYOffset
-
-		let transformTop = window.innerHeight - height
-
-		let max = window.pageYOffset >= vhMinusHeader ? 0 : (window.pageYOffset / (window.innerHeight - 246) * 100)
-		
-		let offsett = window.pageYOffset >= window.pageYOffset ? window.innerHeight : window.pageYOffset 
-
-
-		max = max.toFixed(1)
-		max = 100 - max
-		middd.style.opacity = `${max}%`
-		scrollDownYeah.style.opacity = `${max}%`
-		middd.style.transform = `translateY(-${transformTop}px)`
-		scrollDownYeah.style.transform = `translateY(-${transformTop}px)`
-		workWith.style.height = `${height}px`
-		burgerWindow.style.height = `${height}px`
-		homeMain.style.marginTop = `${offsett + 230}px`
-
-		if (window.pageYOffset > vhMinusHeader) {
-			workWith.classList.add('scrolled')
+		if (window.pageYOffset > window.innerHeight - 123) {
+			headerContainer.classList.add('scrolled')
+			burgerWindow.classList.add('scrolled')
 		} else {
-			workWith.classList.remove('scrolled')
+			headerContainer.classList.remove('scrolled')
+			burgerWindow.classList.remove('scrolled')
 		}
 	}
 }
@@ -149,12 +111,6 @@ if (switchToRegisBtn) {
 		switchToRegisBtn.closest('form').parentElement.classList.add('register')
 	})
 }
-if (switchToResetBtn) {
-	switchToResetBtn.addEventListener('click', () => {
-		switchToResetBtn.closest('form').parentElement.classList.add('reset')
-	})
-}
-
 
 const checkPage = () => {
 	if (document.querySelector('.contact-main')) {
@@ -201,19 +157,18 @@ window.addEventListener('DOMContentLoaded', () => {
 	} else {
 		scrollStop(() => {
 			if (window.innerWidth < 1025) {
-				let innHeight = window.innerHeight - 244
 				if (window.pageYOffset === 0) {
-					// console.log("it's zero")
-				} else if (window.pageYOffset > innHeight) {
-					// console.log(`scrolled down too far`)
-				} else if (window.pageYOffset > innHeight / 4) {
-					// console.log(`scrolled down`)
+					console.log("it's zero")
+				} else if (window.pageYOffset > window.innerHeight) {
+					console.log(`scrolled down too far`)
+				} else if (window.pageYOffset > window.innerHeight / 4) {
+					console.log(`scrolled down`)
 					window.scroll({
-						top: innHeight, // could be negative value
+						top: window.innerHeight - 133, // could be negative value
 						left: 0,
 						behavior: 'smooth',
 					})
-				} else if (window.pageYOffset < innHeight / 4) {
+				} else if (window.pageYOffset < window.innerHeight / 4) {
 					console.log(`scrolled up`)
 
 					window.scroll({
@@ -271,4 +226,3 @@ $('.respo-search-li__searchform__X').on('click', () => {
 	$('.respo-menu-ul li:not(.respo-search-li)').removeClass('vanished')
 	$('.respo-search-li').removeClass('respo-srch-on')
 })
-$('.realContent-see-more, .home-header-forms-combiner button, .home-see-all-btn:not(.personal-info form .home-see-all-btn)').addClass('cannabis-btn-rotate')

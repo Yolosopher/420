@@ -6,14 +6,14 @@
     right: 0
     width: 100%
     background-color: $fawhite
-    height: 111px
+    min-height: 111px
     padding: 10.5px 15px 20.5px
     z-index: 30
     @include plus1025()
         display: none
 .respo-menu
     display: flex
-    height: 100%
+    height: 80px
     width: 100%
     background-color: #fff
     border-radius: 12px
@@ -40,7 +40,7 @@
                 width: 24px
                 height: 24px
                 path
-                    transition: fill .2s ease-out
+                    transition: fill .6s ease-out
             &:active, &.active
                 svg
                     width: 24px
@@ -55,32 +55,35 @@
     border-radius: 50%
     position: relative
     bottom: 0
-    transition: bottom .4s ease-in
+    transition: bottom .6s ease-in
     .respo-cats-container
         position: absolute
         height: 0
         background-color: $cyan
         width: 0
-        transition: all .4s ease-in-out
+        transition: all .6s ease-in-out
         border-radius: 12px
         color: #fff
         overflow: hidden
         bottom: 0
-        li
-            @include upperCase(true)
-            font-size: 16px
-            line-height: 18px       
-            white-space: nowrap 
-            opacity: 0
-            transition: opacity .3s ease-in-out
-            &:not(:last-child)
-                margin-bottom: 28px
+
     .respo-cats
         width: 100%
         height: 100%
         padding: 40px
         overflow: auto
-
+        > li
+            @include upperCase(true)
+            font-size: 16px
+            line-height: 18px       
+            white-space: nowrap 
+            opacity: 0
+            transition: opacity .5s ease-in-out
+            &:not(:last-child)
+                margin-bottom: 28px
+            // &::after
+            //     content: url(../images/respo-menu-arrow.svg)
+            // &.active
     &.active
         bottom: 40px
         .respo-cats-container
@@ -90,5 +93,6 @@
             li
                 opacity: 1
     svg
+        display: none
         path
             fill: #fff
