@@ -6,6 +6,7 @@
     height: 220px
     overflow: hidden
     margin-bottom: 39px
+    position: relative
 
     @include plus1025()
         height: 400px
@@ -14,6 +15,16 @@
     iframe
         width: 100%
         height: 100%
+        opacity: .7
+    &::after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+        background-color: rgba($cyan, 1)
 
 .contact-content-container
     position: relative
@@ -127,8 +138,12 @@
         @include plus1025()
             grid-row-gap: 39px
         li span
-            font-size: 1.375rem
-            font-family: rmn
+            font-size: 13px
+            line-height: 15px
+            @include plus1025()
+                font-size: 1.375rem
+                line-height: 1.625rem
+                font-family: rmn
 
     h2
         font-size: 16px
@@ -143,5 +158,9 @@
         opacity: .3
         margin-bottom: 8px
         text-transform: uppercase !important
+        font-size: 13px
+        line-height: 15px
         @include plus1025()
+            font-size: 1rem
+            line-height: 1.125rem
             margin-bottom: 7px

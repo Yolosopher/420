@@ -373,6 +373,7 @@
     max-width: 11.25rem
     // z-index: -1
     position: relative
+    
 .burger-categories
     li
         display: inline-block
@@ -382,77 +383,65 @@
         @include upperCase(true)
         font-size: 1.375rem
         line-height: 1.5625rem
-        transition: transform .8s ease-out
         transform: translateX(-250%)
+        transition: transform .8s ease-out
         &:not(:last-of-type)
             margin-bottom: 1.625rem
         a
             white-space: nowrap
         &.active, &:active, &:hover
             color: #fff
-        &:nth-of-type(2)
-            transition-delay: calc(.18s - .18s)
-        &:nth-of-type(3)
-            transition-delay: calc(.25s - .18s)
-        &:nth-of-type(4)
-            transition-delay: calc(.3s - .18s)
-        &:nth-of-type(5)
-            transition-delay: calc(.35s - .18s)
-        &:nth-of-type(6)
-            transition-delay: calc(.39s - .18s)
-        &:nth-of-type(7)
-            transition-delay: calc(.45s - .18s)
-        &:nth-of-type(8)
-            transition-delay: calc(.48s - .18s)
-        &:nth-of-type(9)
-            transition-delay: calc(.51s - .18s)
-        &:nth-of-type(10)
-            transition-delay: calc(.73s - .18s)
-        &:nth-of-type(11)
-            transition-delay: calc(.77s - .18s)
-        &:nth-of-type(12)
-            transition-delay: calc(.81s - .18s)
-        &:nth-of-type(13)
-            transition-delay: calc(.84s - .18s)
-        &:nth-of-type(14)
-            transition-delay: calc(.88s - .18s)
-        &:nth-of-type(15)
-            transition-delay: calc(.92s - .18s)
+        // &:nth-of-type(2)
+        //     transition-delay: calc(.18s - .18s)
+        // &:nth-of-type(3)
+        //     transition-delay: calc(.25s - .18s)
+        // &:nth-of-type(4)
+        //     transition-delay: calc(.3s - .18s)
+        // &:nth-of-type(5)
+        //     transition-delay: calc(.35s - .18s)
+        // &:nth-of-type(6)
+        //     transition-delay: calc(.39s - .18s)
+        // &:nth-of-type(7)
+        //     transition-delay: calc(.45s - .18s)
+        // &:nth-of-type(8)
+        //     transition-delay: calc(.48s - .18s)
+        // &:nth-of-type(9)
+        //     transition-delay: calc(.51s - .18s)
+        // &:nth-of-type(10)
+        //     transition-delay: calc(.73s - .18s)
+        // &:nth-of-type(11)
+        //     transition-delay: calc(.77s - .18s)
+        // &:nth-of-type(12)
+        //     transition-delay: calc(.81s - .18s)
+        // &:nth-of-type(13)
+        //     transition-delay: calc(.84s - .18s)
+        // &:nth-of-type(14)
+        //     transition-delay: calc(.88s - .18s)
+        // &:nth-of-type(15)
+        //     transition-delay: calc(.92s - .18s)
+@for $i from 25 through 1
+    .burger-categories
+        li
+            &:nth-of-type(#{$i})
+                $b: #{$i - 25}
+                transition-delay: #{ 0.03 * $b - 0.03}s
+
 .whole-nav-menu
     &.left
         .burger-categories
             .burger-cat-ul li
                 transform: translateX(0)
-                &:nth-of-type(1)
-                    transition-delay: calc(.20s - .18s)
-                &:nth-of-type(2)
-                    transition-delay: calc(.25s - .18s)
-                &:nth-of-type(3)
-                    transition-delay: calc(.3s - .18s)
-                &:nth-of-type(4)
-                    transition-delay: calc(.35s - .18s)
-                &:nth-of-type(5)
-                    transition-delay: calc(.39s - .18s)
-                &:nth-of-type(6)
-                    transition-delay: calc(.45s - .18s)
-                &:nth-of-type(7)
-                    transition-delay: calc(.48s - .18s)
-                &:nth-of-type(8)
-                    transition-delay: calc(.51s - .18s)
-                &:nth-of-type(9)
-                    transition-delay: calc(.73s - .18s)
-                &:nth-of-type(10)
-                    transition-delay: calc(.77s - .18s)
-                &:nth-of-type(11)
-                    transition-delay: calc(.81s - .18s)
-                &:nth-of-type(12)
-                    transition-delay: calc(.84s - .18s)
-                &:nth-of-type(13)
-                    transition-delay: calc(.88s - .18s)
-                &:nth-of-type(14)
-                    transition-delay: calc(.92s - .18s)
-                &:nth-of-type(15)
-                    transition-delay: calc(.92s - .18s)
+// @for $i from 1 through 25
+//     .whole-nav-menu
+//         &.left
+//             .burger-categories
+//                 .burger-cat-ul li 
+//                     &:nth-of-type(#{$i})
+//                         transition-delay: #{ 0.03 * $i - 0.03}s
+            
+
+                        
+
 
 .realContent-left      
     height: 202px !important

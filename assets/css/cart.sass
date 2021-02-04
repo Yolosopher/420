@@ -518,12 +518,17 @@ h3 +
         @include plus1025()
             padding-bottom: 31px
             margin-bottom: 40px
+            grid-gap: 2.5rem
+            grid-template-columns: auto auto
+            justify-content: flex-start
 .radio-input
+    width: min-content
     label
         position: relative
         display: flex
         align-items: center
         cursor: pointer
+        white-space: nowrap
     input
         position: absolute
         opacity: 0

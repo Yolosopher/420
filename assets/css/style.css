@@ -1113,12 +1113,12 @@ svg {
   font-weight: 600 !important;
   font-size: 1.375rem;
   line-height: 1.5625rem;
+  -webkit-transform: translateX(-250%);
+          transform: translateX(-250%);
   -webkit-transition: -webkit-transform .8s ease-out;
   transition: -webkit-transform .8s ease-out;
   transition: transform .8s ease-out;
   transition: transform .8s ease-out, -webkit-transform .8s ease-out;
-  -webkit-transform: translateX(-250%);
-          transform: translateX(-250%);
 }
 
 .burger-categories li:not(:last-of-type) {
@@ -1133,154 +1133,134 @@ svg {
   color: #fff;
 }
 
-.burger-categories li:nth-of-type(2) {
-  -webkit-transition-delay: calc(.18s - .18s);
-          transition-delay: calc(.18s - .18s);
+.burger-categories li:nth-of-type(25) {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
-.burger-categories li:nth-of-type(3) {
-  -webkit-transition-delay: calc(.25s - .18s);
-          transition-delay: calc(.25s - .18s);
+.burger-categories li:nth-of-type(24) {
+  -webkit-transition-delay: -0.03s;
+          transition-delay: -0.03s;
 }
 
-.burger-categories li:nth-of-type(4) {
-  -webkit-transition-delay: calc(.3s - .18s);
-          transition-delay: calc(.3s - .18s);
+.burger-categories li:nth-of-type(23) {
+  -webkit-transition-delay: -0.06s;
+          transition-delay: -0.06s;
 }
 
-.burger-categories li:nth-of-type(5) {
-  -webkit-transition-delay: calc(.35s - .18s);
-          transition-delay: calc(.35s - .18s);
+.burger-categories li:nth-of-type(22) {
+  -webkit-transition-delay: -0.09s;
+          transition-delay: -0.09s;
 }
 
-.burger-categories li:nth-of-type(6) {
-  -webkit-transition-delay: calc(.39s - .18s);
-          transition-delay: calc(.39s - .18s);
+.burger-categories li:nth-of-type(21) {
+  -webkit-transition-delay: -0.12s;
+          transition-delay: -0.12s;
 }
 
-.burger-categories li:nth-of-type(7) {
-  -webkit-transition-delay: calc(.45s - .18s);
-          transition-delay: calc(.45s - .18s);
+.burger-categories li:nth-of-type(20) {
+  -webkit-transition-delay: -0.15s;
+          transition-delay: -0.15s;
 }
 
-.burger-categories li:nth-of-type(8) {
-  -webkit-transition-delay: calc(.48s - .18s);
-          transition-delay: calc(.48s - .18s);
+.burger-categories li:nth-of-type(19) {
+  -webkit-transition-delay: -0.18s;
+          transition-delay: -0.18s;
 }
 
-.burger-categories li:nth-of-type(9) {
-  -webkit-transition-delay: calc(.51s - .18s);
-          transition-delay: calc(.51s - .18s);
+.burger-categories li:nth-of-type(18) {
+  -webkit-transition-delay: -0.21s;
+          transition-delay: -0.21s;
 }
 
-.burger-categories li:nth-of-type(10) {
-  -webkit-transition-delay: calc(.73s - .18s);
-          transition-delay: calc(.73s - .18s);
+.burger-categories li:nth-of-type(17) {
+  -webkit-transition-delay: -0.24s;
+          transition-delay: -0.24s;
 }
 
-.burger-categories li:nth-of-type(11) {
-  -webkit-transition-delay: calc(.77s - .18s);
-          transition-delay: calc(.77s - .18s);
-}
-
-.burger-categories li:nth-of-type(12) {
-  -webkit-transition-delay: calc(.81s - .18s);
-          transition-delay: calc(.81s - .18s);
-}
-
-.burger-categories li:nth-of-type(13) {
-  -webkit-transition-delay: calc(.84s - .18s);
-          transition-delay: calc(.84s - .18s);
-}
-
-.burger-categories li:nth-of-type(14) {
-  -webkit-transition-delay: calc(.88s - .18s);
-          transition-delay: calc(.88s - .18s);
+.burger-categories li:nth-of-type(16) {
+  -webkit-transition-delay: -0.27s;
+          transition-delay: -0.27s;
 }
 
 .burger-categories li:nth-of-type(15) {
-  -webkit-transition-delay: calc(.92s - .18s);
-          transition-delay: calc(.92s - .18s);
+  -webkit-transition-delay: -0.3s;
+          transition-delay: -0.3s;
+}
+
+.burger-categories li:nth-of-type(14) {
+  -webkit-transition-delay: -0.33s;
+          transition-delay: -0.33s;
+}
+
+.burger-categories li:nth-of-type(13) {
+  -webkit-transition-delay: -0.36s;
+          transition-delay: -0.36s;
+}
+
+.burger-categories li:nth-of-type(12) {
+  -webkit-transition-delay: -0.39s;
+          transition-delay: -0.39s;
+}
+
+.burger-categories li:nth-of-type(11) {
+  -webkit-transition-delay: -0.42s;
+          transition-delay: -0.42s;
+}
+
+.burger-categories li:nth-of-type(10) {
+  -webkit-transition-delay: -0.45s;
+          transition-delay: -0.45s;
+}
+
+.burger-categories li:nth-of-type(9) {
+  -webkit-transition-delay: -0.48s;
+          transition-delay: -0.48s;
+}
+
+.burger-categories li:nth-of-type(8) {
+  -webkit-transition-delay: -0.51s;
+          transition-delay: -0.51s;
+}
+
+.burger-categories li:nth-of-type(7) {
+  -webkit-transition-delay: -0.54s;
+          transition-delay: -0.54s;
+}
+
+.burger-categories li:nth-of-type(6) {
+  -webkit-transition-delay: -0.57s;
+          transition-delay: -0.57s;
+}
+
+.burger-categories li:nth-of-type(5) {
+  -webkit-transition-delay: -0.6s;
+          transition-delay: -0.6s;
+}
+
+.burger-categories li:nth-of-type(4) {
+  -webkit-transition-delay: -0.63s;
+          transition-delay: -0.63s;
+}
+
+.burger-categories li:nth-of-type(3) {
+  -webkit-transition-delay: -0.66s;
+          transition-delay: -0.66s;
+}
+
+.burger-categories li:nth-of-type(2) {
+  -webkit-transition-delay: -0.69s;
+          transition-delay: -0.69s;
+}
+
+.burger-categories li:nth-of-type(1) {
+  -webkit-transition-delay: -0.72s;
+          transition-delay: -0.72s;
 }
 
 .whole-nav-menu.left .burger-categories .burger-cat-ul li {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(1) {
-  -webkit-transition-delay: calc(.20s - .18s);
-          transition-delay: calc(.20s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(2) {
-  -webkit-transition-delay: calc(.25s - .18s);
-          transition-delay: calc(.25s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(3) {
-  -webkit-transition-delay: calc(.3s - .18s);
-          transition-delay: calc(.3s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(4) {
-  -webkit-transition-delay: calc(.35s - .18s);
-          transition-delay: calc(.35s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(5) {
-  -webkit-transition-delay: calc(.39s - .18s);
-          transition-delay: calc(.39s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(6) {
-  -webkit-transition-delay: calc(.45s - .18s);
-          transition-delay: calc(.45s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(7) {
-  -webkit-transition-delay: calc(.48s - .18s);
-          transition-delay: calc(.48s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(8) {
-  -webkit-transition-delay: calc(.51s - .18s);
-          transition-delay: calc(.51s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(9) {
-  -webkit-transition-delay: calc(.73s - .18s);
-          transition-delay: calc(.73s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(10) {
-  -webkit-transition-delay: calc(.77s - .18s);
-          transition-delay: calc(.77s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(11) {
-  -webkit-transition-delay: calc(.81s - .18s);
-          transition-delay: calc(.81s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(12) {
-  -webkit-transition-delay: calc(.84s - .18s);
-          transition-delay: calc(.84s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(13) {
-  -webkit-transition-delay: calc(.88s - .18s);
-          transition-delay: calc(.88s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(14) {
-  -webkit-transition-delay: calc(.92s - .18s);
-          transition-delay: calc(.92s - .18s);
-}
-
-.whole-nav-menu.left .burger-categories .burger-cat-ul li:nth-of-type(15) {
-  -webkit-transition-delay: calc(.92s - .18s);
-          transition-delay: calc(.92s - .18s);
 }
 
 .realContent-left {
@@ -2974,6 +2954,7 @@ body .header-container-norm header {
   height: 220px;
   overflow: hidden;
   margin-bottom: 39px;
+  position: relative;
 }
 
 @media screen and (min-width: 1025px) {
@@ -2986,6 +2967,18 @@ body .header-container-norm header {
 .contact-map iframe {
   width: 100%;
   height: 100%;
+  opacity: .7;
+}
+
+.contact-map::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #20cf8b;
 }
 
 .contact-content-container {
@@ -3192,8 +3185,16 @@ body .header-container-norm header {
 }
 
 .contact-info .contact-info-ul li span {
-  font-size: 1.375rem;
-  font-family: rmn;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+@media screen and (min-width: 1025px) {
+  .contact-info .contact-info-ul li span {
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+    font-family: rmn;
+  }
 }
 
 .contact-info h2 {
@@ -3215,10 +3216,14 @@ body .header-container-norm header {
   opacity: .3;
   margin-bottom: 8px;
   text-transform: uppercase !important;
+  font-size: 13px;
+  line-height: 15px;
 }
 
 @media screen and (min-width: 1025px) {
   .contact-info h3 {
+    font-size: 1rem;
+    line-height: 1.125rem;
     margin-bottom: 7px;
   }
 }
@@ -5144,7 +5149,19 @@ aside.cart-menu.active {
   .two-together:nth-of-type(2) {
     padding-bottom: 31px;
     margin-bottom: 40px;
+    grid-gap: 2.5rem;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
+}
+
+.radio-input {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .radio-input label {
@@ -5156,6 +5173,7 @@ aside.cart-menu.active {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .radio-input input {
@@ -6182,6 +6200,17 @@ aside.cart-menu.active {
 .rules-content__three-together__each__text span {
   display: block;
   color: #F2A928;
+}
+
+.rules-content svg {
+  width: 44px;
+  height: 44px;
+}
+
+@media screen and (min-width: 1025px) {
+  .real-rules {
+    padding-bottom: 7.5rem;
+  }
 }
 
 header {
