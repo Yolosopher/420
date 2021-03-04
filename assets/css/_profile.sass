@@ -8,7 +8,9 @@
         @include plus1025()
             grid-gap: 1.5625rem
             grid-template-columns: repeat(3, 1fr)
-
+    &__one-alone
+        cursor: drag
+        position: relative
 
 .personal-input
     border: 1px solid #E5E5E5
@@ -17,13 +19,13 @@
 .dropzone.dz-clickable
     cursor: initial !important
 
-.dropzone 
+.dropzone
     min-height: unset !important
     border: unset !important
     background: unset !important
     padding: unset !important
 
-.personal-info 
+.personal-info
     @media screen and ( max-width: 768px )
         padding: 0 !important
         background: unset !important
@@ -39,7 +41,7 @@
     padding: 20px !important
     @include plus1025()
         padding: 0 !important
-    label
+    label:not(.label-container), label .same-as-label
         cursor: pointer
         display: block
         @include upperCase(true)
@@ -72,9 +74,9 @@
     height: 181px
     border-radius: 12px
     border: 1px dashed #e5e5e5
-    @include plus1025()  
+    @include plus1025()
         height: 220px
-.dz-button
+.dz-message
     display: flex
     justify-content: center
     align-items: center
@@ -85,8 +87,8 @@
     span
         font-size: 14px
         line-height: 16px
-        color: #AAAAAA 
-        margin-bottom: 13px 
+        color: #AAAAAA
+        margin-bottom: 13px
         @include plus1025()
             font-size: 1rem
             line-height: 1.125rem
@@ -103,10 +105,43 @@
         line-height: 0.875rem
 .dropzone .dz-message
     margin: 0 !important
+    cursor: pointer
     margin-bottom: 20px !important
     @include plus1025()
         margin-bottom: 30px !important
 
+.dz-message
+    .real-image
+        display: none
+        width: 100%
+        height: 100%
+    &.got-input
+        padding: 10px
+        > *:not(.real-image)
+            display: none !important
+        .real-image
+            display: flex
+
+.real-image
+    position: relative
+    img
+        border-radius: 12px
+        height: 100%
+        object-fit: contain
+.real-imageX
+    display: none
+    position: absolute
+    right: -10px
+    top: 0
+    z-index: 20
+    cursor: pointer
+    i
+        font-size: 25px
+        color: #F41E10
+.personal-info__one-alone
+    &.got-input-outer
+        .real-imageX
+            display: unset
 .passformheading
     margin-bottom: 38px
     @include upperCase(true)

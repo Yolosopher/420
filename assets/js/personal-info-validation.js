@@ -111,6 +111,15 @@ const checkTextPut = (textPut) => {
 	}
 }
 
+
+let allTogether = [persInfoemailInput, textInput, telInput];
+
+allTogether.forEach(each => {
+    let val = each.value;
+    if (val.length > 1) {
+        each.parentElement.classList.remove('invalid');
+    }
+});
 // submit validation
 const forms = document.querySelectorAll('.personal-info form')
 

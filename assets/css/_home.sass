@@ -12,6 +12,7 @@
     overflow: hidden
     margin-bottom: 38px
     @include plus1025()
+        // padding: 0 20px
         height: 19.3125rem
         margin-bottom: 7.375rem
 .home-categories-ul, .home-topProducts-ul
@@ -150,11 +151,13 @@
                 text-transform: unset !important
                 font-size: 14px
                 line-height: 17px
+                min-height: #{17px * 2}
                 font-weight: 500 !important
                 margin-bottom: 17px
                 @include plus1025()
                     font-size: 16px
                     line-height: 19px
+                    min-height: #{19px * 2}
         .top-products-price
             display: flex
             justify-content: center

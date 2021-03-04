@@ -142,7 +142,6 @@ header
         transition: height 0s
         position: fixed
         top: 0
-        &.scrolled
 
 .mid-container
     @include plus1025()
@@ -175,5 +174,42 @@ header
         &::after
             background: url(../images/active-respo-menu.svg)
 
-
             
+main:not(.home-main):not(.single-product-main)
+    @include plus1025()
+        padding-bottom: 6.875rem
+@media screen and ( max-width:  1024px)
+    .personal-info__three-together
+        grid-row-gap: 0
+        .input-div:not(.radio-input)
+            margin-bottom: 20px
+                
+$red: #F22828
+
+.real-success
+    .recover-successfully-completed
+        display: flex
+        .error-svgg
+            display: none
+        .p-message-err
+            display: none
+        &.error
+            .checkmark-buble
+                background-color: $red
+            .error-svgg, .p-message-err
+                display: unset
+            .sucesss, .p-message-suc
+                display: none
+
+
+.recover-successfully-completed
+    svg
+        width: 32px
+        height: 32px
+
+@media screen and ( max-width: 768px )
+    .home-page
+        .home-see-all-btn
+            width: 100%
+    .home-topProductsSecond
+        padding-bottom: 34px

@@ -1,12 +1,99 @@
-<script>
-	isPassResetSent = true //ეს ხაზი ან თუ გაიგზავნა მეილზე წარმატებით, გამოაჩინე, თუ არადა ან არ გამოაჩინო
+<div
+	role="tabpanel"
+	class="tab-pane fade active in"
+	id="ka"
+	aria-labelledby="home-tab"
+>
+	<div class="form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+			დასახელება <span class="required">*</span>
+		</label>
+		<div class="col-md-7 col-sm-7 col-xs-12">
+			<input
+				type="text"
+				name="translates[ka][title]"
+				value=""
+				class="form-control col-md-7 col-xs-12"
+			/>
+		</div>
+	</div>
 
-	let combiner = document.querySelector('.home-header-forms-combiner')
-	isPassResetSent = isPassResetSent && function () {
-		headerLoginBtns[0].click()
-		switchToResetBtn.click()
-		combiner.classList.add('reseted')
-	}
-
-	if (isPassResetSent) isPassResetSent()
-</script>
+	<div id="wrapper" class="form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+			admin.urltitle <span class="required">*</span>
+		</label>
+		<div class="col-md-7 col-sm-7 col-xs-12">
+			<input
+				type="text"
+				name="translates[ka][urltitle][]"
+				value=""
+				class="form-control col-md-7 col-xs-12"
+			/>
+		</div>
+	</div>
+	<div id="wrapper" class="form-group">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">
+			ბმული <span class="required">*</span>
+		</label>
+		<div class="col-md-7 col-sm-7 col-xs-12">
+			<input
+				type="text"
+				name="translates[ka][url][]"
+				value=""
+				class="form-control col-md-7 col-xs-12"
+			/>
+		</div>
+	</div>
+	<div class="addedtogether">
+		<div class="form-group">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				admin.urltitle <span class="required">*</span>
+			</label>
+			<div class="col-md-7 col-sm-7 col-xs-12">
+				<input
+					type="text"
+					name="translates[ka][urltitle][]"
+					value=""
+					class="form-control col-md-7 col-xs-12"
+				/>
+			</div>
+		</div>
+		<div class="form-group" style="position: relative">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+				ბმული <span class="required">*</span>
+			</label>
+			<div class="col-md-7 col-sm-7 col-xs-12">
+				<input
+					type="text"
+					name="translates[ka][url][]"
+					value=""
+					class="form-control col-md-7 col-xs-12"
+				/>
+			</div>
+			<div
+				class="linkRemover"
+				style="
+					cursor: pointer;
+					position: absolute;
+					right: 0;
+					top: 0;
+					display: flex;
+					height: 100%;
+					align-items: center;
+				"
+			>
+				<i style="font-size: 30px" class="far fa-times-circle"></i>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<input
+			type="button"
+			class="btn btn-success"
+			id="more_fields"
+			onclick="add_fields();"
+			value="url დამატება"
+		/>
+	</div>
+	<div class="ln_solid"></div>
+</div>

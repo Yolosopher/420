@@ -138,7 +138,7 @@ const headerBotFixer = () => {
 		scrollDownYeah.style.transform = `translateY(-${transformTop}px)`
 		workWith.style.height = `${height}px`
 		burgerWindow.style.height = `${height}px`
-		homeMain.style.marginTop = `${offsett + 230}px`
+		homeMain.style.marginTop = `${offsett + 110}px`
 
 		if (window.pageYOffset > vhMinusHeader) {
 			workWith.classList.add('scrolled')
@@ -235,16 +235,9 @@ respoMenuToggler.addEventListener('click', () => {
 	respoMenuToggler.classList.toggle('active')
 })
 
-const respoLoginBtnA = document.querySelector('.respo-profile-li:last-child a')
-
-respoLoginBtnA.href = 'javascript:void(0)'
-
 const RespLoginCaller = () => {
 	headerLoginBtnFirst.click()
 }
-respoLoginBtnA.addEventListener('click', (e) => {
-	RespLoginCaller()
-})
 
 // srchbar dekstop
 
